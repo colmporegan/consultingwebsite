@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fastnet AI Consulting | AI That Speaks Science</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0a1628;
+  --paper: #f6f4f0;
+  --accent: #38bdf8;
+  --accent-dark: #0ea5e9;
+  --warm: #e8e4dd;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --border: #d4d0c8;
+  --green: #16a34a;
+  --hero-grad: linear-gradient(165deg, #0a1628 0%, #0f2847 55%, #164e78 100%);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Instrument Sans', sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+/* ---- HERO ---- */
+.hero {
+  background: var(--hero-grad);
+  color: #fff;
+  padding: 100px 0 90px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -40%; right: -20%;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; max-width: 720px; }
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  color: rgba(255,255,255,0.8);
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.12;
+  margin-bottom: 22px;
+  letter-spacing: -0.01em;
+}
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.72);
+  max-width: 560px;
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.25); }
+.btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
+
+/* ---- LOGOS ---- */
+.logos {
+  padding: 50px 0;
+  border-bottom: 1px solid var(--border);
+}
+.logos-label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+.logos-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.logos-grid span {
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  color: #999;
+  white-space: nowrap;
+}
+
+/* ---- WHY SECTION ---- */
+.why { padding: 90px 0; }
+.section-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+.why h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+.why-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+}
+.why-card .icon {
+  width: 44px; height: 44px;
+  background: rgba(56,189,248,0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 18px;
+  font-size: 20px;
+}
+.why-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
+.why-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.65; }
+
+/* ---- SERVICES ---- */
+.services {
+  padding: 90px 0;
+  background: var(--ink);
+  color: #fff;
+}
+.services .section-label { color: rgba(255,255,255,0.5); }
+.services h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+.service-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s;
+}
+.service-card:hover { border-color: rgba(255,255,255,0.2); }
+.service-card h3 { font-size: 1.15rem; margin-bottom: 12px; }
+.service-card p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; flex: 1; margin-bottom: 20px; }
+.service-card a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.service-card a:hover { text-decoration: underline; }
+.service-card a::after { content: '→'; }
+
+/* ---- TESTIMONIALS ---- */
+.testimonials { padding: 90px 0; }
+.testimonials h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; }
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.test-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 32px 28px;
+}
+.test-card .stars { color: #f59e0b; font-size: 16px; margin-bottom: 14px; }
+.test-card blockquote {
+  font-size: 0.95rem;
+  color: var(--ink);
+  line-height: 1.7;
+  margin-bottom: 18px;
+  font-style: italic;
+}
+.test-card .attr {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ---- CONTACT ---- */
+.contact {
+  padding: 90px 0;
+  background: var(--warm);
+}
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.contact h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 16px; }
+.contact > .container > .contact-wrap > div:first-child p { color: var(--muted); font-size: 1rem; margin-bottom: 24px; }
+.contact-info { font-size: 0.9rem; color: var(--muted); }
+.contact-info a { color: var(--accent); text-decoration: none; }
+.contact-form { display: flex; flex-direction: column; gap: 14px; }
+.contact-form input, .contact-form textarea, .contact-form select {
+  font-family: inherit;
+  font-size: 15px;
+  padding: 13px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--accent); }
+.contact-form textarea { resize: vertical; min-height: 100px; }
+.contact-form .btn { width: 100%; justify-content: center; }
+
+/* ---- FAQ ---- */
+.faq { padding: 90px 0; }
+.faq h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; text-align: center; }
+.faq-list { max-width: 740px; margin: 0 auto; }
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 22px 0;
+}
+.faq-q {
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  user-select: none;
+}
+.faq-q::after {
+  content: '+';
+  font-size: 1.4rem;
+  color: var(--muted);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.faq-item.open .faq-q::after { content: '−'; }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s;
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.faq-item.open .faq-a { max-height: 300px; padding-top: 14px; }
+
+/* ---- FINAL CTA ---- */
+.final-cta {
+  padding: 80px 0;
+  background: var(--hero-grad);
+  color: #fff;
+  text-align: center;
+}
+.final-cta h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 16px; }
+.final-cta p { color: rgba(255,255,255,0.6); margin-bottom: 32px; font-size: 1.05rem; }
+.final-cta .hero-ctas { justify-content: center; }
+
+/* ---- FOOTER ---- */
+footer {
+  background: var(--ink);
+  color: rgba(255,255,255,0.5);
+  padding: 60px 0 36px;
+  font-size: 0.85rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.footer-brand h4 { font-size: 1.2rem; color: #fff; margin-bottom: 12px; }
+.footer-brand p { line-height: 1.7; max-width: 280px; }
+footer h5 {
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 16px;
+}
+footer ul { list-style: none; }
+footer ul li { margin-bottom: 10px; }
+footer ul a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+footer ul a:hover { color: #fff; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ---- NAV ---- */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(10,22,40,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 0 24px;
+}
+.nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+.nav-logo {
+  font-family: 'Instrument Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.nav-logo svg { flex-shrink: 0; }
+
+/* ---- WHAT IS ---- */
+.what-is { padding: 90px 0; }
+.what-is-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.what-is-logo { text-align: center; }
+.what-is-logo svg { width: 180px; height: auto; }
+.what-is h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 18px; }
+.what-is p { color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 14px; }
+@media (max-width: 768px) {
+  .what-is-wrap { grid-template-columns: 1fr; }
+  .what-is-logo { order: -1; }
+}
+.nav-logo em { font-style: normal; color: var(--accent); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #fff; }
+.nav-links .btn { padding: 9px 20px; font-size: 13px; }
+
+.hero { padding-top: 160px; }
+
+/* ---- ABOUT ---- */
+.about { padding: 90px 0; background: var(--ink); color: #fff; }
+.about-wrap {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 56px;
+  align-items: center;
+}
+.about-photo {
+  width: 280px; height: 280px;
+  border-radius: 14px;
+  object-fit: cover;
+  filter: grayscale(0.2);
+}
+.about h2 { font-size: clamp(1.8rem, 3vw, 2.2rem); margin-bottom: 18px; }
+.about p { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.75; margin-bottom: 14px; }
+.about p strong { color: #fff; }
+@media (max-width: 768px) {
+  .about-wrap { grid-template-columns: 1fr; text-align: center; }
+  .about-photo { margin: 0 auto; }
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .services-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg width="32" height="32" viewBox="-20 -2 68 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="34" r="32" fill="none" stroke="#fff" stroke-width="1.5"/>
+        <rect x="8" y="22" width="12" height="28" fill="#fff"/>
+        <path d="M14 10 L8 22 L20 22Z" fill="#fff"/>
+        <circle cx="14" cy="14" r="4" fill="#38bdf8"/>
+        <line x1="-4" y1="14" x2="6" y2="14" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="22" y1="14" x2="32" y2="14" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="2" y1="4" x2="8" y2="10" stroke="#38bdf8" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+        <line x1="26" y1="4" x2="20" y2="10" stroke="#38bdf8" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+        <rect x="8" y="34" width="12" height="4" fill="#38bdf8"/>
+        <path d="M-12 54 C-4 50, 4 56, 14 52 C24 48, 32 54, 40 50" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.35"/>
+      </svg>
+      Fastnet <em>AI</em> Consulting
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn-primary">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-badge">AI consulting for life science teams</div>
+      <h1>Your AI partner<br>who <em>actually understands</em> the science</h1>
+      <p>Fastnet AI Consulting helps life science and lab technology companies adopt AI faster, without sacrificing scientific accuracy, compliance, or credibility.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+        <a href="https://sciencecopywriting.com/subscribe/" target="_blank" class="btn btn-outline">Read the Selling Science Newsletter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS -->
+<section class="logos">
+  <div class="container">
+    <div class="logos-label">Trusted by teams at</div>
+    <div class="logos-grid">
+      <span>Hitachi High-Tech</span>
+      <span>Thermo Fisher Scientific</span>
+      <span>ZEISS</span>
+      <span>Leica Microsystems</span>
+      <span>Merck</span>
+    </div>
+    <!-- Replace with client logo images -->
+  </div>
+</section>
+
+<!-- WHAT IS -->
+<section class="what-is">
+  <div class="container">
+    <div class="what-is-wrap">
+      <div>
+        <div class="section-label">My story</div>
+        <h2>What is Fastnet AI Consulting?</h2>
+        <p>The name Fastnet comes from the lighthouse that stands on Fastnet Rock off the southwest coast of Ireland. For over a century, it has guided ships safely through some of the most challenging waters in the North Atlantic.</p>
+        <p>That's the idea behind Fastnet AI Consulting. I shine a light on AI and help leaders in life science and lab technology see the best path forward towards adoption. No hype, no confusion, just clear, practical guidance grounded in real scientific understanding.</p>
+        <p>Based in Ireland and serving clients worldwide, Fastnet AI Consulting brings deep domain expertise to every engagement, whether you're across the road or across the ocean.</p>
+      </div>
+      <div class="what-is-logo">
+        <svg width="200" height="200" viewBox="-20 -2 68 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="34" r="32" fill="none" stroke="#0a1628" stroke-width="1.5"/>
+          <rect x="8" y="22" width="12" height="28" fill="#0a1628"/>
+          <path d="M14 10 L8 22 L20 22Z" fill="#0a1628"/>
+          <circle cx="14" cy="14" r="4" fill="#38bdf8"/>
+          <line x1="-4" y1="14" x2="6" y2="14" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="22" y1="14" x2="32" y2="14" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="2" y1="4" x2="8" y2="10" stroke="#38bdf8" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+          <line x1="26" y1="4" x2="20" y2="10" stroke="#38bdf8" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+          <rect x="8" y="34" width="12" height="4" fill="#38bdf8"/>
+          <path d="M-12 54 C-4 50, 4 56, 14 52 C24 48, 32 54, 40 50" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.35"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="container">
+    <div class="section-label">Why Fastnet AI</div>
+    <h2>AI consulting built for the realities of life science marketing</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon">🔬</div>
+        <h3>PhD-Level Domain Expertise</h3>
+        <p>A chemistry PhD and a decade in the lab means your AI workflows are built by someone who knows what a Schottky field emitter is, not just what ChatGPT says it is.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">⚡</div>
+        <h3>Faster Content, Fewer Bottlenecks</h3>
+        <p>Compress campaign cycles from weeks to days. AI-augmented workflows that your team can actually use, without waiting on a single overloaded copywriter.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">🛡️</div>
+        <h3>Accuracy & Compliance First</h3>
+        <p>No hallucinated specs. No reckless claims. Every workflow includes guardrails designed for regulated, technical content.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">🌍</div>
+        <h3>Global Reach, Sector Focus</h3>
+        <p>Ireland-based, serving teams worldwide. 10+ years writing for the biggest names in microscopy, analytical instruments, and biopharma tools.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-label">Services</div>
+    <h2>What I deliver</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>AI Training & Workshops for Individuals</h3>
+        <p>Executive-focused training programs for faster AI adoption: leadership alignment, practical workflows, and role-specific implementation plans for your marketing and sales teams.</p>
+        <a href="#contact">Contact for more information</a>
+      </div>
+      <div class="service-card">
+        <h3>AI Strategy & Consulting</h3>
+        <p>From first conversation to full implementation plan. Starts with an AI Jam Session to identify opportunities, builds into an AI Mission Plan for your team, and scales to full AI Roadmapping across your organisation.</p>
+        <a href="#contact">Contact for more information</a>
+      </div>
+      <div class="service-card">
+        <h3>SEO/AEO Optimization</h3>
+        <p>Search visibility systems for both classic SEO and AI answer surfaces, combining technical structure with conversion-ready content strategy for scientific audiences.</p>
+        <a href="#contact">Contact for more information</a>
+      </div>
+      <div class="service-card">
+        <h3>Custom AI Agents</h3>
+        <p>Purpose-built AI agents for support, internal operations, and decision support, integrated with your stack and guardrails so they work within your compliance framework.</p>
+        <a href="#contact">Contact for more information</a>
+      </div>
+      <div class="service-card">
+        <h3>AI Advisory Services</h3>
+        <p>Fractional CAIO advisory for roadmap design, vendor due diligence, governance, and executive-level implementation oversight. Strategic AI leadership, on demand.</p>
+        <a href="#contact">Contact for more information</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+    <div class="section-label">Testimonials</div>
+    <h2>What clients say</h2>
+    <div class="test-grid">
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"The quality of work was higher than expected. We asked Colm to turn a customer interview into an article, but he delivered a polished success story with a much more engaging style. He understood our business objectives and provided professional suggestions on gated content SEO, plus a full communications package including emails and social posts. Overall, I'm very satisfied."</blockquote>
+        <div class="attr">– Shiyo Lin, Marketing Manager EMEA, Leica Microsystems</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Colm's AI Marketing Roadmap showed me exactly how AI could help with competitor research, audience insights, and creating content quickly. He asked great questions to make sure the roadmap matched what I needed, and gave me a clear plan with practical tools I could use straight away. I'd recommend this to any life science marketer who feels stuck or overwhelmed by AI."</blockquote>
+        <div class="attr">– Ricardo Wilkins, Health Science Author, ASEA</div>
+      </div>
+      <div class="test-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I was blown away by how comprehensive and tailored Colm's AI Roadmap service is. He broke the process down into bite-size steps and spoke directly to my pain points. I'd recommend it to any life science marketer who wants to use AI to work smarter, not harder."</blockquote>
+        <div class="attr">– Shawn Jones Clarke, Wellness Consultant, ASEA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-wrap">
+      <div>
+        <div class="section-label">Get started</div>
+        <h2>Let's talk about your AI roadmap</h2>
+        <p>Book a free 30-minute discovery call. No pitch deck, just a focused conversation about where AI can move the needle for your team.</p>
+        <div class="contact-info">
+          <p>Or email directly: <a href="/cdn-cgi/l/email-protection#53303c3f3e13353220273d3627323a7d303c3e"><span class="__cf_email__" data-cfemail="43202c2f2e03252230372d2637222a6d202c2e">[email&#160;protected]</span></a></p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <input type="text" placeholder="Your name">
+        <input type="email" placeholder="Work email">
+        <input type="text" placeholder="Company">
+        <select>
+          <option value="" disabled selected>I'm interested in...</option>
+          <option>AI Training & Workshops</option>
+          <option>AI Strategy & Consulting</option>
+          <option>SEO/AEO Optimization</option>
+          <option>Custom AI Agents</option>
+          <option>AI Advisory Services</option>
+          <option>Not sure yet, let's talk</option>
+        </select>
+        <textarea placeholder="Tell me briefly what you're trying to solve"></textarea>
+        <button class="btn btn-primary">Book a Discovery Call</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="container">
+    <div class="about-wrap">
+      <img src="Headshot.jpg" alt="Colm O'Regan" class="about-photo">
+      <div>
+        <div class="section-label" style="color:rgba(255,255,255,0.4);">About</div>
+        <h2>Meet Colm O'Regan</h2>
+        <p>I'm a former research scientist with a B.Sc. and Ph.D. in chemistry and materials science, and over 10 years working in science labs. I've used the instruments, run the experiments, and sat through the purchasing decisions, so I know the world your buyers live in.</p>
+        <p>Since 2015, I've been writing and strategising for major life science brands including Hitachi High-Tech, Thermo Fisher, Zeiss, and Leica Microsystems. Now I help life science companies <strong>adopt AI with confidence</strong>, building workflows, training teams, and designing strategies rooted in real scientific understanding.</p>
+        <p><strong>That combination of lab credibility, marketing experience, and AI expertise is rare.</strong> With me, you get someone who won't need a briefing on your science, and who can translate that into AI systems your team will actually trust and use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <h2>Frequently asked questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">Who do you typically work with?</div>
+        <div class="faq-a">Marketing directors, commercial leaders, and sales teams at life science, lab technology, and instrumentation companies, from microscopy and analytical instruments to diagnostics and biopharma tools. If your buyers are scientists, I speak their language.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What makes you different from a generic AI consultancy?</div>
+        <div class="faq-a">A PhD in chemistry, a decade of lab research, and 10+ years writing for brands like Hitachi High-Tech, Thermo Fisher, and Zeiss. I don't need a briefing on your science. That means faster implementation, fewer errors, and workflows your technical reviewers will actually trust.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Will AI produce scientifically accurate content for our market?</div>
+        <div class="faq-a">Not out of the box, and anyone who tells you otherwise is selling hype. My approach builds in domain-specific guardrails, review checkpoints, and prompt architectures designed for regulated technical content. Accuracy isn't optional; it's the starting point.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do you handle compliance and regulatory concerns?</div>
+        <div class="faq-a">Every engagement includes a governance review tailored to your sector. I design workflows that keep humans in the loop at critical checkpoints and ensure AI outputs meet your internal review standards before anything goes public.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">What does a typical engagement look like?</div>
+        <div class="faq-a">It depends on where you are. Some teams start with a workshop to get immediate wins. Others need a full roadmap and automation build. We'll scope it together on a discovery call, no cookie-cutter packages.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do you work with companies outside life science?</div>
+        <div class="faq-a">My sweet spot is life science, lab technology, and instrumentation. If your business sits at the intersection of complex science and commercial marketing, there's a good chance I can help. Let's talk.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">How do I get started?</div>
+        <div class="faq-a">Book a free 30-minute discovery call. We'll discuss your current situation, identify quick wins, and map out what an AI engagement could look like for your team. No commitment, no pitch deck.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Ready to put AI to work, the right way?</h2>
+    <p>Your competitors are experimenting. Your team should be implementing.</p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+      <a href="https://sciencecopywriting.com/subscribe/" target="_blank" class="btn btn-outline">Read the Selling Science Newsletter</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Fastnet AI Consulting</h4>
+        <p>AI consulting for life science and lab technology companies. Built on real science, not hype.</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#">AI Training</a></li>
+          <li><a href="#">Strategy & Consulting</a></li>
+          <li><a href="#">SEO/AEO</a></li>
+          <li><a href="#">Custom Agents</a></li>
+          <li><a href="#">Advisory</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <ul>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Fastnet AI Consulting. All rights reserved.</span>
+      <span>Privacy Policy &middot; Terms</span>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scri
