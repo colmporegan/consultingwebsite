@@ -621,13 +621,14 @@ nav {
         <p>Book a free 30-minute discovery call. No pitch deck, just a focused conversation about where AI can move the needle for your team.</p>
         <div class="contact-info">
           <p>Or email directly: <a href="mailto:colm@sciencecopywriting.com">colm@sciencecopywriting.com</a>
+</p>        
         </div>
       </div>
-      <div class="contact-form">
-        <input type="text" placeholder="Your name">
-        <input type="email" placeholder="Work email">
-        <input type="text" placeholder="Company">
-        <select>
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/xlgoynyz" method="POST">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Work email" required>
+        <input type="text" name="company" placeholder="Company">
+        <select name="service">
           <option value="" disabled selected>I'm interested in...</option>
           <option>AI Training & Workshops</option>
           <option>AI Strategy & Consulting</option>
@@ -636,8 +637,18 @@ nav {
           <option>AI Advisory Services</option>
           <option>Not sure yet, let's talk</option>
         </select>
-        <textarea placeholder="Tell me briefly what you're trying to solve"></textarea>
-        <button class="btn btn-primary">Book a Discovery Call</button>
+        <textarea name="message" placeholder="Tell me briefly what you're trying to solve"></textarea>
+        <button type="submit" class="btn btn-primary">Book a Discovery Call</button>
+      </form>
+ 
+      <!-- Success modal -->
+      <div id="form-modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); z-index:999; display:none; align-items:center; justify-content:center;">
+        <div style="background:#fff; border-radius:12px; padding:40px 36px; max-width:460px; text-align:center; margin:20px; box-shadow:0 20px 60px rgba(0,0,0,0.2);">
+          <div style="font-size:48px; margin-bottom:16px;">&#10003;</div>
+          <h3 style="font-size:1.3rem; margin-bottom:12px; color:#0a1628;">Thank you!</h3>
+          <p style="color:#6b7280; font-size:0.95rem; line-height:1.7;">Your form has been successfully submitted. I'll reach out to you within 24 hours to schedule a call.</p>
+          <button onclick="document.getElementById('form-modal').style.display='none'" class="btn btn-primary" style="margin-top:20px;">Got it</button>
+        </div>
       </div>
     </div>
   </div>
