@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | Lighthouse AI Consulting</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0a1628;
+  --paper: #f6f4f0;
+  --accent: #38bdf8;
+  --accent-dark: #0ea5e9;
+  --muted: #6b7280;
+  --hero-grad: linear-gradient(165deg, #0a1628 0%, #0f2847 55%, #164e78 100%);
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Instrument Sans', sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.2s; cursor: pointer; border: none; }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+.btn-outline { background: transparent; color: var(--ink); border: 1.5px solid var(--ink); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,22,40,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 0 24px; }
+.nav-inner { max-width: 1120px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+.nav-logo { font-family: 'Instrument Sans', sans-serif; font-weight: 700; font-size: 1.15rem; color: #fff; text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.nav-logo svg { flex-shrink: 0; }
+.nav-logo em { font-style: normal; color: var(--accent); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: #fff; }
+.nav-links .btn { padding: 9px 20px; font-size: 13px; color: #fff; font-weight: 700; }
+
+/* THANK YOU */
+.thank-you {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 64px;
+}
+.thank-you-card {
+  text-align: center;
+  max-width: 560px;
+  padding: 60px 40px;
+}
+.thank-you-icon {
+  width: 72px;
+  height: 72px;
+  background: rgba(56,189,248,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 28px;
+  font-size: 32px;
+  color: var(--accent-dark);
+}
+.thank-you-card h1 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  margin-bottom: 16px;
+}
+.thank-you-card p {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+.thank-you-card .ctas {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+/* FOOTER */
+footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 36px 0; font-size: 0.85rem; position: fixed; bottom: 0; left: 0; right: 0; }
+.footer-bottom { display: flex; justify-content: center; align-items: center; }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .thank-you-card { padding: 40px 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg width="32" height="32" viewBox="-20 -2 68 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="34" r="32" fill="none" stroke="#fff" stroke-width="1.5"/>
+        <rect x="8" y="22" width="12" height="28" fill="#fff"/>
+        <path d="M14 10 L8 22 L20 22Z" fill="#fff"/>
+        <circle cx="14" cy="14" r="4" fill="#38bdf8"/>
+        <line x1="-4" y1="14" x2="6" y2="14" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="22" y1="14" x2="32" y2="14" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="2" y1="4" x2="8" y2="10" stroke="#38bdf8" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+        <line x1="26" y1="4" x2="20" y2="10" stroke="#38bdf8" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+        <rect x="8" y="34" width="12" height="4" fill="#38bdf8"/>
+        <path d="M-12 54 C-4 50, 4 56, 14 52 C24 48, 32 54, 40 50" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.35"/>
+      </svg>
+      Lighthouse <em>AI</em> Consulting
+    </a>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="index.html#why">Why Us</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact" class="btn btn-primary">Book a Call</a>
+    </div>
+  </div>
+</nav>
+
+<section class="thank-you">
+  <div class="container">
+    <div class="thank-you-card">
+      <div class="thank-you-icon">✓</div>
+      <h1>Thank you!</h1>
+      <p>Your form has been successfully submitted. I'll reach out to you within 24 hours to schedule a call.</p>
+      <p>In the meantime, feel free to check out the Selling Science newsletter for practical AI and marketing insights for life science teams.</p>
+      <div class="ctas">
+        <a href="index.html" class="btn btn-primary">Back to Home</a>
+        <a href="https://sciencecopywriting.com/subscribe/" target="_blank" class="btn btn-outline">Read the Newsletter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="justify-content: center;">
+      <span>&copy; 2026 Lighthouse AI Consulting. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
