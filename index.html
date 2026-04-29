@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lighthouse AI Consulting | AI That Speaks Science</title>
+<title>Lighthouse AI Consulting | Practical AI for Business</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -18,11 +18,11 @@
   --green: #16a34a;
   --hero-grad: linear-gradient(165deg, #0a1628 0%, #0f2847 55%, #164e78 100%);
 }
-
+ 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
 html { scroll-behavior: smooth; }
-
+ 
 body {
   font-family: 'Instrument Sans', sans-serif;
   color: var(--ink);
@@ -30,11 +30,11 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-
+ 
 h1, h2, h3, h4 { font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
-
+ 
 .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
-
+ 
 /* ---- HERO ---- */
 .hero {
   background: var(--hero-grad);
@@ -97,7 +97,7 @@ h1, h2, h3, h4 { font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
 .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
 .btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.25); }
 .btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
-
+ 
 /* ---- LOGOS ---- */
 .logos {
   padding: 50px 0;
@@ -127,7 +127,7 @@ h1, h2, h3, h4 { font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
   color: #999;
   white-space: nowrap;
 }
-
+ 
 /* ---- WHY SECTION ---- */
 .why { padding: 90px 0; }
 .section-label {
@@ -160,7 +160,7 @@ h1, h2, h3, h4 { font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
 }
 .why-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
 .why-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.65; }
-
+ 
 /* ---- SERVICES ---- */
 .services {
   padding: 90px 0;
@@ -197,7 +197,7 @@ h1, h2, h3, h4 { font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
 }
 .service-card a:hover { text-decoration: underline; }
 .service-card a::after { content: '→'; }
-
+ 
 /* ---- TESTIMONIALS ---- */
 .testimonials { padding: 90px 0; }
 .testimonials h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; }
@@ -225,7 +225,7 @@ h1, h2, h3, h4 { font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
   color: var(--muted);
   font-weight: 600;
 }
-
+ 
 /* ---- CONTACT ---- */
 .contact {
   padding: 90px 0;
@@ -256,7 +256,7 @@ h1, h2, h3, h4 { font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
 .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--accent); }
 .contact-form textarea { resize: vertical; min-height: 100px; }
 .contact-form .btn { width: 100%; justify-content: center; }
-
+ 
 /* ---- FAQ ---- */
 .faq { padding: 90px 0; }
 .faq h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; text-align: center; }
@@ -265,34 +265,13 @@ h1, h2, h3, h4 { font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
   border-bottom: 1px solid var(--border);
   padding: 22px 0;
 }
-.faq-q {
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  user-select: none;
-}
-.faq-q::after {
-  content: '+';
-  font-size: 1.4rem;
-  color: var(--muted);
-  transition: transform 0.2s;
-  flex-shrink: 0;
-}
-.faq-item.open .faq-q::after { content: '−'; }
-.faq-a {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s;
+.faq-item h3 { font-size: 1rem; margin-bottom: 10px; }
+.faq-item p {
   font-size: 0.92rem;
   color: var(--muted);
   line-height: 1.7;
 }
-.faq-item.open .faq-a { max-height: 300px; padding-top: 14px; }
-
+ 
 /* ---- FINAL CTA ---- */
 .final-cta {
   padding: 80px 0;
@@ -303,45 +282,20 @@ h1, h2, h3, h4 { font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
 .final-cta h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 16px; }
 .final-cta p { color: rgba(255,255,255,0.6); margin-bottom: 32px; font-size: 1.05rem; }
 .final-cta .hero-ctas { justify-content: center; }
-
+ 
 /* ---- FOOTER ---- */
 footer {
   background: var(--ink);
   color: rgba(255,255,255,0.5);
-  padding: 60px 0 36px;
+  padding: 36px 0;
   font-size: 0.85rem;
 }
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 48px;
-}
-.footer-brand h4 { font-size: 1.2rem; color: #fff; margin-bottom: 12px; }
-.footer-brand p { line-height: 1.7; max-width: 280px; }
-footer h5 {
-  font-family: 'Instrument Sans', sans-serif;
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  margin-bottom: 16px;
-}
-footer ul { list-style: none; }
-footer ul li { margin-bottom: 10px; }
-footer ul a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
-footer ul a:hover { color: #fff; }
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  padding-top: 24px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
 }
-
+ 
 /* ---- NAV ---- */
 nav {
   position: fixed;
@@ -371,7 +325,7 @@ nav {
   gap: 10px;
 }
 .nav-logo svg { flex-shrink: 0; }
-
+ 
 /* ---- WHAT IS ---- */
 .what-is { padding: 90px 0; }
 .what-is-wrap {
@@ -381,7 +335,6 @@ nav {
   align-items: center;
 }
 .what-is-logo { text-align: center; }
-.what-is-logo svg { width: 180px; height: auto; }
 .what-is h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 18px; }
 .what-is p { color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 14px; }
 @media (max-width: 768px) {
@@ -398,10 +351,10 @@ nav {
   transition: color 0.2s;
 }
 .nav-links a:hover { color: #fff; }
-.nav-links .btn { padding: 9px 20px; font-size: 15px; color: #fff; font-weight: 700; }
-
+.nav-links .btn { padding: 10px 22px; font-size: 14px; color: #fff; font-weight: 700; }
+ 
 .hero { padding-top: 160px; }
-
+ 
 /* ---- ABOUT ---- */
 .about { padding: 90px 0; background: var(--ink); color: #fff; }
 .about-wrap {
@@ -423,18 +376,17 @@ nav {
   .about-wrap { grid-template-columns: 1fr; text-align: center; }
   .about-photo { margin: 0 auto; }
 }
-
+ 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 768px) {
   .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
   .services-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
@@ -451,39 +403,36 @@ nav {
         <rect x="8" y="34" width="12" height="4" fill="#38bdf8"/>
         <path d="M-12 54 C-4 50, 4 56, 14 52 C24 48, 32 54, 40 50" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.35"/>
       </svg>
-  Lighthouse <em>AI</em> Consulting
-</a>
       Lighthouse <em>AI</em> Consulting
     </a>
     <div class="nav-links">
       <a href="#services">Services</a>
-      <a href="#why">Why Us</a>
       <a href="case-studies.html">Case Studies</a>
+      <a href="#why">Why Us</a>
       <a href="#faq">FAQ</a>
       <a href="#contact" class="btn btn-primary">Book a Call</a>
     </div>
   </div>
 </nav>
-
+ 
 <!-- HERO -->
 <section class="hero">
   <div class="container">
     <div class="hero-inner">
-      <div class="hero-badge">AI consulting for life science teams</div>
-      <h1>Helping life science<br>leaders <em>adopt AI </em>with confidence</em></h1>
-      <p>Lighthouse AI Consulting helps life science and lab technology companies adopt AI faster, without sacrificing scientific accuracy, compliance, or credibility.</p>
+      <div class="hero-badge">AI consulting for business leaders</div>
+      <h1>Helping business leaders<br><em>adopt AI</em> with confidence</h1>
+      <p>Lighthouse AI Consulting helps businesses adopt AI the right way, with practical strategy, hands-on implementation, and ongoing governance. No hype, just results.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
-        <a href="https://sciencecopywriting.com/subscribe/" target="_blank" class="btn btn-outline">Read the Selling Science Newsletter</a>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- LOGOS -->
 <section class="logos">
   <div class="container">
-    <div class="logos-label">Trusted by teams at</div>
+    <div class="logos-label">Trusted by teams at companies like</div>
     <div class="logos-grid">
       <span>Hitachi High-Tech</span>
       <span>Thermo Fisher Scientific</span>
@@ -491,10 +440,9 @@ nav {
       <span>Leica Microsystems</span>
       <span>Merck</span>
     </div>
-    <!-- Replace with client logo images -->
   </div>
 </section>
-
+ 
 <!-- WHAT IS -->
 <section class="what-is">
   <div class="container">
@@ -502,83 +450,88 @@ nav {
       <div>
         <div class="section-label">My story</div>
         <h2>What is Lighthouse AI Consulting?</h2>
-        <p>The name Lighthouse Consulting takes its inspiration from the lighthouse that stands on Fastnet Rock off the southwest coast of Ireland. For over a century, it has guided ships safely through some of the most challenging waters in the North Atlantic.</p>
-        <p>That's the idea behind Lighthouse AI Consulting. I shine a light on AI and help leaders in life science and lab technology see the best path forward towards adoption. No hype, no confusion, just clear, practical guidance grounded in real scientific understanding.</p>
-        <p>Based in Ireland and serving clients worldwide, Lighthouse AI Consulting brings deep domain expertise to every engagement, whether you're across the road or across the ocean.</p>
+        <p>The name Lighthouse takes its inspiration from the lighthouse that stands on Fastnet Rock off the southwest coast of Ireland. For over a century, it has guided ships safely through some of the most challenging waters in the North Atlantic.</p>
+        <p>That's the idea behind Lighthouse AI Consulting. I shine a light on AI and help business leaders see the best path forward towards adoption. No hype, no confusion, just clear, practical guidance that delivers real results.</p>
+        <p>Based in Ireland and serving clients worldwide, Lighthouse AI Consulting brings hands-on expertise to every engagement, whether you're across the road or across the ocean.</p>
       </div>
       <div class="what-is-logo">
-  <img src="images/lighthouse.png" alt="Lighthouse AI Consulting" style="width:400px;">
-</div>
+        <img src="images/lighthouse.png" alt="Lighthouse AI Consulting" style="width:400px;">
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- WHY -->
 <section class="why" id="why">
   <div class="container">
     <div class="section-label">Why Lighthouse AI</div>
-    <h2>AI consulting for life science companies</h2>
+    <h2>AI consulting that focuses on what actually matters</h2>
     <div class="why-grid">
       <div class="why-card">
-        <div class="icon">🔬</div>
-        <h3>PhD-Level Domain Expertise</h3>
-        <p>With a PhD in chemistry and 10 years of hands-on lab experience, I understand the products, buyers, and technical detail your team works with every day.</p>
+        <div class="icon">🎯</div>
+        <h3>Strategy Before Tools</h3>
+        <p>I don't start with technology. I start with your business, your workflows, and your goals. The right AI solution comes from understanding the problem first.</p>
       </div>
       <div class="why-card">
         <div class="icon">⚡</div>
-        <h3>Unique combo of science, marketing, and AI</h3>
-        <p>I have a unique combination of science background, marketing skills, and AI expertise, all rolled into one.</p>
+        <h3>Practical, Not Theoretical</h3>
+        <p>No slides-only presentations or abstract frameworks. Every engagement delivers actionable outcomes your team can implement straight away.</p>
       </div>
       <div class="why-card">
         <div class="icon">🛡️</div>
         <h3>Direct Access to Me</h3>
-        <p>I am not an agency, and I do not pass work off to junior staff. You work directly with me for the project duration, which helps us build a relationship from the start.</p>
+        <p>I'm not an agency, and I don't pass work off to junior staff. You work directly with me for the project duration, which helps us build a relationship from the start.</p>
       </div>
       <div class="why-card">
         <div class="icon">🌍</div>
-        <h3>Global Reach, Sector Focus</h3>
-        <p>Ireland-based, serving teams worldwide. 10+ years writing for the biggest names in microscopy, analytical instruments, and biopharma tools.</p>
+        <h3>Global Reach</h3>
+        <p>Ireland-based, serving clients worldwide. Whether you're a growing startup or an established enterprise, I adapt to your pace and scale.</p>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- SERVICES -->
 <section class="services" id="services">
   <div class="container">
     <div class="section-label">Services</div>
-    <h2>What I deliver</h2>
+    <h2>How I help</h2>
+    <p style="color:rgba(255,255,255,0.55); font-size:1rem; line-height:1.75; max-width:700px; margin-bottom:50px;">AI should solve problems, not create more of them. But too often, businesses rush in without a strategy, spending time and money on tools that don't deliver. That's why I start with discovery. Instead of chasing trends, I focus on what actually moves the needle for your business. Before talking about solutions, I dig into your workflows, challenges, and opportunities, pinpointing where AI can have a real impact. No tech hype, just practical, real-world solutions.</p>
     <div class="services-grid">
       <div class="service-card">
-        <h3>AI Training & Workshops for Individuals</h3>
-        <p>Executive-focused training programs for faster AI adoption: leadership alignment, practical workflows, and role-specific implementation plans for your marketing and sales teams.</p>
+        <h3>AI Discovery Call & Readiness Assessment</h3>
+        <p>A complimentary 30-minute consultation to assess your AI needs and goals. I'll help you identify quick wins and your biggest AI opportunities, give you expert insights on where AI makes sense for your business, and leave you with actionable next steps, even if you're just exploring.</p>
+        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Businesses curious about AI but unsure where to start</div>
+        <a href="#contact">Book a Free Discovery Call</a>
+      </div>
+      <div class="service-card">
+        <h3>AI Education & Stakeholder Alignment</h3>
+        <p>AI explained in simple terms: what it is, what it isn't, and how it applies to your business. Includes industry-specific use cases, coverage of AI risks and best practices around security, compliance, and ethics, plus stakeholder alignment sessions so your team is on board before adoption.</p>
+        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Companies interested in AI but hesitant about where to begin</div>
         <a href="#contact">Contact for more information</a>
       </div>
       <div class="service-card">
-        <h3>AI Strategy & Consulting</h3>
-        <p>From first conversation to full implementation plan. Starts with an AI Jam Session to identify opportunities, builds into an AI Mission Plan for your team, and scales to full AI Roadmapping across your organisation.</p>
+        <h3>AI Strategy & Roadmap Development</h3>
+        <p>I evaluate AI opportunities and risks specific to your business, then develop a custom AI roadmap aligned with your goals. Covers ethical, secure, and compliant adoption with AI projects prioritised based on ROI and feasibility.</p>
+        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Companies that need a clear strategy before investing in AI tools</div>
         <a href="#contact">Contact for more information</a>
       </div>
       <div class="service-card">
-        <h3>SEO/AEO Optimization</h3>
-        <p>Search visibility systems for both classic SEO and AI answer surfaces, combining technical structure with conversion-ready content strategy for scientific audiences.</p>
+        <h3>AI Automation & Implementation</h3>
+        <p>I identify high-impact areas for AI-driven automation and integrate AI tools to streamline workflows and boost efficiency. Includes improving decision-making with AI-powered insights and training your teams on how to use AI effectively in daily operations.</p>
+        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Businesses ready to actively implement AI with expert guidance</div>
         <a href="#contact">Contact for more information</a>
       </div>
       <div class="service-card">
-        <h3>Custom AI Agents</h3>
-        <p>Purpose-built AI agents for support, internal operations, and decision support, integrated with your stack and guardrails so they work within your compliance framework.</p>
-        <a href="#contact">Contact for more information</a>
-      </div>
-      <div class="service-card">
-        <h3>AI Advisory Services</h3>
-        <p>Fractional CAIO advisory for roadmap design, vendor due diligence, governance, and executive-level implementation oversight. Strategic AI leadership, on demand.</p>
+        <h3>AI Governance & Risk Management</h3>
+        <p>I establish AI policies and best practices for responsible, compliant use, ensuring your AI solutions meet security, compliance, and ethical standards. Includes monitoring risks associated with bias, misuse, or security vulnerabilities, plus quarterly AI audits to refine and optimise your initiatives.</p>
+        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Organisations that need long-term AI governance and risk management</div>
         <a href="#contact">Contact for more information</a>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- TESTIMONIALS -->
 <section class="testimonials">
   <div class="container">
@@ -592,18 +545,18 @@ nav {
       </div>
       <div class="test-card">
         <div class="stars">★★★★★</div>
-        <blockquote>"Colm's AI Marketing Roadmap showed me exactly how AI could help with competitor research, audience insights, and creating content quickly. He asked great questions to make sure the roadmap matched what I needed, and gave me a clear plan with practical tools I could use straight away. I'd recommend this to any life science marketer who feels stuck or overwhelmed by AI."</blockquote>
+        <blockquote>"Colm's AI Marketing Roadmap showed me exactly how AI could help with competitor research, audience insights, and creating content quickly. He asked great questions to make sure the roadmap matched what I needed, and gave me a clear plan with practical tools I could use straight away. I'd recommend this to any marketer who feels stuck or overwhelmed by AI."</blockquote>
         <div class="attr">– Ricardo Wilkins, Health Science Author, ASEA</div>
       </div>
       <div class="test-card">
         <div class="stars">★★★★★</div>
-        <blockquote>"I was blown away by how comprehensive and tailored Colm's AI Roadmap service is. He broke the process down into bite-size steps and spoke directly to my pain points. I'd recommend it to any life science marketer who wants to use AI to work smarter, not harder."</blockquote>
+        <blockquote>"I was blown away by how comprehensive and tailored Colm's AI Roadmap service is. He broke the process down into bite-size steps and spoke directly to my pain points. I'd recommend it to any marketer who wants to use AI to work smarter, not harder."</blockquote>
         <div class="attr">– Shawn Jones Clarke, Wellness Consultant, ASEA</div>
       </div>
     </div>
   </div>
 </section>
-  
+ 
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="container">
@@ -613,8 +566,7 @@ nav {
         <h2>Let's talk about your AI roadmap</h2>
         <p>Book a free 30-minute discovery call. No pitch deck, just a focused conversation about where AI can move the needle for your team.</p>
         <div class="contact-info">
-          <p>Or email directly: <a href="mailto:colm@sciencecopywriting.com">colm@sciencecopywriting.com</a>
-</p>        
+          <p>Or email directly: <a href="mailto:colm@sciencecopywriting.com">colm@sciencecopywriting.com</a></p>
         </div>
       </div>
       <form class="contact-form" id="contact-form" action="https://formspree.io/f/xlgoynyz" method="POST">
@@ -623,11 +575,11 @@ nav {
         <input type="text" name="company" placeholder="Company">
         <select name="service">
           <option value="" disabled selected>I'm interested in...</option>
-          <option>AI Training & Workshops</option>
-          <option>AI Strategy & Consulting</option>
-          <option>SEO/AEO Optimization</option>
-          <option>Custom AI Agents</option>
-          <option>AI Advisory Services</option>
+          <option>AI Discovery Call & Readiness Assessment</option>
+          <option>AI Education & Stakeholder Alignment</option>
+          <option>AI Strategy & Roadmap Development</option>
+          <option>AI Automation & Implementation</option>
+          <option>AI Governance & Risk Management</option>
           <option>Not sure yet, let's talk</option>
         </select>
         <textarea name="message" placeholder="Tell me briefly what you're trying to solve"></textarea>
@@ -635,7 +587,7 @@ nav {
       </form>
  
       <!-- Success modal -->
-      <div id="form-modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); z-index:999; display:none; align-items:center; justify-content:center;">
+      <div id="form-modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); z-index:999; align-items:center; justify-content:center;">
         <div style="background:#fff; border-radius:12px; padding:40px 36px; max-width:460px; text-align:center; margin:20px; box-shadow:0 20px 60px rgba(0,0,0,0.2);">
           <div style="font-size:48px; margin-bottom:16px;">&#10003;</div>
           <h3 style="font-size:1.3rem; margin-bottom:12px; color:#0a1628;">Thank you!</h3>
@@ -646,7 +598,7 @@ nav {
     </div>
   </div>
 </section>
-
+ 
 <!-- ABOUT -->
 <section class="about">
   <div class="container">
@@ -655,14 +607,14 @@ nav {
       <div>
         <div class="section-label" style="color:rgba(255,255,255,0.4);">About</div>
         <h2>Meet Colm O'Regan</h2>
-        <p>I'm a former research scientist with a B.Sc. and Ph.D. in chemistry and materials science, and over 10 years working in science labs. I've used the instruments, run the experiments, and sat through the purchasing decisions, so I know the world your buyers live in.</p>
-        <p>Since 2015, I've been planning and writing marketing content for major life science brands including Hitachi High-Tech, Thermo Fisher, Zeiss, and Leica Microsystems. Now I help life science companies <strong>adopt AI with confidence</strong>, with training, consulting, and designing strategies rooted in real scientific understanding.</p>
-        <p><strong>That combination of lab credibility, marketing experience, and AI expertise is rare.</strong> With me, you get someone who won't need a briefing on your science, and who can translate that into AI systems your team will actually trust and use.</p>
+        <p>I'm a former research scientist with a Ph.D. in chemistry and over 10 years working in research labs. That background gave me a rigorous, evidence-based approach to problem-solving that I now apply to AI consulting.</p>
+        <p>Since 2015, I've been working with businesses on marketing strategy, content, and technology adoption. Now I help companies <strong>adopt AI with confidence</strong>, through discovery, strategy, implementation, and governance.</p>
+        <p><strong>I don't sell tools or push trends.</strong> I help you figure out where AI actually makes sense for your business, then build a plan to get there. Practical, clear, and focused on results.</p>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="container">
@@ -670,36 +622,36 @@ nav {
     <div class="faq-list">
       <div class="faq-item">
         <h3>Who do you typically work with?</h3>
-        <p>Marketing directors, commercial leaders, and sales teams at life science, lab technology, and instrumentation companies, from microscopy and analytical instruments to diagnostics and biopharma tools. If your buyers are scientists, I speak their language.</p>
+        <p>Business leaders, marketing directors, operations managers, and teams across a range of industries who want to adopt AI but aren't sure where to start, or who have started but aren't seeing the results they expected.</p>
       </div>
       <div class="faq-item">
-        <h3>What makes you different from a generic AI consultancy?</h3>
-        <p>A PhD in chemistry, a decade of lab research, and 10+ years planning and creating content for brands like Merck, Leica Microsystems, Hitachi High-Tech, Thermo Fisher, and Zeiss. I don't need a briefing on your science. That means faster implementation and workflows your technical reviewers will actually trust.</p>
+        <h3>What makes you different from other AI consultancies?</h3>
+        <p>I focus on practical outcomes, not hype. Every engagement starts with understanding your business before recommending any technology. I work directly with you throughout, and I prioritise solutions based on real ROI and feasibility, not what's trendy.</p>
       </div>
       <div class="faq-item">
-        <h3>Will AI produce scientifically accurate content for our market?</h3>
-        <p>Not out of the box, and anyone who tells you otherwise is selling hype. My approach builds in domain-specific guardrails, review checkpoints, and prompts designed for regulated technical content.</p>
+        <h3>Will AI actually work for my business?</h3>
+        <p>That depends on where and how you apply it. That's exactly what the discovery call and readiness assessment are for. I'll help you identify where AI can genuinely make a difference and where it's not worth the investment.</p>
       </div>
       <div class="faq-item">
-        <h3>How do you handle compliance and regulatory concerns?</h3>
-        <p>Every engagement includes a governance review tailored to your sector. We keep humans in the loop at critical checkpoints and ensure AI outputs meet your internal review standards before anything goes public.</p>
+        <h3>How do you handle compliance and security concerns?</h3>
+        <p>Every engagement includes a review of compliance and security requirements relevant to your sector. I build AI governance frameworks that keep humans in the loop at critical checkpoints and ensure your AI use meets ethical and regulatory standards.</p>
       </div>
       <div class="faq-item">
         <h3>What does a typical engagement look like?</h3>
-        <p>It depends on where you are. Some leaders start with a workshop or training to get immediate wins. Others need a full roadmap or automation build. We'll scope it together on a discovery call.</p>
+        <p>It depends on where you are. Some clients start with a discovery call and readiness assessment. Others jump straight into strategy and roadmap development. We'll scope it together on an initial call.</p>
       </div>
       <div class="faq-item">
-        <h3>Do you work with companies outside life science?</h3>
-        <p>My sweet spot is lab technology and instrumentation because of my background as a lab scientist. If your business sits at the intersection of complex science and commercial marketing, there's a good chance I can help. Let's talk.</p>
+        <h3>Do you work with specific industries?</h3>
+        <p>I work across industries. My background is in science and technology, but the AI strategy, implementation, and governance frameworks I build are applicable to any business looking to adopt AI responsibly and effectively.</p>
       </div>
       <div class="faq-item">
         <h3>How do I get started?</h3>
-        <p>Book a free 30-minute discovery call. We'll discuss your current situation and map out what an AI engagement could look like for your company.</p>
+        <p>Book a free 30-minute discovery call. We'll discuss your current situation, identify your biggest opportunities, and map out what an AI engagement could look like for your business.</p>
       </div>
     </div>
   </div>
 </section>
-
+ 
 <!-- FINAL CTA -->
 <section class="final-cta">
   <div class="container">
@@ -707,11 +659,10 @@ nav {
     <p>Your competitors are experimenting. Your team should be implementing.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
-      <a href="https://sciencecopywriting.com/subscribe/" target="_blank" class="btn btn-outline">Read the Selling Science Newsletter</a>
     </div>
   </div>
 </section>
-
+ 
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -720,5 +671,25 @@ nav {
     </div>
   </div>
 </footer>
-
+ 
 <script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var form = this;
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  }).then(function(response) {
+    if (response.ok) {
+      window.location.href = 'thank-you.html';
+    } else {
+      alert('Something went wrong. Please try again or email directly.');
+    }
+  }).catch(function() {
+    alert('Something went wrong. Please try again or email directly.');
+  });
+});
+</script>
+</body>
+</html>
