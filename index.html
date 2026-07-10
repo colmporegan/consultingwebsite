@@ -3,692 +3,611 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lighthouse AI Consulting | Practical AI for Business</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Lighthouse AI Consulting | Fill more healthcare roles, faster</title>
+<meta name="description" content="The Shortlist OS helps UK healthcare staffing agencies fill more roles by shortlisting 30–40% faster — without adding recruiters.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink: #0a1628;
-  --paper: #f6f4f0;
-  --accent: #38bdf8;
-  --accent-dark: #0ea5e9;
-  --warm: #e8e4dd;
-  --muted: #6b7280;
-  --card-bg: #ffffff;
-  --border: #d4d0c8;
-  --green: #16a34a;
-  --hero-grad: linear-gradient(165deg, #0a1628 0%, #0f2847 55%, #164e78 100%);
+  --bg: #0A0A0E;
+  --surface: #13131A;
+  --surface-2: #191922;
+  --accent: #6366F1;
+  --accent-light: #818CF8;
+  --text: #F4F4F6;
+  --muted: rgba(244,244,246,0.60);
+  --muted-dim: rgba(244,244,246,0.42);
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.18);
+  --green: #34D399;
 }
- 
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
- 
 html { scroll-behavior: smooth; }
- 
 body {
-  font-family: 'Instrument Sans', sans-serif;
-  color: var(--ink);
-  background: var(--paper);
-  line-height: 1.6;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
- 
-h1, h2, h3, h4 { font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
- 
-.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
- 
-/* ---- HERO ---- */
-.hero {
-  background: var(--hero-grad);
-  color: #fff;
-  padding: 100px 0 90px;
-  position: relative;
-  overflow: hidden;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  top: -40%; right: -20%;
-  width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero-inner { position: relative; z-index: 1; max-width: 720px; }
-.hero-badge {
+h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; }
+a { color: inherit; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+.section { padding: 120px 0; }
+.eyebrow {
   display: inline-block;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  padding: 6px 16px;
-  border-radius: 100px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-bottom: 28px;
-  color: rgba(255,255,255,0.8);
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 18px;
 }
-.hero h1 {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  line-height: 1.12;
-  margin-bottom: 22px;
-  letter-spacing: -0.01em;
-}
-.hero h1 em { font-style: normal; color: var(--accent); }
-.hero p {
-  font-size: 1.15rem;
-  color: rgba(255,255,255,0.72);
-  max-width: 560px;
-  margin-bottom: 36px;
-  line-height: 1.7;
-}
-.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+.section-head { max-width: 720px; margin-bottom: 64px; }
+.section-head h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); margin-bottom: 18px; }
+.section-head p { color: var(--muted); font-size: 1.08rem; }
+.cite { color: var(--accent-light); text-decoration: none; border-bottom: 1px dotted rgba(129,140,248,0.5); }
+.cite:hover { color: #fff; border-bottom-color: #fff; }
+
+/* ---- BUTTON ---- */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-  cursor: pointer;
-  border: none;
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 15px 30px; border-radius: 10px;
+  font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+  text-decoration: none; cursor: pointer; border: none; white-space: nowrap;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
-.btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.25); }
-.btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
- 
-/* ---- LOGOS ---- */
-.logos {
-  padding: 50px 0;
-  border-bottom: 1px solid var(--border);
+.btn-primary {
+  background: var(--accent); color: #fff;
+  box-shadow: 0 8px 24px -8px rgba(99,102,241,0.6);
 }
-.logos-label {
-  text-align: center;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 28px;
-}
-.logos-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 48px;
-  flex-wrap: wrap;
-}
-.logos-grid span {
-  font-family: 'Instrument Sans', sans-serif;
-  font-weight: 700;
-  font-size: 15px;
-  letter-spacing: 0.02em;
-  color: #999;
-  white-space: nowrap;
-}
- 
-/* ---- WHY SECTION ---- */
-.why { padding: 90px 0; }
-.section-label {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-.why h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; }
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 32px;
-}
-.why-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px 28px;
-}
-.why-card .icon {
-  width: 44px; height: 44px;
-  background: rgba(56,189,248,0.1);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 18px;
-  font-size: 20px;
-}
-.why-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
-.why-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.65; }
- 
-/* ---- SERVICES ---- */
-.services {
-  padding: 90px 0;
-  background: var(--ink);
-  color: #fff;
-}
-.services .section-label { color: rgba(255,255,255,0.5); }
-.services h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; }
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-}
-.service-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  transition: border-color 0.2s;
-}
-.service-card:hover { border-color: rgba(255,255,255,0.2); }
-.service-card h3 { font-size: 1.15rem; margin-bottom: 12px; }
-.service-card p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; flex: 1; margin-bottom: 20px; }
-.service-card a {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.service-card a:hover { text-decoration: underline; }
-.service-card a::after { content: '→'; }
- 
-/* ---- TESTIMONIALS ---- */
-.testimonials { padding: 90px 0; }
-.testimonials h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; }
-.test-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-}
-.test-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px 28px;
-}
-.test-card .stars { color: #f59e0b; font-size: 16px; margin-bottom: 14px; }
-.test-card blockquote {
-  font-size: 0.95rem;
-  color: var(--ink);
-  line-height: 1.7;
-  margin-bottom: 18px;
-  font-style: italic;
-}
-.test-card .attr {
-  font-size: 0.82rem;
-  color: var(--muted);
-  font-weight: 600;
-}
- 
-/* ---- CONTACT ---- */
-.contact {
-  padding: 90px 0;
-  background: var(--warm);
-}
-.contact-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-.contact h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 16px; }
-.contact > .container > .contact-wrap > div:first-child p { color: var(--muted); font-size: 1rem; margin-bottom: 24px; }
-.contact-info { font-size: 0.9rem; color: var(--muted); }
-.contact-info a { color: var(--accent); text-decoration: none; }
-.contact-form { display: flex; flex-direction: column; gap: 14px; }
-.contact-form input, .contact-form textarea, .contact-form select {
-  font-family: inherit;
-  font-size: 15px;
-  padding: 13px 16px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: #fff;
-  color: var(--ink);
-  outline: none;
-  transition: border-color 0.2s;
-}
-.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--accent); }
-.contact-form textarea { resize: vertical; min-height: 100px; }
-.contact-form .btn { width: 100%; justify-content: center; }
- 
-/* ---- FAQ ---- */
-.faq { padding: 90px 0; }
-.faq h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; text-align: center; }
-.faq-list { max-width: 740px; margin: 0 auto; }
-.faq-item {
-  border-bottom: 1px solid var(--border);
-  padding: 22px 0;
-}
-.faq-item h3 { font-size: 1rem; margin-bottom: 10px; }
-.faq-item p {
-  font-size: 0.92rem;
-  color: var(--muted);
-  line-height: 1.7;
-}
- 
-/* ---- FINAL CTA ---- */
-.final-cta {
-  padding: 80px 0;
-  background: var(--hero-grad);
-  color: #fff;
-  text-align: center;
-}
-.final-cta h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 16px; }
-.final-cta p { color: rgba(255,255,255,0.6); margin-bottom: 32px; font-size: 1.05rem; }
-.final-cta .hero-ctas { justify-content: center; }
- 
-/* ---- FOOTER ---- */
-footer {
-  background: var(--ink);
-  color: rgba(255,255,255,0.5);
-  padding: 36px 0;
-  font-size: 0.85rem;
-}
-.footer-bottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
- 
+.btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 14px 32px -8px rgba(99,102,241,0.7); }
+.btn-primary::after { content: '→'; font-size: 1.05em; }
+
 /* ---- NAV ---- */
 nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: rgba(10,22,40,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  padding: 0 24px;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(10,10,14,0.72);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
 }
 .nav-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 64px;
+  max-width: 1140px; margin: 0 auto; padding: 0 28px;
+  display: flex; justify-content: space-between; align-items: center;
+  height: 72px;
 }
 .nav-logo {
-  font-family: 'Instrument Sans', sans-serif;
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: #fff;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem;
+  color: #fff; text-decoration: none;
+  display: flex; align-items: center; gap: 11px; letter-spacing: -0.01em;
 }
 .nav-logo svg { flex-shrink: 0; }
- 
-/* ---- WHAT IS ---- */
-.what-is { padding: 90px 0; }
-.what-is-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+.nav-logo em { font-style: normal; color: var(--accent-light); }
+nav .btn-primary { padding: 11px 22px; font-size: 14px; }
+
+/* ---- HERO ---- */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding: 120px 0 80px;
+  background:
+    radial-gradient(900px 500px at 70% -10%, rgba(99,102,241,0.18), transparent 60%),
+    linear-gradient(180deg, #0C0C12 0%, var(--bg) 70%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(760px 560px at 60% 30%, #000 0%, transparent 78%);
+  mask-image: radial-gradient(760px 560px at 60% 30%, #000 0%, transparent 78%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; z-index: 1; max-width: 820px; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(99,102,241,0.10);
+  border: 1px solid rgba(99,102,241,0.30);
+  padding: 7px 16px; border-radius: 100px;
+  font-size: 13px; font-weight: 500; color: var(--accent-light);
+  margin-bottom: 30px;
+}
+.hero-badge::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--accent-light); box-shadow: 0 0 10px var(--accent-light); }
+.hero h1 {
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-weight: 800; margin-bottom: 26px;
+}
+.hero h1 em { font-style: normal; color: var(--accent-light); }
+.hero-sub {
+  font-size: clamp(1.08rem, 2vw, 1.3rem);
+  color: var(--muted); max-width: 640px; margin-bottom: 40px;
+}
+.hero-cta-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.hero-note { font-size: 14px; color: var(--muted-dim); }
+
+/* ---- PROBLEM ---- */
+.problem { background: var(--bg); }
+.cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.p-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px; padding: 34px 30px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.p-card:hover { border-color: var(--border-hover); transform: translateY(-4px); }
+.p-card .p-num {
+  width: 42px; height: 42px; border-radius: 11px;
+  background: rgba(99,102,241,0.12);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; color: var(--accent-light);
+}
+.p-card h3 { font-size: 1.22rem; margin-bottom: 12px; }
+.p-card p { color: var(--muted); font-size: 0.96rem; }
+
+/* ---- SOLUTION / PROCESS ---- */
+.solution { background: linear-gradient(180deg, var(--bg) 0%, #0C0C13 100%); }
+.steps { display: flex; flex-direction: column; gap: 0; max-width: 860px; }
+.step {
+  display: grid; grid-template-columns: 84px 1fr; gap: 28px;
+  padding: 30px 0;
+  border-top: 1px solid var(--border);
+  align-items: baseline;
+}
+.step:last-child { border-bottom: 1px solid var(--border); }
+.step-num {
+  font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.5rem;
+  color: var(--accent-light);
+  display: flex; align-items: baseline; gap: 4px;
+}
+.step-num .slash { color: var(--muted-dim); font-size: 1rem; }
+.step-body h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.step-body p { color: var(--muted); font-size: 0.98rem; max-width: 560px; }
+
+/* ---- RESULTS / MATH ---- */
+.results { background: var(--bg); }
+.results-grid {
+  display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 56px;
   align-items: center;
+  background: linear-gradient(150deg, var(--surface) 0%, #14141d 100%);
+  border: 1px solid var(--border);
+  border-radius: 22px; padding: 56px;
 }
-.what-is-logo { text-align: center; }
-.what-is h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 18px; }
-.what-is p { color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 14px; }
-@media (max-width: 768px) {
-  .what-is-wrap { grid-template-columns: 1fr; }
-  .what-is-logo { order: -1; }
+.big-stat { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: clamp(3.4rem, 8vw, 5rem); line-height: 1; color: #fff; letter-spacing: -0.03em; }
+.big-stat .sub { display: block; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 1rem; color: var(--accent-light); margin-top: 14px; letter-spacing: 0; }
+.stat-foot { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--border); font-size: 0.9rem; color: var(--muted-dim); }
+.stat-foot strong { color: var(--muted); font-weight: 600; }
+.results-copy h3 { font-size: 1.5rem; margin-bottom: 16px; }
+.results-copy p { color: var(--muted); font-size: 1rem; margin-bottom: 14px; }
+.results-copy p strong { color: var(--text); font-weight: 600; }
+
+/* ---- QUOTES ---- */
+.quotes { margin-top: 56px; }
+.quotes-label { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-dim); margin-bottom: 26px; }
+.quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.quote {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 30px 28px;
 }
-.nav-logo em { font-style: normal; color: var(--accent); }
-.nav-links { display: flex; gap: 32px; align-items: center; }
-.nav-links a {
-  color: rgba(255,255,255,0.6);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.2s;
+.quote .stars { color: var(--accent-light); font-size: 15px; margin-bottom: 14px; letter-spacing: 2px; }
+.quote blockquote { font-size: 0.98rem; color: var(--text); line-height: 1.7; margin-bottom: 18px; }
+.quote .attr { font-size: 0.85rem; color: var(--muted); font-weight: 500; }
+
+/* ---- GUARANTEE ---- */
+.guarantee {
+  margin-top: 40px;
+  display: flex; align-items: center; gap: 22px;
+  background: rgba(52,211,153,0.06);
+  border: 1px solid rgba(52,211,153,0.28);
+  border-radius: 16px; padding: 26px 32px;
 }
-.nav-links a:hover { color: #fff; }
-.nav-links .btn { padding: 10px 22px; font-size: 14px; color: #fff; font-weight: 700; }
- 
-.hero { padding-top: 160px; }
- 
-/* ---- ABOUT ---- */
-.about { padding: 90px 0; background: var(--ink); color: #fff; }
-.about-wrap {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 56px;
-  align-items: center;
+.guarantee .g-icon { flex-shrink: 0; color: var(--green); }
+.guarantee p { font-size: 1.02rem; color: var(--text); }
+.guarantee p strong { color: var(--green); font-weight: 600; }
+
+/* ---- SOURCES ---- */
+.sources { margin-top: 40px; font-size: 0.82rem; color: var(--muted-dim); line-height: 1.9; }
+.sources b { color: var(--muted); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.72rem; }
+.sources a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); }
+.sources a:hover { color: var(--accent-light); border-bottom-color: var(--accent-light); }
+
+/* ---- FIT ---- */
+.fit { background: linear-gradient(180deg, #0C0C13 0%, var(--bg) 100%); }
+.fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.fit-col {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 18px; padding: 40px 36px;
 }
-.about-photo {
-  width: 280px; height: 280px;
-  border-radius: 14px;
-  object-fit: cover;
-  filter: grayscale(0.2);
+.fit-col.yes { border-color: rgba(99,102,241,0.35); }
+.fit-col h3 { font-size: 1.3rem; margin-bottom: 26px; display: flex; align-items: center; gap: 12px; }
+.fit-list { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+.fit-list li { display: flex; gap: 13px; align-items: flex-start; font-size: 0.98rem; color: var(--muted); }
+.fit-list .mark { flex-shrink: 0; margin-top: 3px; }
+.yes .mark { color: var(--accent-light); }
+.no .mark { color: var(--muted-dim); }
+.yes .fit-list li { color: var(--text); }
+
+/* ---- FINAL CTA / CONTACT ---- */
+.final {
+  background:
+    radial-gradient(700px 400px at 50% 0%, rgba(99,102,241,0.16), transparent 65%),
+    var(--bg);
+  text-align: center;
 }
-.about h2 { font-size: clamp(1.8rem, 3vw, 2.2rem); margin-bottom: 18px; }
-.about p { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.75; margin-bottom: 14px; }
-.about p strong { color: #fff; }
-@media (max-width: 768px) {
-  .about-wrap { grid-template-columns: 1fr; text-align: center; }
-  .about-photo { margin: 0 auto; }
+.final h2 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; margin-bottom: 18px; }
+.final > .container > .final-sub { color: var(--muted); font-size: 1.15rem; max-width: 560px; margin: 0 auto 44px; }
+.contact-card {
+  max-width: 560px; margin: 0 auto;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 20px; padding: 40px; text-align: left;
 }
- 
+.contact-card h3 { font-size: 1.3rem; margin-bottom: 6px; text-align: center; }
+.contact-card .cc-note { color: var(--muted); font-size: 0.92rem; text-align: center; margin-bottom: 28px; }
+.contact-form { display: flex; flex-direction: column; gap: 14px; }
+.contact-form input, .contact-form select, .contact-form textarea {
+  font-family: inherit; font-size: 15px; padding: 14px 16px;
+  border-radius: 10px; border: 1px solid var(--border);
+  background: var(--surface-2); color: var(--text); outline: none;
+  transition: border-color 0.2s ease;
+}
+.contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--muted-dim); }
+.contact-form select { color: var(--muted); }
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--accent); }
+.contact-form textarea { resize: vertical; min-height: 96px; }
+.contact-form .btn { width: 100%; justify-content: center; margin-top: 6px; }
+.contact-alt { text-align: center; margin-top: 20px; font-size: 0.88rem; color: var(--muted-dim); }
+.contact-alt a { color: var(--accent-light); text-decoration: none; }
+
+/* ---- FOOTER ---- */
+footer { border-top: 1px solid var(--border); padding: 40px 0; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer-brand { display: flex; align-items: center; gap: 10px; font-family: 'Outfit', sans-serif; font-weight: 600; color: var(--text); }
+.footer-brand em { font-style: normal; color: var(--accent-light); }
+.footer-meta { font-size: 0.85rem; color: var(--muted-dim); }
+.footer-meta a { color: var(--muted); text-decoration: none; }
+.footer-meta a:hover { color: var(--accent-light); }
+
+/* ---- SCROLL ANIMATION ---- */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+
+/* ---- MODAL ---- */
+#form-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 999; align-items: center; justify-content: center; padding: 20px; }
+.modal-box { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 44px 38px; max-width: 440px; text-align: center; }
+.modal-box .check { width: 56px; height: 56px; border-radius: 50%; background: rgba(99,102,241,0.15); color: var(--accent-light); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; }
+.modal-box h3 { font-size: 1.35rem; margin-bottom: 12px; }
+.modal-box p { color: var(--muted); font-size: 0.96rem; margin-bottom: 24px; }
+
 /* ---- RESPONSIVE ---- */
-@media (max-width: 768px) {
-  .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
-  .nav-links { display: none; }
-  .services-grid { grid-template-columns: 1fr; }
+@media (max-width: 900px) {
+  .cards-3 { grid-template-columns: 1fr; }
+  .results-grid { grid-template-columns: 1fr; gap: 36px; padding: 40px 30px; text-align: center; }
+  .stat-foot { text-align: left; }
+  .quote-grid { grid-template-columns: 1fr; }
+  .fit-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .section { padding: 84px 0; }
+  .nav-inner { height: 64px; }
+  .nav-logo { font-size: 1rem; gap: 8px; }
+  .nav-logo span.full { display: none; }
+  nav .btn-primary { padding: 9px 16px; font-size: 13px; }
+  .step { grid-template-columns: 56px 1fr; gap: 18px; }
+  .guarantee { flex-direction: column; text-align: center; gap: 14px; }
+  .contact-card { padding: 30px 22px; }
 }
 </style>
 </head>
 <body>
- 
+
+<!-- LIGHTHOUSE LOGO (reused component) -->
+<script>
+  window.LH_SVG = `<svg width="30" height="30" viewBox="-20 -2 68 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="14" cy="34" r="32" fill="none" stroke="#fff" stroke-width="1.5"/>
+    <rect x="8" y="22" width="12" height="28" fill="#fff"/>
+    <path d="M14 10 L8 22 L20 22Z" fill="#fff"/>
+    <circle cx="14" cy="14" r="4" fill="#818CF8"/>
+    <line x1="-4" y1="14" x2="6" y2="14" stroke="#818CF8" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="22" y1="14" x2="32" y2="14" stroke="#818CF8" stroke-width="1.5" stroke-linecap="round"/>
+    <rect x="8" y="34" width="12" height="4" fill="#818CF8"/>
+  </svg>`;
+</script>
+
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <svg width="32" height="32" viewBox="-20 -2 68 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="30" height="30" viewBox="-20 -2 68 72" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="14" cy="34" r="32" fill="none" stroke="#fff" stroke-width="1.5"/>
         <rect x="8" y="22" width="12" height="28" fill="#fff"/>
         <path d="M14 10 L8 22 L20 22Z" fill="#fff"/>
-        <circle cx="14" cy="14" r="4" fill="#38bdf8"/>
-        <line x1="-4" y1="14" x2="6" y2="14" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="22" y1="14" x2="32" y2="14" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="2" y1="4" x2="8" y2="10" stroke="#38bdf8" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-        <line x1="26" y1="4" x2="20" y2="10" stroke="#38bdf8" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-        <rect x="8" y="34" width="12" height="4" fill="#38bdf8"/>
-        <path d="M-12 54 C-4 50, 4 56, 14 52 C24 48, 32 54, 40 50" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.35"/>
+        <circle cx="14" cy="14" r="4" fill="#818CF8"/>
+        <line x1="-4" y1="14" x2="6" y2="14" stroke="#818CF8" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="22" y1="14" x2="32" y2="14" stroke="#818CF8" stroke-width="1.5" stroke-linecap="round"/>
+        <rect x="8" y="34" width="12" height="4" fill="#818CF8"/>
       </svg>
-      Lighthouse <em>AI</em> Consulting
+      Lighthouse <em>AI</em> <span class="full">Consulting</span>
     </a>
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="#why">Why Us</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact" class="btn btn-primary">Book a Call</a>
-    </div>
+    <a href="#contact" class="btn btn-primary">Book a call</a>
   </div>
 </nav>
- 
+
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-grid"></div>
   <div class="container">
     <div class="hero-inner">
-      <div class="hero-badge">AI consulting for business leaders</div>
-      <h1>Helping business leaders<br><em>adopt AI</em> with confidence</h1>
-      <p>Lighthouse AI Consulting helps businesses adopt AI the right way, with practical strategy, hands-on implementation, and ongoing governance. No hype, just results.</p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+      <div class="hero-badge">For UK healthcare staffing agencies</div>
+      <h1>Fill more roles by shortlisting <em>30–40% faster</em>.</h1>
+      <p class="hero-sub">The Shortlist OS automates resume screening, candidate ranking, job posting, and interview scheduling — so you're first to submit and win more of the orders already sitting open on your board. Without adding recruiters.</p>
+      <div class="hero-cta-row">
+        <a href="#contact" class="btn btn-primary">Book a free strategy call</a>
+        <span class="hero-note">30 minutes. No pitch. Just a clear next step.</span>
       </div>
     </div>
   </div>
 </section>
- 
-<!-- LOGOS -->
-<section class="logos">
+
+<!-- PROBLEM -->
+<section class="section problem">
   <div class="container">
-    <div class="logos-label">Trusted by teams at companies like</div>
-    <div class="logos-grid">
-      <span>Hitachi High-Tech</span>
-      <span>Thermo Fisher Scientific</span>
-      <span>ZEISS</span>
-      <span>Leica Microsystems</span>
-      <span>Merck</span>
+    <div class="section-head reveal">
+      <div class="eyebrow">The problem</div>
+      <h2>Your recruiters are drowning in manual work.</h2>
+      <p>The average healthcare role takes <strong style="color:var(--text)">40–60 days to fill</strong>, and every day it sits open is lost margin. Most of that time isn't spent placing — it's spent screening, posting, and chasing. <a class="cite" href="https://www.jobtarget.com/blog/healthcare-recruitment-time-to-fill-optimization" target="_blank" rel="noopener">JobTarget puts the average at ~49 days.</a></p>
     </div>
-  </div>
-</section>
- 
-<!-- WHAT IS -->
-<section class="what-is">
-  <div class="container">
-    <div class="what-is-wrap">
-      <div>
-        <div class="section-label">My story</div>
-        <h2>What is Lighthouse AI Consulting?</h2>
-        <p>The name Lighthouse takes its inspiration from the lighthouse that stands on Fastnet Rock off the southwest coast of Ireland. For over a century, it has guided ships safely through some of the most challenging waters in the North Atlantic.</p>
-        <p>That's the idea behind Lighthouse AI Consulting. I shine a light on AI and help business leaders see the best path forward towards adoption. No hype, no confusion, just clear, practical guidance that delivers real results.</p>
-        <p>Based in Ireland and serving clients worldwide, Lighthouse AI Consulting brings hands-on expertise to every engagement, whether you're across the road or across the ocean.</p>
+    <div class="cards-3">
+      <div class="p-card reveal">
+        <div class="p-num">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h3"/></svg>
+        </div>
+        <h3>Screening &amp; ranking CVs by hand</h3>
+        <p>Recruiters read and score every resume manually — the single biggest time sink, often <strong style="color:var(--text)">10–12 hours per role</strong> before a shortlist even exists.</p>
       </div>
-      <div class="what-is-logo">
-        <img src="images/lighthouse.png" alt="Lighthouse AI Consulting" style="width:400px;">
+      <div class="p-card reveal">
+        <div class="p-num">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h3>Posting across 10+ job boards</h3>
+        <p>Every role gets copied and posted to a dozen boards by hand, then monitored separately. Hours gone before a single qualified candidate lands in the pipeline.</p>
       </div>
-    </div>
-  </div>
-</section>
- 
-<!-- WHY -->
-<section class="why" id="why">
-  <div class="container">
-    <div class="section-label">Why Lighthouse AI</div>
-    <h2>AI consulting that focuses on what actually matters</h2>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="icon">🎯</div>
-        <h3>Strategy Before Tools</h3>
-        <p>I don't start with technology. I start with your business, your workflows, and your goals. The right AI solution comes from understanding the problem first.</p>
-      </div>
-      <div class="why-card">
-        <div class="icon">⚡</div>
-        <h3>Practical, Not Theoretical</h3>
-        <p>No slides-only presentations or abstract frameworks. Every engagement delivers actionable outcomes your team can implement straight away.</p>
-      </div>
-      <div class="why-card">
-        <div class="icon">🛡️</div>
-        <h3>Direct Access to Me</h3>
-        <p>I'm not an agency, and I don't pass work off to junior staff. You work directly with me for the project duration, which helps us build a relationship from the start.</p>
-      </div>
-      <div class="why-card">
-        <div class="icon">🌍</div>
-        <h3>Global Reach</h3>
-        <p>Ireland-based, serving clients worldwide. Whether you're a growing startup or an established enterprise, I adapt to your pace and scale.</p>
+      <div class="p-card reveal">
+        <div class="p-num">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
+        </div>
+        <h3>Scheduling chaos &amp; cold candidates</h3>
+        <p>Interview coordination, reschedules, and manual status updates keep good candidates waiting. They drop off, ghost, or take another offer — and the req stays open.</p>
       </div>
     </div>
   </div>
 </section>
- 
-<!-- SERVICES -->
-<section class="services" id="services">
+
+<!-- SOLUTION / PROCESS -->
+<section class="section solution" id="how">
   <div class="container">
-    <div class="section-label">Services</div>
-    <h2>How I help</h2>
-    <p style="color:rgba(255,255,255,0.55); font-size:1rem; line-height:1.75; max-width:700px; margin-bottom:50px;">AI should solve problems, not create more of them. But too often, businesses rush in without a strategy, spending time and money on tools that don't deliver. That's why I start with discovery. Instead of chasing trends, I focus on what actually moves the needle for your business. Before talking about solutions, I dig into your workflows, challenges, and opportunities, pinpointing where AI can have a real impact. No tech hype, just practical, real-world solutions.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>AI Discovery Call & Readiness Assessment</h3>
-        <p>A complimentary 30-minute consultation to assess your AI needs and goals. I'll help you identify quick wins and your biggest AI opportunities, give you expert insights on where AI makes sense for your business, and leave you with actionable next steps, even if you're just exploring.</p>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Businesses curious about AI but unsure where to start</div>
-        <a href="#contact">Book a Free Discovery Call</a>
-      </div>
-      <div class="service-card">
-        <h3>AI Education & Stakeholder Alignment</h3>
-        <p>AI explained in simple terms: what it is, what it isn't, and how it applies to your business. Includes industry-specific use cases, coverage of AI risks and best practices around security, compliance, and ethics, plus stakeholder alignment sessions so your team is on board before adoption.</p>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Companies interested in AI but hesitant about where to begin</div>
-        <a href="#contact">Contact for more information</a>
-      </div>
-      <div class="service-card">
-        <h3>AI Strategy & Roadmap Development</h3>
-        <p>I evaluate AI opportunities and risks specific to your business, then develop a custom AI roadmap aligned with your goals. Covers ethical, secure, and compliant adoption with AI projects prioritised based on ROI and feasibility.</p>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Companies that need a clear strategy before investing in AI tools</div>
-        <a href="#contact">Contact for more information</a>
-      </div>
-      <div class="service-card">
-        <h3>AI Automation & Implementation</h3>
-        <p>I identify high-impact areas for AI-driven automation and integrate AI tools to streamline workflows and boost efficiency. Includes improving decision-making with AI-powered insights and training your teams on how to use AI effectively in daily operations.</p>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Businesses ready to actively implement AI with expert guidance</div>
-        <a href="#contact">Contact for more information</a>
-      </div>
-      <div class="service-card">
-        <h3>AI Governance & Risk Management</h3>
-        <p>I establish AI policies and best practices for responsible, compliant use, ensuring your AI solutions meet security, compliance, and ethical standards. Includes monitoring risks associated with bias, misuse, or security vulnerabilities, plus quarterly AI audits to refine and optimise your initiatives.</p>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Organisations that need long-term AI governance and risk management</div>
-        <a href="#contact">Contact for more information</a>
-      </div>
+    <div class="section-head reveal">
+      <div class="eyebrow">The solution</div>
+      <h2>Introducing The Shortlist OS.</h2>
+      <p>A done-for-you automation system that turns a stack of applicants into a ranked, interview-ready shortlist — in hours, not days. It sources and screens continuously, ranks candidates against your roles, distributes postings, and schedules interviews, so your team spends its time placing, not processing. Here's how we build it with you.</p>
     </div>
-  </div>
-</section>
- 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="container">
-    <div class="section-label">Testimonials</div>
-    <h2>What clients say</h2>
-    <div class="test-grid">
-      <div class="test-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"The quality of work was higher than expected. We asked  to turn a customer interview into an article, but he delivered a polished success story with a much more engaging style. He understood our business objectives and provided professional suggestions on gated content SEO, plus a full communications package including emails and social posts. Overall, I'm very satisfied."</blockquote>
-        <div class="attr">– Shiyo Lin, Marketing Manager EMEA, Leica Microsystems</div>
-      </div>
-      <div class="test-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"'s AI Marketing Roadmap showed me exactly how AI could help with competitor research, audience insights, and creating content quickly. He asked great questions to make sure the roadmap matched what I needed, and gave me a clear plan with practical tools I could use straight away. I'd recommend this to any marketer who feels stuck or overwhelmed by AI."</blockquote>
-        <div class="attr">– Ricardo Wilkins, Health Science Author, ASEA</div>
-      </div>
-      <div class="test-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"I was blown away by how comprehensive and tailored 's AI Roadmap service is. He broke the process down into bite-size steps and spoke directly to my pain points. I'd recommend it to any marketer who wants to use AI to work smarter, not harder."</blockquote>
-        <div class="attr">– Shawn Jones Clarke, Wellness Consultant, ASEA</div>
-      </div>
-    </div>
-  </div>
-</section>
- 
-<!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="container">
-    <div class="contact-wrap">
-      <div>
-        <div class="section-label">Get started</div>
-        <h2>Let's talk about your AI roadmap</h2>
-        <p>Book a free 30-minute discovery call. No pitch deck, just a focused conversation about where AI can move the needle for your team.</p>
-        <div class="contact-info">
-          <p>Or email directly: <a href="mailto:@colmporegan.com">colm@colmporegan.com</a></p>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01<span class="slash">/</span></div>
+        <div class="step-body">
+          <h3>Discovery</h3>
+          <p>We map your current shortlisting workflow end to end — your roles, boards, ATS, and compliance steps — and pinpoint exactly where the hours leak.</p>
         </div>
       </div>
+      <div class="step reveal">
+        <div class="step-num">02<span class="slash">/</span></div>
+        <div class="step-body">
+          <h3>Strategy</h3>
+          <p>We design your Shortlist OS around your specialties and clients, with clear ranking criteria and human checkpoints where credentialing and judgement matter.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03<span class="slash">/</span></div>
+        <div class="step-body">
+          <h3>Build</h3>
+          <p>We configure the automations: AI screening and ranking, multi-board job distribution, and interview scheduling — wired into the tools you already use.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04<span class="slash">/</span></div>
+        <div class="step-body">
+          <h3>Launch</h3>
+          <p>We roll it out with your recruiters, run it on live reqs, and prove the time-to-shortlist drop against your baseline — with training so the team owns it.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">05<span class="slash">/</span></div>
+        <div class="step-body">
+          <h3>Ongoing optimization</h3>
+          <p>As your req mix and clients change, we tune the ranking and automations so the system keeps getting faster and sharper month over month.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS / MATH -->
+<section class="section results">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">What it's worth</div>
+      <h2>The math on faster shortlisting.</h2>
+      <p>Faster time-to-fill doesn't just save hours — it converts stalled reqs into placements you're already working. Here's the model for a typical mid-size agency.</p>
+    </div>
+    <div class="results-grid reveal">
+      <div>
+        <div class="big-stat">$500K+<span class="sub">in additional placement revenue per year</span></div>
+        <div class="stat-foot"><strong>~$126,000/yr</strong> in extra gross profit, even at a conservative 25% margin.</div>
+      </div>
+      <div class="results-copy">
+        <h3>From 6 extra placements a month.</h3>
+        <p>A mid-size agency filling <strong>~30 placements/month</strong> at <strong>~$7,000 revenue per placement</strong> is the baseline. Cutting time-to-fill by 30–40% typically lifts placement volume by ~20% with the same headcount — <strong>6 extra placements a month</strong>. <a class="cite" href="https://www.jobtarget.com/blog/healthcare-recruitment-time-to-fill-optimization" target="_blank" rel="noopener">(JobTarget)</a></p>
+        <p>That's <strong>$42,000/month</strong> in extra placement revenue, or <strong>$504,000 a year</strong> — plus 10–12 recruiter hours handed back on every single role. <a class="cite" href="https://www.directshifts.com/employer-resources/cost-comparison-staffing-agencies-vs-directshifts-hybrid-solution-for-healthcare-recruiters" target="_blank" rel="noopener">(DirectShifts)</a></p>
+        <p style="color:var(--text);font-weight:600;">I help you unlock over $500K a year in additional placement revenue — and I do it for a fraction of that.</p>
+      </div>
+    </div>
+
+    <!-- GUARANTEE -->
+    <div class="guarantee reveal">
+      <div class="g-icon">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+      </div>
+      <p><strong>My guarantee:</strong> if your average time-to-shortlist isn't cut by at least half within 90 days, you don't pay.</p>
+    </div>
+
+    <!-- QUOTES -->
+    <div class="quotes reveal">
+      <div class="quotes-label">What clients say about working with Colm</div>
+      <div class="quote-grid">
+        <div class="quote">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Colm's roadmap showed me exactly how AI could help with research, insights, and creating what I needed quickly. He asked great questions to make sure it matched my situation, and gave me a clear plan with practical tools I could use straight away."</blockquote>
+          <div class="attr">— Ricardo Wilkins, Health Science Author, ASEA</div>
+        </div>
+        <div class="quote">
+          <div class="stars">★★★★★</div>
+          <blockquote>"I was blown away by how comprehensive and tailored Colm's work is. He broke the process down into bite-size steps and spoke directly to my pain points. I'd recommend it to anyone who wants to use AI to work smarter, not harder."</blockquote>
+          <div class="attr">— Shawn Jones Clarke, Wellness Consultant, ASEA</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOURCES -->
+    <div class="sources reveal">
+      <b>Sources</b><br>
+      Benchmarks in this model are drawn from public industry data:
+      <a href="https://www.jobtarget.com/blog/healthcare-recruitment-time-to-fill-optimization" target="_blank" rel="noopener">JobTarget</a> (time-to-fill),
+      <a href="https://www.directshifts.com/employer-resources/cost-comparison-staffing-agencies-vs-directshifts-hybrid-solution-for-healthcare-recruiters" target="_blank" rel="noopener">DirectShifts</a> (screening hours &amp; cost-per-hire),
+      <a href="https://levelcfo.com/benchmarks/staffing/" target="_blank" rel="noopener">Level CFO</a> (margins &amp; revenue per placement), and
+      <a href="https://vantainsights.com/insights/staffing-agency-profit-margins" target="_blank" rel="noopener">Vanta Insights</a> (net margin). Figures are illustrative estimates, not guaranteed results.
+    </div>
+  </div>
+</section>
+
+<!-- FIT -->
+<section class="section fit">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Fit</div>
+      <h2>Is this right for you?</h2>
+    </div>
+    <div class="fit-grid">
+      <div class="fit-col yes reveal">
+        <h3>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          This is for you if…
+        </h3>
+        <ul class="fit-list">
+          <li><span class="mark">✓</span> You run a UK healthcare staffing or recruitment agency.</li>
+          <li><span class="mark">✓</span> You're winning orders but leaving roles open on the board.</li>
+          <li><span class="mark">✓</span> Your recruiters spend hours screening and ranking CVs by hand.</li>
+          <li><span class="mark">✓</span> You want more placements without hiring more recruiters.</li>
+        </ul>
+      </div>
+      <div class="fit-col no reveal">
+        <h3>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--muted-dim)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          This is not for you if…
+        </h3>
+        <ul class="fit-list">
+          <li><span class="mark">✕</span> You're a solo recruiter or pre-revenue.</li>
+          <li><span class="mark">✕</span> You're outside healthcare staffing.</li>
+          <li><span class="mark">✕</span> You want a cheap plug-in tool, not a system.</li>
+          <li><span class="mark">✕</span> You're not open to changing any part of your workflow.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA / CONTACT -->
+<section class="section final" id="contact">
+  <div class="container">
+    <h2>Ready to fix this?</h2>
+    <p class="final-sub">Fill more of the roles you're already working — faster, and without adding recruiters. Let's map it out.</p>
+    <div class="contact-card reveal">
+      <h3>Book a free strategy call</h3>
+      <p class="cc-note">30 minutes. No pitch. Just a clear next step.</p>
       <form class="contact-form" id="contact-form" action="https://formspree.io/f/xlgoynyz" method="POST">
         <input type="text" name="name" placeholder="Your name" required>
         <input type="email" name="email" placeholder="Work email" required>
-        <input type="text" name="company" placeholder="Company">
-        <select name="service">
-          <option value="" disabled selected>I'm interested in...</option>
-          <option>AI Discovery Call & Readiness Assessment</option>
-          <option>AI Education & Stakeholder Alignment</option>
-          <option>AI Strategy & Roadmap Development</option>
-          <option>AI Automation & Implementation</option>
-          <option>AI Governance & Risk Management</option>
-          <option>Not sure yet, let's talk</option>
+        <input type="text" name="company" placeholder="Agency name">
+        <select name="placements">
+          <option value="" disabled selected>Placements per month…</option>
+          <option>Under 10</option>
+          <option>10–30</option>
+          <option>30–60</option>
+          <option>60+</option>
         </select>
-        <textarea name="message" placeholder="Tell me briefly what you're trying to solve"></textarea>
-        <button type="submit" class="btn btn-primary">Book a Discovery Call</button>
+        <textarea name="message" placeholder="Briefly — where does your shortlisting slow down?"></textarea>
+        <button type="submit" class="btn btn-primary">Book a free strategy call</button>
       </form>
- 
-      <!-- Success modal -->
-      <div id="form-modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); z-index:999; align-items:center; justify-content:center;">
-        <div style="background:#fff; border-radius:12px; padding:40px 36px; max-width:460px; text-align:center; margin:20px; box-shadow:0 20px 60px rgba(0,0,0,0.2);">
-          <div style="font-size:48px; margin-bottom:16px;">&#10003;</div>
-          <h3 style="font-size:1.3rem; margin-bottom:12px; color:#0a1628;">Thank you!</h3>
-          <p style="color:#6b7280; font-size:0.95rem; line-height:1.7;">Your form has been successfully submitted. I'll reach out to you within 24 hours to schedule a call.</p>
-          <button onclick="document.getElementById('form-modal').style.display='none'" class="btn btn-primary" style="margin-top:20px;">Got it</button>
-        </div>
-      </div>
+      <div class="contact-alt">Or email directly: <a href="mailto:colm@colmporegan.com">colm@colmporegan.com</a></div>
     </div>
   </div>
 </section>
- 
-<!-- ABOUT -->
-<section class="about">
-  <div class="container">
-    <div class="about-wrap">
-      <img src="images/Headshot.jpg" alt="Colm O'Regan" class="about-photo">
-      <div>
-        <div class="section-label" style="color:rgba(255,255,255,0.4);">About</div>
-        <h2>Meet Colm O'Regan</h2>
-        <p>I'm a former research scientist with a Ph.D. in chemistry and over 10 years working in research labs. That background gave me a rigorous, evidence-based approach to problem-solving that I now apply to AI consulting.</p>
-        <p>Since 2015, I've been working with businesses on marketing strategy, content, and technology adoption. Now I help companies <strong>adopt AI with confidence</strong>, through discovery, strategy, implementation, and governance.</p>
-        <p><strong>I don't sell tools or push trends.</strong> I help you figure out where AI actually makes sense for your business, then build a plan to get there. Practical, clear, and focused on results. Finally, I’m the founder of BestLabTech.com, where I review lab software and help buyers find the right tools for their workflow.</p>
-      </div>
-    </div>
-  </div>
-</section>
- 
-<!-- FAQ -->
-<section class="faq" id="faq">
-  <div class="container">
-    <h2>Frequently asked questions</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <h3>Who do you typically work with?</h3>
-        <p>Business leaders, marketing directors, operations managers, and teams across a range of industries who want to adopt AI but aren't sure where to start, or who have started but aren't seeing the results they expected.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What makes you different from other AI consultancies?</h3>
-        <p>I focus on practical outcomes, not hype. Every engagement starts with understanding your business before recommending any technology. I work directly with you throughout, and I prioritise solutions based on real ROI and feasibility, not what's trendy.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Will AI actually work for my business?</h3>
-        <p>That depends on where and how you apply it. That's exactly what the discovery call and readiness assessment are for. I'll help you identify where AI can genuinely make a difference and where it's not worth the investment.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How do you handle compliance and security concerns?</h3>
-        <p>Every engagement includes a review of compliance and security requirements relevant to your sector. I build AI governance frameworks that keep humans in the loop at critical checkpoints and ensure your AI use meets ethical and regulatory standards.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What does a typical engagement look like?</h3>
-        <p>It depends on where you are. Some clients start with a discovery call and readiness assessment. Others jump straight into strategy and roadmap development. We'll scope it together on an initial call.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Do you work with specific industries?</h3>
-        <p>I work across industries. My background is in science and technology, but the AI strategy, implementation, and governance frameworks I build are applicable to any business looking to adopt AI responsibly and effectively.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How do I get started?</h3>
-        <p>Book a free 30-minute discovery call. We'll discuss your current situation, identify your biggest opportunities, and map out what an AI engagement could look like for your business.</p>
-      </div>
-    </div>
-  </div>
-</section>
- 
-<!-- FINAL CTA -->
-<section class="final-cta">
-  <div class="container">
-    <h2>Ready to put AI to work?</h2>
-    <p>Your competitors are experimenting. Your team should be implementing.</p>
-    <div class="hero-ctas">
-      <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
-    </div>
-  </div>
-</section>
- 
+
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-bottom" style="justify-content: center;">
-      <span>&copy; 2026 Lighthouse AI Consulting. All rights reserved.</span>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg width="24" height="24" viewBox="-20 -2 68 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="34" r="32" fill="none" stroke="#fff" stroke-width="1.5"/>
+          <rect x="8" y="22" width="12" height="28" fill="#fff"/>
+          <path d="M14 10 L8 22 L20 22Z" fill="#fff"/>
+          <circle cx="14" cy="14" r="4" fill="#818CF8"/>
+          <rect x="8" y="34" width="12" height="4" fill="#818CF8"/>
+        </svg>
+        Lighthouse <em>AI</em> Consulting
+      </div>
+      <div class="footer-meta">
+        &copy; 2026 Lighthouse AI Consulting · <a href="mailto:colm@colmporegan.com">colm@colmporegan.com</a>
+      </div>
     </div>
   </div>
 </footer>
- 
+
+<!-- SUCCESS MODAL -->
+<div id="form-modal">
+  <div class="modal-box">
+    <div class="check">✓</div>
+    <h3>Thanks — you're booked in.</h3>
+    <p>Your message has landed. I'll be in touch within 24 hours to lock in your strategy call.</p>
+    <button onclick="document.getElementById('form-modal').style.display='none'" class="btn btn-primary" style="justify-content:center;">Got it</button>
+  </div>
+</div>
+
 <script>
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+// Scroll reveal
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function (e) { io.observe(e); });
+})();
+
+// Form submit
+document.getElementById('contact-form').addEventListener('submit', function (e) {
   e.preventDefault();
   var form = this;
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).then(function(response) {
-    if (response.ok) {
-      window.location.href = 'thank-you.html';
-    } else {
-      alert('Something went wrong. Please try again or email directly.');
-    }
-  }).catch(function() {
-    alert('Something went wrong. Please try again or email directly.');
-  });
+  fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+    .then(function (r) {
+      if (r.ok) { document.getElementById('form-modal').style.display = 'flex'; form.reset(); }
+      else { alert('Something went wrong. Please email colm@colmporegan.com directly.'); }
+    })
+    .catch(function () { alert('Something went wrong. Please email colm@colmporegan.com directly.'); });
 });
 </script>
 </body>
