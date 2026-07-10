@@ -92,9 +92,6 @@ nav {
 }
 .nav-logo svg { flex-shrink: 0; }
 .nav-logo em { font-style: normal; color: var(--accent); }
-.nav-links { display: flex; gap: 30px; align-items: center; }
-.nav-links > a:not(.btn) { color: rgba(255,255,255,0.62); text-decoration: none; font-size: 14px; font-weight: 500; transition: color 0.2s; }
-.nav-links > a:not(.btn):hover { color: #fff; }
 nav .btn-primary { padding: 11px 22px; font-size: 14px; }
 
 /* ---- HERO ---- */
@@ -308,8 +305,6 @@ footer { background: var(--ink); padding: 40px 0; }
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
-  .nav-links > a:not(.btn) { display: none; }
-  .nav-links { gap: 0; }
   .cards-3 { grid-template-columns: 1fr; }
   .results-grid { grid-template-columns: 1fr; gap: 36px; padding: 40px 30px; text-align: center; }
   .stat-foot { text-align: left; }
@@ -345,14 +340,7 @@ footer { background: var(--ink); padding: 40px 0; }
       </svg>
       Lighthouse <em>AI</em> <span class="full">Consulting</span>
     </a>
-    <div class="nav-links">
-      <a href="index.html#services">Services</a>
-      <a href="healthcare-staffing.html">Healthcare Staffing</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="index.html#why">Why Us</a>
-      <a href="index.html#faq">FAQ</a>
-      <a href="#contact" class="btn btn-primary">Book a call</a>
-    </div>
+    <a href="#contact" class="btn btn-primary">Book a call</a>
   </div>
 </nav>
 
