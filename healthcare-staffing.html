@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lighthouse AI Consulting | Fill more healthcare roles, faster</title>
-<meta name="description" content="The Shortlist OS helps UK healthcare staffing agencies fill more roles by shortlisting 30–40% faster — without adding recruiters.">
+<meta name="description" content="The Shortlist OS helps UK healthcare staffing agencies fill more roles by shortlisting faster, without adding recruiters.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink: #0a1628;          /* deep navy — text & dark bands */
+  --ink: #0a1628;          /* deep navy, text & dark bands */
   --paper: #f6f4f0;        /* cream page background */
   --warm: #efeae2;         /* warm alt background */
   --card: #ffffff;         /* white cards */
@@ -71,7 +71,7 @@ a { color: inherit; }
   box-shadow: 0 8px 22px -8px rgba(56,189,248,0.6);
 }
 .btn-primary:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 14px 30px -8px rgba(56,189,248,0.7); }
-.btn-primary::after { content: '→'; font-size: 1.05em; }
+.btn-primary::after { content: '\2192'; font-size: 1.05em; }
 
 /* ---- NAV ---- */
 nav {
@@ -228,6 +228,18 @@ nav .btn-primary { padding: 11px 22px; font-size: 14px; }
 .sources a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--border); }
 .sources a:hover { color: var(--accent-dark); border-bottom-color: var(--accent-dark); }
 
+/* ---- ABOUT (dark band) ---- */
+.about { background: var(--ink); }
+.about-wrap { display: grid; grid-template-columns: 300px 1fr; gap: 56px; align-items: center; }
+.about-photo {
+  width: 300px; height: 340px; object-fit: cover; object-position: 50% 16%;
+  border-radius: 16px; filter: grayscale(0.25) contrast(1.02);
+  border: 1px solid var(--border-dark);
+}
+.about-body h2 { font-size: clamp(1.8rem, 3.5vw, 2.4rem); color: #fff; margin-bottom: 18px; }
+.about-body p { color: var(--muted-light); font-size: 1rem; line-height: 1.75; margin-bottom: 14px; }
+.about-body p strong { color: #fff; font-weight: 600; }
+
 /* ---- FIT ---- */
 .fit { background: var(--warm); }
 .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -296,13 +308,6 @@ footer { background: var(--ink); padding: 40px 0; }
 .reveal.in { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
 
-/* ---- MODAL ---- */
-#form-modal { display: none; position: fixed; inset: 0; background: rgba(10,22,40,0.6); z-index: 999; align-items: center; justify-content: center; padding: 20px; }
-.modal-box { background: var(--card); border: 1px solid var(--border); border-radius: 18px; padding: 44px 38px; max-width: 440px; text-align: center; box-shadow: 0 30px 70px -20px rgba(0,0,0,0.4); }
-.modal-box .check { width: 56px; height: 56px; border-radius: 50%; background: rgba(56,189,248,0.15); color: var(--accent-dark); display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 28px; }
-.modal-box h3 { font-size: 1.35rem; margin-bottom: 12px; color: var(--ink); }
-.modal-box p { color: var(--muted); font-size: 0.96rem; margin-bottom: 24px; }
-
 /* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
   .cards-3 { grid-template-columns: 1fr; }
@@ -310,6 +315,10 @@ footer { background: var(--ink); padding: 40px 0; }
   .stat-foot { text-align: left; }
   .quote-grid { grid-template-columns: 1fr; }
   .fit-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .about-wrap { grid-template-columns: 1fr; text-align: center; gap: 30px; }
+  .about-photo { margin: 0 auto; width: 240px; height: 280px; }
 }
 @media (max-width: 640px) {
   .section { padding: 84px 0; }
@@ -350,8 +359,8 @@ footer { background: var(--ink); padding: 40px 0; }
   <div class="container">
     <div class="hero-inner">
       <div class="hero-badge">For UK healthcare staffing agencies</div>
-      <h1>Fill more roles by shortlisting <em>30–40% faster</em>.</h1>
-      <p class="hero-sub">The Shortlist OS automates resume screening, candidate ranking, job posting, and interview scheduling — so you're first to submit and win more of the orders already sitting open on your board. Without adding recruiters.</p>
+      <h1>Fill more roles by shortlisting <em>faster</em>.</h1>
+      <p class="hero-sub">The Shortlist OS automates resume screening, candidate ranking, job posting, and interview scheduling, so you're first to submit and win more of the orders already sitting open on your board. Without adding recruiters.</p>
       <div class="hero-cta-row">
         <a href="#contact" class="btn btn-primary">Book a free strategy call</a>
         <span class="hero-note">30 minutes. No pitch. Just a clear next step.</span>
@@ -366,7 +375,7 @@ footer { background: var(--ink); padding: 40px 0; }
     <div class="section-head reveal">
       <div class="eyebrow">The problem</div>
       <h2>Your recruiters are drowning in manual work.</h2>
-      <p>The average healthcare role takes <strong style="color:var(--ink)">40–60 days to fill</strong>, and every day it sits open is lost margin. Most of that time isn't spent placing — it's spent screening, posting, and chasing. <a class="cite" href="https://www.jobtarget.com/blog/healthcare-recruitment-time-to-fill-optimization" target="_blank" rel="noopener">JobTarget puts the average at ~49 days.</a></p>
+      <p>The average healthcare role takes <strong style="color:var(--ink)">40 to 60 days to fill</strong>, and every day it sits open is lost margin. Most of that time isn't spent placing. It's spent screening, posting, and chasing. <a class="cite" href="https://www.jobtarget.com/blog/healthcare-recruitment-time-to-fill-optimization" target="_blank" rel="noopener">JobTarget puts the average at ~49 days.</a></p>
     </div>
     <div class="cards-3">
       <div class="p-card reveal">
@@ -374,7 +383,7 @@ footer { background: var(--ink); padding: 40px 0; }
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6"/><path d="M9 17h3"/></svg>
         </div>
         <h3>Screening &amp; ranking CVs by hand</h3>
-        <p>Recruiters read and score every resume manually — the single biggest time sink, often <strong style="color:var(--ink)">10–12 hours per role</strong> before a shortlist even exists.</p>
+        <p>Recruiters read and score every resume manually. It's the single biggest time sink, often <strong style="color:var(--ink)">10 to 12 hours per role</strong> before a shortlist even exists.</p>
       </div>
       <div class="p-card reveal">
         <div class="p-num">
@@ -388,7 +397,7 @@ footer { background: var(--ink); padding: 40px 0; }
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg>
         </div>
         <h3>Scheduling chaos &amp; cold candidates</h3>
-        <p>Interview coordination, reschedules, and manual status updates keep good candidates waiting. They drop off, ghost, or take another offer — and the req stays open.</p>
+        <p>Interview coordination, reschedules, and manual status updates keep good candidates waiting. They drop off, ghost, or take another offer, and the req stays open.</p>
       </div>
     </div>
   </div>
@@ -400,14 +409,14 @@ footer { background: var(--ink); padding: 40px 0; }
     <div class="section-head reveal">
       <div class="eyebrow">The solution</div>
       <h2>Introducing The Shortlist OS.</h2>
-      <p>A done-for-you automation system that turns a stack of applicants into a ranked, interview-ready shortlist — in hours, not days. It sources and screens continuously, ranks candidates against your roles, distributes postings, and schedules interviews, so your team spends its time placing, not processing. Here's how we build it with you.</p>
+      <p>A done-for-you automation system that turns a stack of applicants into a ranked, interview-ready shortlist in hours, not days. It sources and screens continuously, ranks candidates against your roles, distributes postings, and schedules interviews, so your team spends its time placing, not processing. Here's how we build it with you.</p>
     </div>
     <div class="steps">
       <div class="step reveal">
         <div class="step-num">01<span class="slash">/</span></div>
         <div class="step-body">
           <h3>Discovery</h3>
-          <p>We map your current shortlisting workflow end to end — your roles, boards, ATS, and compliance steps — and pinpoint exactly where the hours leak.</p>
+          <p>We map your current shortlisting workflow end to end, across your roles, boards, ATS, and compliance steps, and pinpoint exactly where the hours leak.</p>
         </div>
       </div>
       <div class="step reveal">
@@ -421,14 +430,14 @@ footer { background: var(--ink); padding: 40px 0; }
         <div class="step-num">03<span class="slash">/</span></div>
         <div class="step-body">
           <h3>Build</h3>
-          <p>We configure the automations: AI screening and ranking, multi-board job distribution, and interview scheduling — wired into the tools you already use.</p>
+          <p>We configure the automations: AI screening and ranking, multi-board job distribution, and interview scheduling, wired into the tools you already use.</p>
         </div>
       </div>
       <div class="step reveal">
         <div class="step-num">04<span class="slash">/</span></div>
         <div class="step-body">
           <h3>Launch</h3>
-          <p>We roll it out with your recruiters, run it on live reqs, and prove the time-to-shortlist drop against your baseline — with training so the team owns it.</p>
+          <p>We roll it out with your recruiters, run it on live reqs, and prove the time-to-shortlist drop against your baseline, with training so the team owns it.</p>
         </div>
       </div>
       <div class="step reveal">
@@ -448,7 +457,7 @@ footer { background: var(--ink); padding: 40px 0; }
     <div class="section-head reveal">
       <div class="eyebrow">What it's worth</div>
       <h2>The math on faster shortlisting.</h2>
-      <p>Faster time-to-fill doesn't just save hours — it converts stalled reqs into placements you're already working. Here's the model for a typical mid-size agency.</p>
+      <p>Faster time-to-fill doesn't just save hours. It converts stalled reqs into placements you're already working. Here's the model for a typical mid-size agency.</p>
     </div>
     <div class="results-grid reveal">
       <div>
@@ -457,9 +466,9 @@ footer { background: var(--ink); padding: 40px 0; }
       </div>
       <div class="results-copy">
         <h3>From 6 extra placements a month.</h3>
-        <p>A mid-size agency filling <strong>~30 placements/month</strong> at <strong>~$7,000 revenue per placement</strong> is the baseline. Cutting time-to-fill by 30–40% typically lifts placement volume by ~20% with the same headcount — <strong>6 extra placements a month</strong>. <a class="cite" href="https://www.jobtarget.com/blog/healthcare-recruitment-time-to-fill-optimization" target="_blank" rel="noopener">(JobTarget)</a></p>
-        <p>That's <strong>$42,000/month</strong> in extra placement revenue, or <strong>$504,000 a year</strong> — plus 10–12 recruiter hours handed back on every single role. <a class="cite" href="https://www.directshifts.com/employer-resources/cost-comparison-staffing-agencies-vs-directshifts-hybrid-solution-for-healthcare-recruiters" target="_blank" rel="noopener">(DirectShifts)</a></p>
-        <p style="color:var(--ink);font-weight:600;">I help you unlock over $500K a year in additional placement revenue — and I do it for a fraction of that.</p>
+        <p>A mid-size agency filling <strong>~30 placements/month</strong> at <strong>~$7,000 revenue per placement</strong> is the baseline. Cutting time-to-fill by 30 to 40% typically lifts placement volume by ~20% with the same headcount, which is <strong>6 extra placements a month</strong>. <a class="cite" href="https://www.jobtarget.com/blog/healthcare-recruitment-time-to-fill-optimization" target="_blank" rel="noopener">(JobTarget)</a></p>
+        <p>That's <strong>$42,000/month</strong> in extra placement revenue, or <strong>$504,000 a year</strong>, plus 10 to 12 recruiter hours handed back on every single role. <a class="cite" href="https://www.directshifts.com/employer-resources/cost-comparison-staffing-agencies-vs-directshifts-hybrid-solution-for-healthcare-recruiters" target="_blank" rel="noopener">(DirectShifts)</a></p>
+        <p style="color:var(--ink);font-weight:600;">I help you unlock over $500K a year in additional placement revenue, and I do it for a fraction of that.</p>
       </div>
     </div>
 
@@ -478,12 +487,12 @@ footer { background: var(--ink); padding: 40px 0; }
         <div class="quote">
           <div class="stars">★★★★★</div>
           <blockquote>"Colm's roadmap showed me exactly how AI could help with research, insights, and creating what I needed quickly. He asked great questions to make sure it matched my situation, and gave me a clear plan with practical tools I could use straight away."</blockquote>
-          <div class="attr">— Ricardo Wilkins, Health Science Author, ASEA</div>
+          <div class="attr">Ricardo Wilkins, Health Science Author, ASEA</div>
         </div>
         <div class="quote">
           <div class="stars">★★★★★</div>
           <blockquote>"I was blown away by how comprehensive and tailored Colm's work is. He broke the process down into bite-size steps and spoke directly to my pain points. I'd recommend it to anyone who wants to use AI to work smarter, not harder."</blockquote>
-          <div class="attr">— Shawn Jones Clarke, Wellness Consultant, ASEA</div>
+          <div class="attr">Shawn Jones Clarke, Wellness Consultant, ASEA</div>
         </div>
       </div>
     </div>
@@ -496,6 +505,22 @@ footer { background: var(--ink); padding: 40px 0; }
       <a href="https://www.directshifts.com/employer-resources/cost-comparison-staffing-agencies-vs-directshifts-hybrid-solution-for-healthcare-recruiters" target="_blank" rel="noopener">DirectShifts</a> (screening hours &amp; cost-per-hire),
       <a href="https://levelcfo.com/benchmarks/staffing/" target="_blank" rel="noopener">Level CFO</a> (margins &amp; revenue per placement), and
       <a href="https://vantainsights.com/insights/staffing-agency-profit-margins" target="_blank" rel="noopener">Vanta Insights</a> (net margin). Figures are illustrative estimates, not guaranteed results.
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about on-dark">
+  <div class="container">
+    <div class="about-wrap">
+      <img src="images/Headshot.jpg" alt="Colm O'Regan" class="about-photo reveal">
+      <div class="about-body reveal">
+        <div class="eyebrow">About</div>
+        <h2>Meet Colm O'Regan</h2>
+        <p>I'm a former research scientist with a Ph.D. in chemistry and over 10 years working in research labs. That background gave me a rigorous, evidence-based approach to problem-solving that I now bring to every engagement.</p>
+        <p>Since 2015 I've worked with businesses on marketing, content, and technology adoption. Now I help healthcare staffing agencies put AI to work where it actually moves the needle: faster shortlisting, less manual screening, and more placements without adding recruiters.</p>
+        <p><strong>I don't sell tools or push hype.</strong> I figure out where AI genuinely fits your workflow, then build the system that gets you there. Practical, clear, and focused on results you can measure.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -540,7 +565,7 @@ footer { background: var(--ink); padding: 40px 0; }
 <section class="section final" id="contact">
   <div class="container">
     <h2>Ready to fix this?</h2>
-    <p class="final-sub">Fill more of the roles you're already working — faster, and without adding recruiters. Let's map it out.</p>
+    <p class="final-sub">Fill more of the roles you're already working, faster, and without adding recruiters. Let's map it out.</p>
     <div class="contact-card reveal">
       <h3>Book a free strategy call</h3>
       <p class="cc-note">30 minutes. No pitch. Just a clear next step.</p>
@@ -551,11 +576,11 @@ footer { background: var(--ink); padding: 40px 0; }
         <select name="placements">
           <option value="" disabled selected>Placements per month…</option>
           <option>Under 10</option>
-          <option>10–30</option>
-          <option>30–60</option>
+          <option>10 to 30</option>
+          <option>30 to 60</option>
           <option>60+</option>
         </select>
-        <textarea name="message" placeholder="Briefly — where does your shortlisting slow down?"></textarea>
+        <textarea name="message" placeholder="Briefly, where does your shortlisting slow down?"></textarea>
         <button type="submit" class="btn btn-primary">Book a free strategy call</button>
       </form>
       <div class="contact-alt">Or email directly: <a href="mailto:colm@colmporegan.com">colm@colmporegan.com</a></div>
@@ -584,16 +609,6 @@ footer { background: var(--ink); padding: 40px 0; }
   </div>
 </footer>
 
-<!-- SUCCESS MODAL -->
-<div id="form-modal">
-  <div class="modal-box">
-    <div class="check">✓</div>
-    <h3>Thanks — you're booked in.</h3>
-    <p>Your message has landed. I'll be in touch within 24 hours to lock in your strategy call.</p>
-    <button onclick="document.getElementById('form-modal').style.display='none'" class="btn btn-primary" style="justify-content:center;">Got it</button>
-  </div>
-</div>
-
 <script>
 // Scroll reveal
 (function () {
@@ -607,13 +622,13 @@ footer { background: var(--ink); padding: 40px 0; }
   els.forEach(function (e) { io.observe(e); });
 })();
 
-// Form submit
+// Form submit (same behaviour as the homepage: post to Formspree, then redirect to thank-you page)
 document.getElementById('contact-form').addEventListener('submit', function (e) {
   e.preventDefault();
   var form = this;
   fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
     .then(function (r) {
-      if (r.ok) { document.getElementById('form-modal').style.display = 'flex'; form.reset(); }
+      if (r.ok) { window.location.href = 'thank-you.html'; }
       else { alert('Something went wrong. Please email colm@colmporegan.com directly.'); }
     })
     .catch(function () { alert('Something went wrong. Please email colm@colmporegan.com directly.'); });
