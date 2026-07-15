@@ -80,6 +80,9 @@
   }
   .brand svg { flex-shrink: 0; }
   .brand em { font-style: normal; color: var(--accent); }
+  .nav-links { display: flex; align-items: center; gap: 28px; }
+  .nav-links > a:not(.btn) { color: rgba(255,255,255,0.66); font-size: 14px; font-weight: 500; transition: color .2s ease; }
+  .nav-links > a:not(.btn):hover { color: #fff; }
   .nav-cta { font-size: 14px; padding: 10px 20px; }
 
   /* ---------- Section frame ---------- */
@@ -270,6 +273,7 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 860px) {
+    .nav-links > a:not(.btn) { display: none; }
     .cards { grid-template-columns: 1fr; }
     .results-band { grid-template-columns: 1fr; gap: 34px; }
     .fit-grid { grid-template-columns: 1fr; }
@@ -304,7 +308,14 @@
       </svg>
       Lighthouse <em>AI</em> Consulting
     </a>
-    <a href="#book" class="btn nav-cta">Book a call</a>
+    <div class="nav-links">
+      <a href="index.html#services">Services</a>
+      <a href="/healthcare-staffing">Healthcare Staffing</a>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="index.html#why">Why Us</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="#book" class="btn nav-cta">Book a call</a>
+    </div>
   </div>
 </nav>
 
