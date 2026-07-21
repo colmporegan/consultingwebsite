@@ -98,9 +98,30 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba
 footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 36px 0; font-size: 0.85rem; }
 .footer-bottom { display: flex; justify-content: center; align-items: center; }
 
+.nav-toggle { display: none; background: none; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 8px 9px; cursor: pointer; }
+.nav-toggle span { display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+.nav-toggle span + span { margin-top: 5px; }
+nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 @media (max-width: 768px) {
-  .nav-links { display: none; }
+  .nav-toggle { display: block; }
+  .nav-links {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    background: rgba(10,22,40,0.98); backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    flex-direction: column; align-items: stretch; gap: 0;
+    padding: 8px 24px 18px;
+  }
+  nav.open .nav-links { display: flex; }
+  .nav-links a { display: block; padding: 13px 0; font-size: 15px; color: rgba(255,255,255,0.82); border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .nav-links a:last-child { border-bottom: none; }
+  .nav-links .btn { margin-top: 14px; justify-content: center; }
   .case-study { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) {
+  .nav-logo { font-size: 0.92rem; gap: 8px; }
+  .nav-logo svg { width: 24px; height: 24px; }
 }
 </style>
 </head>
@@ -123,6 +144,7 @@ footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 36px 0; 
       </svg>
       Lighthouse <em>AI</em> Consulting
     </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links">
       <a href="index.html#services">Services</a>
       <a href="/healthcare-staffing">Healthcare Staffing</a>
@@ -200,5 +222,22 @@ footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 36px 0; 
   </div>
 </footer>
 
+<script>
+(function () {
+  var nv = document.querySelector('nav');
+  var tg = nv && nv.querySelector('.nav-toggle');
+  if (!nv || !tg) return;
+  tg.addEventListener('click', function () {
+    var open = nv.classList.toggle('open');
+    tg.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nv.querySelectorAll('.nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      nv.classList.remove('open');
+      tg.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 </body>
 </html>

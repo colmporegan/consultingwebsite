@@ -283,8 +283,24 @@
   }
 
   /* ---------- Responsive ---------- */
-  @media (max-width: 860px) {
-    .nav-links > a:not(.btn) { display: none; }
+  .nav-toggle { display: none; background: none; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 8px 9px; cursor: pointer; }
+.nav-toggle span { display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+.nav-toggle span + span { margin-top: 5px; }
+nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
+nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 860px) {
+    .nav-toggle { display: block; }
+    .nav-links {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      background: rgba(10,22,40,0.98); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      flex-direction: column; align-items: stretch; gap: 0;
+      padding: 8px 24px 18px;
+    }
+    nav.open .nav-links { display: flex; }
+    .nav-links > a:not(.btn) { display: block; padding: 13px 0; font-size: 15px; color: rgba(255,255,255,0.82); border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .nav-links .btn { margin-top: 14px; justify-content: center; }
     .cards { grid-template-columns: 1fr; }
     .tcards { grid-template-columns: 1fr; }
     .results-band { grid-template-columns: 1fr; gap: 34px; }
@@ -294,6 +310,8 @@
     .hero-strip { gap: 26px; }
   }
   @media (max-width: 520px) {
+    .brand { font-size: 15px; gap: 8px; }
+    .brand svg { width: 24px; height: 24px; }
     .wrap { padding: 0 20px; }
     .nav-inner { padding: 12px 20px; }
     .hero-cta-row { flex-direction: column; align-items: stretch; }
@@ -320,6 +338,7 @@
       </svg>
       Lighthouse <em>AI</em> Consulting
     </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links">
       <a href="index.html#services">Services</a>
       <a href="/healthcare-staffing">Healthcare Staffing</a>
@@ -581,5 +600,22 @@
   }
 </script>
 
+<script>
+(function () {
+  var nv = document.querySelector('nav');
+  var tg = nv && nv.querySelector('.nav-toggle');
+  if (!nv || !tg) return;
+  tg.addEventListener('click', function () {
+    var open = nv.classList.toggle('open');
+    tg.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nv.querySelectorAll('.nav-links a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      nv.classList.remove('open');
+      tg.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>
 </body>
 </html>
