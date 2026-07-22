@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Placement OS · AI automation for healthcare staffing agencies</title>
-<meta name="description" content="I help healthcare and life science staffing agencies get recruiters out of CRM and candidate admin, so they place more and faster. The Placement OS." />
+<title>The Placement OS™ · Recruiter capacity for healthcare staffing agencies</title>
+<meta name="description" content="We help healthcare and life science staffing agencies increase recruiter capacity, accelerate placements, and scale revenue without hiring more recruiters, through the proprietary Placement OS." />
 <link rel="canonical" href="https://lighthouseaiconsulting.com/healthcare-staffing" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --ink: #0a1628;          /* deep navy: text & dark bands */
-    --paper: #f6f4f0;        /* cream page background */
-    --warm: #efeae2;         /* warm alt background */
-    --card: #ffffff;         /* white cards */
-    --field: #fbfaf7;        /* input background */
-    --border: #dcd7cd;       /* warm border on light */
+    --ink: #0a1628;
+    --paper: #f6f4f0;
+    --warm: #efeae2;
+    --card: #ffffff;
+    --field: #fbfaf7;
+    --border: #dcd7cd;
     --border-dark: rgba(255,255,255,0.12);
-    --accent: #38bdf8;       /* sky blue */
+    --accent: #38bdf8;
     --accent-dark: #0ea5e9;
     --accent-soft: rgba(56,189,248,0.12);
     --text: #0a1628;
@@ -97,14 +97,16 @@
   h2.section-title {
     font-family: var(--display); font-weight: 700; color: var(--ink);
     font-size: clamp(28px, 4vw, 44px); line-height: 1.1;
-    letter-spacing: -0.02em; max-width: 18ch;
+    letter-spacing: -0.02em; max-width: 20ch;
   }
+  .tm { color: var(--accent-dark); font-size: 0.5em; vertical-align: super; font-weight: 700; }
 
   /* dark bands */
   .band-dark { background: var(--ink); }
   .band-dark .eyebrow, .band-dark .eyebrow::before { color: var(--accent); background: var(--accent); }
   .band-dark .eyebrow { background: none; }
   .band-dark h2.section-title { color: #fff; }
+  .band-dark .tm { color: var(--accent); }
 
   /* ---------- Hero ---------- */
   .hero {
@@ -129,6 +131,7 @@
     pointer-events: none;
   }
   .hero-inner { position: relative; z-index: 2; max-width: 900px; }
+  .hero .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; display: inline-block; }
   .hero h1 {
     font-family: var(--display); font-weight: 800; color: #fff;
     font-size: clamp(38px, 6.4vw, 74px); line-height: 1.02;
@@ -137,8 +140,9 @@
   .hero h1 .hl { color: var(--accent); }
   .hero .sub {
     font-size: clamp(17px, 2.1vw, 21px); color: rgba(255,255,255,0.75);
-    max-width: 60ch; margin-bottom: 40px; line-height: 1.55;
+    max-width: 62ch; margin-bottom: 40px; line-height: 1.55;
   }
+  .hero .sub .tm { color: #7dd3fc; }
   .hero-cta-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
   .hero .reassure {
     margin-top: 18px; font-family: var(--mono); font-size: 13px;
@@ -149,7 +153,7 @@
     display: flex; gap: 40px; flex-wrap: wrap;
     border-top: 1px solid var(--border-dark); padding-top: 26px;
   }
-  .hero-strip .stat { display: flex; flex-direction: column; gap: 4px; }
+  .hero-strip .stat { display: flex; flex-direction: column; gap: 4px; max-width: 210px; }
   .hero-strip .stat b { font-family: var(--display); font-weight: 700; font-size: 22px; color: #fff; }
   .hero-strip .stat span {
     font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em;
@@ -170,6 +174,17 @@
   }
   .card h3 { font-family: var(--display); font-weight: 600; font-size: 19px; color: var(--ink); letter-spacing: -0.01em; margin-bottom: 10px; }
   .card p { color: var(--muted); font-size: 15px; }
+
+  /* ---------- Mechanism ---------- */
+  .mechanism { background: var(--warm); }
+  .mech-head { max-width: 780px; }
+  .mech-head .lead { color: var(--muted); font-size: 16px; margin-top: 16px; line-height: 1.65; }
+  .frameworks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 48px; }
+  .fw { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 28px 26px; transition: border-color .3s ease, transform .3s ease; }
+  .fw:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .fw .fw-num { font-family: var(--mono); font-size: 12px; color: var(--accent-dark); letter-spacing: 0.1em; margin-bottom: 16px; display: block; }
+  .fw h3 { font-family: var(--display); font-weight: 600; font-size: 16.5px; color: var(--ink); margin-bottom: 9px; letter-spacing: -0.01em; }
+  .fw p { color: var(--muted); font-size: 14.5px; line-height: 1.6; }
 
   /* ---------- Process (dark band) ---------- */
   .process-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; flex-wrap: wrap; margin-bottom: 20px; }
@@ -192,11 +207,11 @@
   }
   .step-body p { color: var(--muted-light); font-size: 15.5px; }
 
-  /* ---------- Results ---------- */
+  /* ---------- Results / capacity ---------- */
   .results-band {
     background: var(--card); border: 1px solid var(--border);
     border-radius: 22px; padding: clamp(36px, 5vw, 60px);
-    display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: center;
+    display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 50px; align-items: center;
     position: relative; overflow: hidden;
     box-shadow: 0 30px 70px -40px rgba(10,22,40,0.4);
   }
@@ -205,17 +220,40 @@
     width: 340px; height: 340px;
     background: radial-gradient(circle, rgba(56,189,248,0.16), transparent 65%);
   }
-  .bignum { position: relative; z-index: 1; }
-  .bignum .figure { font-family: var(--display); font-weight: 800; font-size: clamp(56px, 9vw, 104px); line-height: 0.95; letter-spacing: -0.04em; color: var(--ink); }
-  .bignum .figure em { color: var(--accent); font-style: normal; }
-  .bignum .cap { font-family: var(--mono); font-size: 13px; letter-spacing: 0.06em; color: var(--muted); text-transform: uppercase; margin-top: 14px; display: block; max-width: 22ch; }
+  .capacity { position: relative; z-index: 1; }
+  .cap-row { margin-bottom: 24px; }
+  .cap-row:last-child { margin-bottom: 0; }
+  .cap-name { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 10px; }
+  .cap-bar { height: 42px; border-radius: 9px; background: #e7e2d9; overflow: hidden; }
+  .cap-bar .fill { height: 100%; background: var(--accent); display: flex; align-items: center; border-radius: 9px 0 0 9px; }
+  .cap-bar .fill span { color: #062033; font-family: var(--display); font-weight: 700; font-size: 13px; padding-left: 14px; white-space: nowrap; }
+  .cap-sub { font-family: var(--mono); font-size: 11px; color: var(--muted); margin-top: 7px; text-align: right; letter-spacing: 0.04em; }
   .results-copy { position: relative; z-index: 1; }
-  .results-copy .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 16px; display: block; }
-  .results-copy p { color: var(--muted); font-size: 16px; margin-bottom: 16px; }
+  .results-copy .kicker { font-family: var(--mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 14px; display: block; }
+  .results-copy h3 { font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--ink); margin-bottom: 14px; letter-spacing: -0.01em; }
+  .results-copy p { color: var(--muted); font-size: 16px; margin-bottom: 16px; line-height: 1.6; }
   .results-copy p strong { color: var(--ink); font-weight: 600; }
-  .placeholder-quote { margin-top: 28px; border-left: 2px solid var(--accent); padding: 6px 0 6px 22px; }
-  .placeholder-quote p { font-family: var(--display); font-size: 17px; color: var(--ink); font-style: italic; margin-bottom: 8px; }
-  .placeholder-quote span { font-family: var(--mono); font-size: 12px; color: var(--faint); letter-spacing: 0.05em; }
+  .fineprint { font-family: var(--mono); font-size: 11px; color: var(--faint); letter-spacing: 0.03em; }
+
+  /* ---------- Included / value stack ---------- */
+  .included { background: var(--warm); }
+  .stack-core { background: var(--ink); border-radius: 16px; padding: 30px 32px; margin-top: 48px; }
+  .stack-core .lbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+  .stack-core h3 { font-family: var(--display); font-weight: 600; font-size: 19px; color: #fff; margin: 9px 0 7px; letter-spacing: -0.01em; }
+  .stack-core p { color: var(--muted-light); font-size: 15px; line-height: 1.6; max-width: 64ch; }
+  .bonuses { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
+  .bonus { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px 26px; }
+  .bonus .blbl { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-dark); display: block; margin-bottom: 11px; }
+  .bonus h4 { font-family: var(--display); font-weight: 600; font-size: 16.5px; color: var(--ink); margin-bottom: 6px; letter-spacing: -0.01em; }
+  .bonus p { color: var(--muted); font-size: 14px; line-height: 1.55; }
+
+  /* ---------- Guarantee (dark band) ---------- */
+  .guarantee-band { background: var(--ink); }
+  .gtee { max-width: 800px; margin: 0 auto; text-align: center; }
+  .gtee .shield { color: var(--accent); margin-bottom: 22px; display: inline-flex; }
+  .gtee h2 { font-family: var(--display); font-weight: 800; color: #fff; font-size: clamp(26px, 4vw, 40px); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 18px; }
+  .gtee p { color: var(--muted-light); font-size: 17px; line-height: 1.65; max-width: 660px; margin: 0 auto; }
+  .gtee p strong { color: #fff; font-weight: 600; }
 
   /* ---------- Testimonials ---------- */
   .testimonials { background: var(--warm); }
@@ -246,8 +284,8 @@
   .final { text-align: center; position: relative; overflow: hidden; }
   .final-glow { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 60% 60% at 50% 100%, rgba(56,189,248,0.18), transparent 70%); }
   .final .inner { position: relative; z-index: 1; }
-  .final h2 { font-family: var(--display); font-weight: 800; color: #fff; font-size: clamp(34px, 6vw, 64px); letter-spacing: -0.03em; line-height: 1.02; margin: 0 auto 20px; }
-  .final p { color: var(--muted-light); font-size: 18px; max-width: 48ch; margin: 0 auto 10px; }
+  .final h2 { font-family: var(--display); font-weight: 800; color: #fff; font-size: clamp(34px, 6vw, 64px); letter-spacing: -0.03em; line-height: 1.02; margin: 0 auto 20px; max-width: 18ch; }
+  .final p { color: var(--muted-light); font-size: 18px; max-width: 52ch; margin: 0 auto 10px; }
   .final .reassure { font-family: var(--mono); font-size: 13px; color: var(--faint-light); margin-top: 18px; }
 
   /* ---------- Contact form ---------- */
@@ -302,6 +340,8 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
     .nav-links > a:not(.btn) { display: block; padding: 13px 0; font-size: 15px; color: rgba(255,255,255,0.82); border-bottom: 1px solid rgba(255,255,255,0.07); }
     .nav-links .btn { margin-top: 14px; justify-content: center; }
     .cards { grid-template-columns: 1fr; }
+    .frameworks { grid-template-columns: 1fr; }
+    .bonuses { grid-template-columns: 1fr; }
     .tcards { grid-template-columns: 1fr; }
     .results-band { grid-template-columns: 1fr; gap: 34px; }
     .fit-grid { grid-template-columns: 1fr; }
@@ -356,19 +396,20 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
   <div class="hero-glow"></div>
   <div class="wrap hero-inner">
     <div class="reveal in">
-      <h1>More placements.<br />Less <span class="hl">admin.</span></h1>
-      <p class="sub">I help healthcare and life science staffing agencies get their recruiters out of CRM and candidate admin, so their hours go back into placing. I do it with The Placement OS, a system built around how your desks already work.</p>
+      <span class="kicker">Recruiter capacity optimization for healthcare staffing agencies</span>
+      <h1>More placements.<br />Same <span class="hl">team.</span></h1>
+      <p class="sub">The Placement OS<span class="tm">™</span> is the operating system that lets healthcare and life science staffing agencies scale placements without scaling headcount. It gives every recruiter 20 to 40 percent more selling time, so your desk produces more with the team you already have.</p>
       <div class="hero-cta-row">
         <a href="#book" class="btn">Book a free strategy call</a>
-        <a href="#process" class="btn btn-ghost">See how it works</a>
+        <a href="#mechanism" class="btn btn-ghost">See how it works</a>
       </div>
       <p class="reassure">30 minutes. No pitch. Just a clear next step.</p>
     </div>
 
     <div class="hero-strip reveal">
-      <div class="stat"><b>~49 days</b><span>Avg healthcare time-to-fill</span></div>
-      <div class="stat"><b>12+ hrs</b><span>Screening admin per role</span></div>
-      <div class="stat"><b>30-day</b><span>Pilot, fully guaranteed</span></div>
+      <div class="stat"><b>20-40%</b><span>More recruiter selling capacity</span></div>
+      <div class="stat"><b>$80k+/yr</b><span>From one extra placement a quarter, per desk</span></div>
+      <div class="stat"><b>30 days</b><span>To a working pilot, or your money back</span></div>
     </div>
   </div>
 </section>
@@ -378,23 +419,61 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
   <div class="wrap">
     <div class="reveal">
       <span class="eyebrow">The problem</span>
-      <h2 class="section-title">Your recruiters didn't join to update a CRM.</h2>
+      <h2 class="section-title">Your growth is capped by recruiter capacity, not demand.</h2>
     </div>
     <div class="cards">
       <div class="card reveal">
         <span class="idx">01</span>
-        <h3>Buried in manual screening</h3>
-        <p>Recruiters lose 12+ hours per role reading CVs and shortlisting by hand. That's time they're not spending placing.</p>
+        <h3>Recruiters are at full capacity</h3>
+        <p>Your best recruiters are already maxed out. Every new role competes for the same limited hours, so placements plateau no matter how much demand you have.</p>
       </div>
       <div class="card reveal">
         <span class="idx">02</span>
-        <h3>Data scattered everywhere</h3>
-        <p>Candidate info lives across the ATS, spreadsheets, and inboxes. Nobody has one clean view, so admin piles up.</p>
+        <h3>You can't scale without hiring</h3>
+        <p>The only obvious lever left is adding recruiters: slow, expensive, and risky. Growth ends up waiting on payroll instead of pipeline.</p>
       </div>
       <div class="card reveal">
         <span class="idx">03</span>
-        <h3>Every open day is lost margin</h3>
-        <p>Slow shortlisting means roles sit open longer. In healthcare staffing, that delay comes straight off your placement revenue.</p>
+        <h3>Wasted capacity is lost revenue</h3>
+        <p>About a third of every recruiter's week goes to admin instead of selling. At a $20,000 average placement fee, that lost time is placements left on the table, tens of thousands per desk a year.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MECHANISM ===== -->
+<section class="section-pad mechanism" id="mechanism">
+  <div class="wrap">
+    <div class="mech-head reveal">
+      <span class="eyebrow">The mechanism</span>
+      <h2 class="section-title">The Placement OS<span class="tm">™</span></h2>
+      <p class="lead">The Placement OS is not another tool to log into. It is the operating system that runs the repetitive, capacity-draining work in the background, so your recruiters spend their time on candidates and clients. It is built from five proprietary frameworks.</p>
+    </div>
+    <div class="frameworks">
+      <div class="fw reveal">
+        <span class="fw-num">01</span>
+        <h3>Candidate Capture Engine<span class="tm">™</span></h3>
+        <p>Sources and captures candidates continuously into one place, so no lead or CV slips through the cracks.</p>
+      </div>
+      <div class="fw reveal">
+        <span class="fw-num">02</span>
+        <h3>Smart Qualification Layer<span class="tm">™</span></h3>
+        <p>Screens and ranks applicants against each role automatically, so recruiters start the day with a shortlist, not a stack.</p>
+      </div>
+      <div class="fw reveal">
+        <span class="fw-num">03</span>
+        <h3>Recruiter Workflow Engine<span class="tm">™</span></h3>
+        <p>Removes the manual steps between stages, so candidates keep moving without anyone chasing.</p>
+      </div>
+      <div class="fw reveal">
+        <span class="fw-num">04</span>
+        <h3>CRM Sync Framework<span class="tm">™</span></h3>
+        <p>Keeps your CRM and records updated on their own, so nobody loses hours to data entry and nothing goes stale.</p>
+      </div>
+      <div class="fw reveal">
+        <span class="fw-num">05</span>
+        <h3>Placement Intelligence Dashboard<span class="tm">™</span></h3>
+        <p>Shows recruiter capacity, pipeline health, and where the next placements will come from, in real time.</p>
       </div>
     </div>
   </div>
@@ -405,10 +484,10 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
   <div class="wrap">
     <div class="process-head">
       <div class="reveal">
-        <span class="eyebrow">The Placement OS</span>
+        <span class="eyebrow">How we work</span>
         <h2 class="section-title">Start small. Prove it. Then scale.</h2>
       </div>
-      <p class="lead reveal">One system that takes candidate and CRM admin off your recruiters' desks. We begin with a single workflow, prove it in 30 days, then expand across your pipeline.</p>
+      <p class="lead reveal">We take the capacity-draining work off your recruiters' desks one framework at a time. We begin with a single high-impact workflow, prove it in 30 days, then expand across your pipeline.</p>
     </div>
 
     <div class="steps">
@@ -444,26 +523,86 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
         <div class="num">05</div>
         <div class="step-body">
           <div><h3>Measure &amp; Optimise</h3><span class="tag">Ongoing</span></div>
-          <p>We track the before and after, hours reclaimed and roles worked, so the impact stays visible. Then we keep building on what's working.</p>
+          <p>We track the before and after, capacity reclaimed and placements made, so the impact stays visible. Then we keep building on what's working.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== RESULTS / VALUE ===== -->
+<!-- ===== RESULTS / CAPACITY SHIFT ===== -->
 <section class="section-pad" id="results">
   <div class="wrap">
     <div class="results-band reveal">
-      <div class="bignum">
-        <div class="figure">$18k<em>+</em></div>
-        <span class="cap">The fee value of a single extra placement</span>
+      <div class="capacity">
+        <div class="cap-row">
+          <span class="cap-name">Before The Placement OS</span>
+          <div class="cap-bar"><div class="fill" style="width:65%"><span>Recruiting 65%</span></div></div>
+          <div class="cap-sub">Admin 35%</div>
+        </div>
+        <div class="cap-row">
+          <span class="cap-name">After The Placement OS</span>
+          <div class="cap-bar"><div class="fill" style="width:90%"><span>Recruiting 90%</span></div></div>
+          <div class="cap-sub">Admin 10%</div>
+        </div>
       </div>
       <div class="results-copy">
-        <span class="kicker">What the work is worth</span>
-        <p>Healthcare staffing runs on placement fees, typically <strong>20 to 25% of a hire's first-year salary</strong>. On a mid-level role that's $18k to $22k per placement.</p>
-        <p>The Placement OS turns lost admin time back into placement time. <strong>It pays for itself on one extra placement,</strong> and a full recruiting desk has far more than one hour a week to reclaim.</p>
+        <span class="kicker">The capacity shift</span>
+        <h3>Same team. Far more selling time.</h3>
+        <p>If your recruiters spent <strong>25% more of their week</strong> talking to candidates instead of updating records, how many more placements would that mean each quarter?</p>
+        <p>Say your average placement fee is <strong>$20,000</strong>. Just one extra placement per quarter is <strong>$80,000 a year</strong>, from a single desk. Across a team, that recovered capacity compounds fast, and it costs a fraction of one new recruiter's salary.</p>
+        <p class="fineprint">Figures are illustrative estimates, not guaranteed results.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT'S INCLUDED ===== -->
+<section class="section-pad included" id="included">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">What's included</span>
+      <h2 class="section-title">Everything you get with The Placement OS<span class="tm">™</span></h2>
+    </div>
+    <div class="stack-core reveal">
+      <span class="lbl">The core</span>
+      <h3>The full Placement OS build and rollout</h3>
+      <p>All five proprietary frameworks configured to how your desks already work, installed, tested, and running on your real pipeline.</p>
+    </div>
+    <div class="bonuses">
+      <div class="bonus reveal">
+        <span class="blbl">Bonus 01</span>
+        <h4>Recruiter Time Audit</h4>
+        <p>A detailed report showing exactly where every recruiter loses hours.</p>
+      </div>
+      <div class="bonus reveal">
+        <span class="blbl">Bonus 02</span>
+        <h4>Placement Opportunity Calculator</h4>
+        <p>A dashboard estimating the additional annual revenue hiding in your recovered capacity.</p>
+      </div>
+      <div class="bonus reveal">
+        <span class="blbl">Bonus 03</span>
+        <h4>Executive Automation Roadmap</h4>
+        <p>A 3-month plan of the next capacity gains across the business.</p>
+      </div>
+      <div class="bonus reveal">
+        <span class="blbl">Bonus 04</span>
+        <h4>Recruiter Adoption Playbook</h4>
+        <p>Training, SOPs, and onboarding so the team actually uses the new workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GUARANTEE ===== -->
+<section class="section-pad guarantee-band" id="guarantee">
+  <div class="wrap">
+    <div class="gtee reveal">
+      <span class="shield">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+      </span>
+      <h2>Proven on your desk in 30 days, or you don't pay.</h2>
+      <p>We find your biggest capacity bottleneck and build a working pilot within 30 days. If you don't believe it is worth continuing, we refund every dollar you have paid, <strong>and you keep everything we have built.</strong></p>
     </div>
   </div>
 </section>
@@ -501,25 +640,25 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
   <div class="wrap">
     <div class="reveal">
       <span class="eyebrow">Fit check</span>
-      <h2 class="section-title">Let's be honest about who this suits.</h2>
+      <h2 class="section-title">Is this right for you?</h2>
     </div>
     <div class="fit-grid">
       <div class="fit-col yes reveal">
         <h3><span class="badge">✓</span> This is for you if</h3>
         <ul class="fit-list">
           <li>You run a healthcare or life science staffing agency doing $50k/month or more.</li>
-          <li>Your recruiters are buried in CRM and candidate admin instead of placing.</li>
-          <li>You'd rather get more out of your current team than hire your way out of the problem.</li>
-          <li>You're open to starting with a small, measured pilot before scaling.</li>
+          <li>Your recruiters are at capacity and growth currently means hiring.</li>
+          <li>You'd rather raise output from your current team than add payroll.</li>
+          <li>You're open to a measured 30-day pilot before scaling.</li>
         </ul>
       </div>
       <div class="fit-col no reveal">
         <h3><span class="badge">✕</span> This is not for you if</h3>
         <ul class="fit-list">
           <li>You're under $50k/month and every dollar of spend gets scrutinised.</li>
-          <li>Your operations are already fully automated and dialled in.</li>
-          <li>You want a magic button, not a process your team actually adopts.</li>
-          <li>You need placement numbers guaranteed. I guarantee the build, not adoption.</li>
+          <li>Your desks already run at peak with no wasted capacity.</li>
+          <li>You want a magic button, not a system your team adopts.</li>
+          <li>You need placement numbers guaranteed. We guarantee the build and the capacity, not how you use it.</li>
         </ul>
       </div>
     </div>
@@ -531,26 +670,24 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
   <div class="final-glow"></div>
   <div class="wrap inner">
     <div class="reveal">
-      <h2>Ready to fix this?</h2>
-      <p>Get your recruiters out of admin and back to placing. Start with a 30-day pilot, fully guaranteed.</p>
-      <p class="reassure">30 minutes. No pitch. Just a clear next step.</p>
+      <h2>Ready to place more with the team you have?</h2>
+      <p>Book a free strategy call. We'll map where your recruiter capacity is leaking and what recovering it is worth. No pitch.</p>
+      <p class="reassure">30 minutes. Just a clear next step.</p>
     </div>
     <div class="contact-card reveal">
       <form class="contact-form" id="contact-form" action="https://formspree.io/f/xlgoynyz" method="POST">
         <input type="text" name="name" placeholder="Your name" required />
         <input type="email" name="email" placeholder="Work email" required />
-        <input type="text" name="company" placeholder="Company" />
-        <select name="service">
-          <option value="" disabled selected>I'm interested in...</option>
-          <option>AI Discovery Call &amp; Readiness Assessment</option>
-          <option>AI Education &amp; Stakeholder Alignment</option>
-          <option>AI Strategy &amp; Roadmap Development</option>
-          <option>AI Automation &amp; Implementation</option>
-          <option>AI Governance &amp; Risk Management</option>
-          <option>Not sure yet, let's talk</option>
+        <input type="text" name="company" placeholder="Agency name" />
+        <select name="placements">
+          <option value="" disabled selected>Placements per month...</option>
+          <option>Under 10</option>
+          <option>10 to 30</option>
+          <option>30 to 60</option>
+          <option>60+</option>
         </select>
-        <textarea name="message" placeholder="Tell me briefly what you're trying to solve"></textarea>
-        <button type="submit" class="btn">Book a Discovery Call</button>
+        <textarea name="message" placeholder="Briefly, where does recruiter capacity leak on your team?"></textarea>
+        <button type="submit" class="btn">Book a free strategy call</button>
       </form>
     </div>
   </div>
@@ -561,7 +698,7 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
   <div class="wrap foot-inner">
     <div>
       <div class="foot-brand">Lighthouse AI Consulting</div>
-      <div class="foot-meta">The Placement OS · AI automation for healthcare &amp; life science staffing</div>
+      <div class="foot-meta">The Placement OS™ · Recruiter capacity for healthcare &amp; life science staffing</div>
     </div>
     <div class="foot-links">
       <a href="https://www.linkedin.com/in/colmporegan/" target="_blank" rel="noopener">LinkedIn</a>
