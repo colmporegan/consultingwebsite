@@ -337,6 +337,17 @@ nav {
 .what-is-logo { text-align: center; }
 .what-is h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 18px; }
 .what-is p { color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 14px; }
+/* WHO-I-HELP DROPDOWN */
+.nav-dropdown { position: relative; display: inline-flex; }
+.nav-drop-toggle { background: none; border: none; cursor: pointer; font-family: inherit; color: rgba(255,255,255,0.6); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px; padding: 0; transition: color 0.2s; }
+.nav-drop-toggle:hover, .nav-dropdown.open .nav-drop-toggle { color: #fff; }
+.nav-drop-toggle .chev { transition: transform .2s ease; }
+.nav-dropdown.open .nav-drop-toggle .chev { transform: rotate(180deg); }
+.nav-drop-menu { position: absolute; top: calc(100% + 20px); left: 50%; transform: translateX(-50%); min-width: 232px; background: rgba(10,22,40,0.98); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px; box-shadow: 0 24px 50px -20px rgba(0,0,0,0.65); display: none; flex-direction: column; gap: 2px; z-index: 120; }
+.nav-dropdown.open .nav-drop-menu { display: flex; }
+.nav-drop-menu a { display: block; padding: 11px 14px; border-radius: 8px; font-size: 14px; color: rgba(255,255,255,0.75); }
+.nav-drop-menu a small { display: block; font-size: 11.5px; color: rgba(255,255,255,0.42); margin-top: 3px; font-weight: 400; }
+.nav-drop-menu a:hover { background: rgba(255,255,255,0.06); color: #fff; }
 .nav-toggle { display: none; background: none; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 8px 9px; cursor: pointer; }
 .nav-toggle span { display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
 .nav-toggle span + span { margin-top: 5px; }
@@ -398,6 +409,11 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
   .nav-links a { display: block; padding: 13px 0; font-size: 15px; color: rgba(255,255,255,0.82); border-bottom: 1px solid rgba(255,255,255,0.07); }
   .nav-links a:last-child { border-bottom: none; }
   .nav-links .btn { margin-top: 14px; justify-content: center; }
+  .nav-dropdown { display: block; width: 100%; position: static; }
+  .nav-drop-toggle { width: 100%; justify-content: space-between; padding: 13px 0; font-size: 15px; color: rgba(255,255,255,0.82); border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .nav-drop-menu { position: static; transform: none; min-width: 0; background: none; border: none; box-shadow: none; padding: 2px 0 6px 16px; backdrop-filter: none; border-radius: 0; }
+  .nav-drop-menu a { padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .nav-drop-menu a small { display: none; }
   .services-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 520px) {
@@ -429,7 +445,13 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
     <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links">
       <a href="#services">Services</a>
-      <a href="/healthcare-staffing">Healthcare Staffing</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-drop-toggle">Who I Help <svg class="chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="nav-drop-menu">
+          <a href="/emergency-dental">Emergency Dental Clinics<small>24/7 AI receptionist that books patients</small></a>
+          <a href="/home-renovation">Home Renovation<small>AI that turns leads into booked estimates</small></a>
+        </div>
+      </div>
       <a href="case-studies.html">Case Studies</a>
       <a href="#why">Why Us</a>
       <a href="#faq">FAQ</a>
@@ -728,6 +750,18 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
       nv.classList.remove('open');
       tg.setAttribute('aria-expanded', 'false');
     });
+  });
+})();
+</script>
+<script>
+(function () {
+  document.querySelectorAll('.nav-drop-toggle').forEach(function (t) {
+    t.addEventListener('click', function (e) { e.stopPropagation(); t.parentElement.classList.toggle('open'); });
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(function (d) { d.classList.remove('open'); });
+    }
   });
 })();
 </script>
