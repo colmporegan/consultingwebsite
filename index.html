@@ -3,442 +3,202 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lighthouse AI Consulting | Practical AI for Business</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Lighthouse AI Consulting · Helping business leaders adopt AI with confidence</title>
+<meta name="description" content="Lighthouse AI Consulting helps businesses adopt AI the right way, with practical strategy, hands-on implementation, and ongoing governance. No hype, just results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --ink: #0a1628;
-  --paper: #f6f4f0;
-  --accent: #38bdf8;
-  --accent-dark: #0ea5e9;
-  --warm: #e8e4dd;
-  --muted: #6b7280;
-  --card-bg: #ffffff;
-  --border: #d4d0c8;
-  --green: #16a34a;
-  --hero-grad: linear-gradient(165deg, #0a1628 0%, #0f2847 55%, #164e78 100%);
-}
- 
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
- 
-html { scroll-behavior: smooth; }
- 
-body {
-  font-family: 'Instrument Sans', sans-serif;
-  color: var(--ink);
-  background: var(--paper);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
- 
-h1, h2, h3, h4 { font-family: 'Instrument Sans', sans-serif; font-weight: 700; }
- 
-.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
- 
-/* ---- HERO ---- */
-.hero {
-  background: var(--hero-grad);
-  color: #fff;
-  padding: 100px 0 90px;
-  position: relative;
-  overflow: hidden;
-}
-.hero::after {
-  content: '';
-  position: absolute;
-  top: -40%; right: -20%;
-  width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(56,189,248,0.15) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero-inner { position: relative; z-index: 1; max-width: 720px; }
-.hero-badge {
-  display: inline-block;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  padding: 6px 16px;
-  border-radius: 100px;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-bottom: 28px;
-  color: rgba(255,255,255,0.8);
-}
-.hero h1 {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  line-height: 1.12;
-  margin-bottom: 22px;
-  letter-spacing: -0.01em;
-}
-.hero h1 em { font-style: normal; color: var(--accent); }
-.hero p {
-  font-size: 1.15rem;
-  color: rgba(255,255,255,0.72);
-  max-width: 560px;
-  margin-bottom: 36px;
-  line-height: 1.7;
-}
-.hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.2s;
-  cursor: pointer;
-  border: none;
-}
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
-.btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.25); }
-.btn-outline:hover { border-color: rgba(255,255,255,0.5); background: rgba(255,255,255,0.05); }
- 
-/* ---- LOGOS ---- */
-.logos {
-  padding: 50px 0;
-  border-bottom: 1px solid var(--border);
-}
-.logos-label {
-  text-align: center;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 28px;
-}
-.logos-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 48px;
-  flex-wrap: wrap;
-}
-.logos-grid span {
-  font-family: 'Instrument Sans', sans-serif;
-  font-weight: 700;
-  font-size: 15px;
-  letter-spacing: 0.02em;
-  color: #999;
-  white-space: nowrap;
-}
- 
-/* ---- WHY SECTION ---- */
-.why { padding: 90px 0; }
-.section-label {
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-.why h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; }
-.why-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 32px;
-}
-.why-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px 28px;
-}
-.why-card .icon {
-  width: 44px; height: 44px;
-  background: rgba(56,189,248,0.1);
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 18px;
-  font-size: 20px;
-}
-.why-card h3 { font-size: 1.15rem; margin-bottom: 10px; }
-.why-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.65; }
- 
-/* ---- SERVICES ---- */
-.services {
-  padding: 90px 0;
-  background: var(--ink);
-  color: #fff;
-}
-.services .section-label { color: rgba(255,255,255,0.5); }
-.services h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; }
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-}
-.service-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 12px;
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  transition: border-color 0.2s;
-}
-.service-card:hover { border-color: rgba(255,255,255,0.2); }
-.service-card h3 { font-size: 1.15rem; margin-bottom: 12px; }
-.service-card p { font-size: 0.88rem; color: rgba(255,255,255,0.55); line-height: 1.7; flex: 1; margin-bottom: 20px; }
-.service-card a {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--accent);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-.service-card a:hover { text-decoration: underline; }
-.service-card a::after { content: '→'; }
- 
-/* ---- TESTIMONIALS ---- */
-.testimonials { padding: 90px 0; }
-.testimonials h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; }
-.test-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-}
-.test-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px 28px;
-}
-.test-card .stars { color: #f59e0b; font-size: 16px; margin-bottom: 14px; }
-.test-card blockquote {
-  font-size: 0.95rem;
-  color: var(--ink);
-  line-height: 1.7;
-  margin-bottom: 18px;
-  font-style: italic;
-}
-.test-card .attr {
-  font-size: 0.82rem;
-  color: var(--muted);
-  font-weight: 600;
-}
- 
-/* ---- CONTACT ---- */
-.contact {
-  padding: 90px 0;
-  background: var(--warm);
-}
-.contact-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
-}
-.contact h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 16px; }
-.contact > .container > .contact-wrap > div:first-child p { color: var(--muted); font-size: 1rem; margin-bottom: 24px; }
-.contact-info { font-size: 0.9rem; color: var(--muted); }
-.contact-info a { color: var(--accent); text-decoration: none; }
-.contact-form { display: flex; flex-direction: column; gap: 14px; }
-.contact-form input, .contact-form textarea, .contact-form select {
-  font-family: inherit;
-  font-size: 15px;
-  padding: 13px 16px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: #fff;
-  color: var(--ink);
-  outline: none;
-  transition: border-color 0.2s;
-}
-.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--accent); }
-.contact-form textarea { resize: vertical; min-height: 100px; }
-.contact-form .btn { width: 100%; justify-content: center; }
- 
-/* ---- FAQ ---- */
-.faq { padding: 90px 0; }
-.faq h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 50px; text-align: center; }
-.faq-list { max-width: 740px; margin: 0 auto; }
-.faq-item {
-  border-bottom: 1px solid var(--border);
-  padding: 22px 0;
-}
-.faq-item h3 { font-size: 1rem; margin-bottom: 10px; }
-.faq-item p {
-  font-size: 0.92rem;
-  color: var(--muted);
-  line-height: 1.7;
-}
- 
-/* ---- FINAL CTA ---- */
-.final-cta {
-  padding: 80px 0;
-  background: var(--hero-grad);
-  color: #fff;
-  text-align: center;
-}
-.final-cta h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); margin-bottom: 16px; }
-.final-cta p { color: rgba(255,255,255,0.6); margin-bottom: 32px; font-size: 1.05rem; }
-.final-cta .hero-ctas { justify-content: center; }
- 
-/* ---- FOOTER ---- */
-footer {
-  background: var(--ink);
-  color: rgba(255,255,255,0.5);
-  padding: 36px 0;
-  font-size: 0.85rem;
-}
-.footer-bottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
- 
-/* ---- NAV ---- */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  background: rgba(10,22,40,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  padding: 0 24px;
-}
-.nav-inner {
-  max-width: 1120px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 64px;
-}
-.nav-logo {
-  font-family: 'Instrument Sans', sans-serif;
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: #fff;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.nav-logo svg { flex-shrink: 0; }
- 
-/* ---- WHAT IS ---- */
-.what-is { padding: 90px 0; }
-.what-is-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-.what-is-logo { text-align: center; }
-.what-is h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 18px; }
-.what-is p { color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin-bottom: 14px; }
-/* WHO-I-HELP DROPDOWN */
-.nav-dropdown { position: relative; display: inline-flex; }
-.nav-drop-toggle { background: none; border: none; cursor: pointer; font-family: inherit; color: rgba(255,255,255,0.6); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px; padding: 0; transition: color 0.2s; }
-.nav-drop-toggle:hover, .nav-dropdown.open .nav-drop-toggle { color: #fff; }
-.nav-drop-toggle .chev { transition: transform .2s ease; }
-.nav-dropdown.open .nav-drop-toggle .chev { transform: rotate(180deg); }
-.nav-drop-menu { position: absolute; top: calc(100% + 20px); left: 50%; transform: translateX(-50%); min-width: 232px; background: rgba(10,22,40,0.98); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 8px; box-shadow: 0 24px 50px -20px rgba(0,0,0,0.65); display: none; flex-direction: column; gap: 2px; z-index: 120; }
-.nav-dropdown.open .nav-drop-menu { display: flex; }
-.nav-drop-menu a { display: block; padding: 11px 14px; border-radius: 8px; font-size: 14px; color: rgba(255,255,255,0.75); }
-.nav-drop-menu a small { display: block; font-size: 11.5px; color: rgba(255,255,255,0.42); margin-top: 3px; font-weight: 400; }
-.nav-drop-menu a:hover { background: rgba(255,255,255,0.06); color: #fff; }
-.nav-toggle { display: none; background: none; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 8px 9px; cursor: pointer; }
-.nav-toggle span { display: block; width: 20px; height: 2px; background: #fff; border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
-.nav-toggle span + span { margin-top: 5px; }
-nav.open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-nav.open .nav-toggle span:nth-child(2) { opacity: 0; }
-nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-@media (max-width: 768px) {
-  .what-is-wrap { grid-template-columns: 1fr; }
-  .what-is-logo { order: -1; }
-}
-.nav-logo em { font-style: normal; color: var(--accent); }
-.nav-links { display: flex; gap: 32px; align-items: center; }
-.nav-links a {
-  color: rgba(255,255,255,0.6);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: #fff; }
-.nav-links .btn { padding: 10px 22px; font-size: 14px; color: #fff; font-weight: 700; }
- 
-.hero { padding-top: 160px; }
- 
-/* ---- ABOUT ---- */
-.about { padding: 90px 0; background: var(--ink); color: #fff; }
-.about-wrap {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 56px;
-  align-items: center;
-}
-.about-photo {
-  width: 280px; height: 280px;
-  border-radius: 14px;
-  object-fit: cover;
-  filter: grayscale(0.2);
-}
-.about h2 { font-size: clamp(1.8rem, 3vw, 2.2rem); margin-bottom: 18px; }
-.about p { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.75; margin-bottom: 14px; }
-.about p strong { color: #fff; }
-@media (max-width: 768px) {
-  .about-wrap { grid-template-columns: 1fr; text-align: center; }
-  .about-photo { margin: 0 auto; }
-}
- 
-/* ---- RESPONSIVE ---- */
-@media (max-width: 768px) {
-  .contact-wrap { grid-template-columns: 1fr; gap: 40px; }
-  .nav-toggle { display: block; }
-  .nav-links {
-    display: none; position: absolute; top: 100%; left: 0; right: 0;
-    background: rgba(10,22,40,0.98); backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-    flex-direction: column; align-items: stretch; gap: 0;
-    padding: 8px 24px 18px;
+  :root{
+    --sky1:#101a30; --sky2:#233150; --dusk:#6a4a63; --horizon:#c9885f;
+    --sand:#EEE2CC; --sand2:#E6D7BC; --cream:#FBF4E7; --card:#F6EFDF;
+    --beam:#F4B26A; --coral:#E98A5B; --ink:#182338; --deep:#14233C;
+    --muted:#5b5343; --faint:#8a8069; --line:#DED0B5;
+    --disp:'Bricolage Grotesque',sans-serif; --body:'Inter',sans-serif;
+    --maxw:1140px;
   }
-  nav.open .nav-links { display: flex; }
-  .nav-links a { display: block; padding: 13px 0; font-size: 15px; color: rgba(255,255,255,0.82); border-bottom: 1px solid rgba(255,255,255,0.07); }
-  .nav-links a:last-child { border-bottom: none; }
-  .nav-links .btn { margin-top: 14px; justify-content: center; }
-  .nav-dropdown { display: block; width: 100%; position: static; }
-  .nav-drop-toggle { width: 100%; justify-content: space-between; padding: 13px 0; font-size: 15px; color: rgba(255,255,255,0.82); border-bottom: 1px solid rgba(255,255,255,0.07); }
-  .nav-drop-menu { position: static; transform: none; min-width: 0; background: none; border: none; box-shadow: none; padding: 2px 0 6px 16px; backdrop-filter: none; border-radius: 0; }
-  .nav-drop-menu a { padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
-  .nav-drop-menu a small { display: none; }
-  .services-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 520px) {
-  .nav-logo { font-size: 0.92rem; gap: 8px; }
-  .nav-logo svg { width: 24px; height: 24px; }
-}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--sand);color:var(--ink);font-family:var(--body);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 34px}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4{font-family:var(--disp);font-weight:600;letter-spacing:-.02em;line-height:1.14}
+  section{position:relative}
+  .eyebrow{font-family:var(--body);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);font-weight:600;margin-bottom:18px;display:inline-block}
+  .band-dark .eyebrow{color:var(--beam)}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:15px;padding:15px 28px;border-radius:100px;border:1px solid transparent;cursor:pointer;transition:background .2s,transform .18s,color .2s}
+  .btn-primary{background:var(--beam);color:#3a2410;border-color:var(--beam)}
+  .btn-primary:hover{background:#ffc987;transform:translateY(-1px)}
+  .btn-ghost{background:transparent;color:var(--cream);border-color:rgba(251,244,231,.45)}
+  .btn-ghost:hover{background:rgba(251,244,231,.1)}
+
+  /* ---------- NAV ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(16,26,48,.82);backdrop-filter:blur(12px);border-bottom:1px solid rgba(251,244,231,.08)}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:15px 34px;display:flex;align-items:center;justify-content:space-between}
+  .nav-logo{font-family:var(--disp);font-weight:600;font-size:19px;color:var(--cream);display:flex;align-items:center;gap:11px}
+  .nav-logo em{font-style:normal;color:var(--beam)}
+  .nav-links{display:flex;align-items:center;gap:26px}
+  .nav-links>a:not(.btn){color:rgba(251,244,231,.72);font-size:14.5px;transition:color .2s}
+  .nav-links>a:not(.btn):hover{color:#fff}
+  .nav-links .btn{padding:10px 20px;font-size:14px}
+  .nav-toggle{display:none;background:none;border:1px solid rgba(251,244,231,.3);border-radius:8px;padding:8px 9px;cursor:pointer}
+  .nav-toggle span{display:block;width:20px;height:2px;background:var(--cream);border-radius:2px;transition:transform .25s,opacity .2s}
+  .nav-toggle span+span{margin-top:5px}
+  nav.open .nav-toggle span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  nav.open .nav-toggle span:nth-child(2){opacity:0}
+  nav.open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ---------- HERO SCENE ---------- */
+  .scene{position:relative;min-height:90vh;overflow:hidden;color:var(--cream);display:flex;align-items:center;
+    background:linear-gradient(180deg,var(--sky1) 0%,var(--sky2) 40%,var(--dusk) 72%,var(--horizon) 100%)}
+  .stars{position:absolute;inset:0;z-index:0}
+  .stars i{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.7}
+  .glow{position:absolute;left:50%;top:58%;width:1000px;height:1000px;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(244,178,106,.22),transparent 60%);pointer-events:none;z-index:0}
+  .beam{position:absolute;right:15%;bottom:150px;width:62%;height:520px;transform-origin:bottom right;transform:rotate(8deg);z-index:1;
+    background:linear-gradient(to top left,rgba(255,214,150,.5),rgba(244,178,106,.12) 55%,rgba(244,178,106,0) 78%);
+    clip-path:polygon(100% 100%,52% 0,100% 0);filter:blur(2px)}
+  .beam.b2{transform:rotate(-6deg);opacity:.55}
+
+  .house{position:absolute;right:13%;bottom:0;width:120px;z-index:2;filter:drop-shadow(0 18px 30px rgba(0,0,0,.4))}
+  .lantern{width:34px;height:22px;background:var(--beam);margin:0 auto;border-radius:3px 3px 0 0;box-shadow:0 0 30px 8px rgba(244,178,106,.85)}
+  .gallery{width:54px;height:8px;background:#e7dccb;margin:0 auto;border-radius:2px}
+  .towerwrap{position:relative;width:64px;margin:0 auto}
+  .tower{width:64px;height:158px;background:linear-gradient(90deg,#e0d3bd,#f6efe2 42%,#ded0b8);clip-path:polygon(27% 0,73% 0,88% 100%,12% 100%)}
+  .band{position:absolute;left:50%;transform:translateX(-50%);width:64px;height:24px;background:var(--coral)}
+  .band.b1{top:36px;clip-path:polygon(30% 0,70% 0,74% 100%,26% 100%)}
+  .band.b2{top:96px;clip-path:polygon(26% 0,74% 0,80% 100%,20% 100%)}
+  .base{width:100px;height:18px;background:#1a2740;margin:0 auto;border-radius:3px}
+  .rocks{position:absolute;left:0;right:0;bottom:0;height:64px;z-index:1;background:#15233a;
+    clip-path:polygon(0 60%,8% 42%,20% 56%,34% 34%,50% 54%,66% 32%,82% 54%,92% 40%,100% 58%,100% 100%,0 100%)}
+
+  .hero-copy{position:relative;z-index:3;max-width:660px;padding-top:70px}
+  .hero-copy h1{font-family:var(--disp);font-weight:600;font-size:clamp(38px,5.8vw,72px);line-height:1.05;letter-spacing:-.03em}
+  .hero-copy h1 em{font-style:normal;color:var(--beam)}
+  .hero-copy p{font-size:clamp(17px,2vw,20px);color:rgba(251,244,231,.8);margin-top:26px;max-width:50ch;line-height:1.6}
+  .hero-ctas{margin-top:36px;display:flex;gap:16px;flex-wrap:wrap}
+
+  /* ---------- LOGOS ---------- */
+  .logos{background:var(--sand);padding:44px 0;border-bottom:1px solid var(--line)}
+  .logos-label{text-align:center;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:22px}
+  .logos-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 46px}
+  .logos-grid span{font-family:var(--disp);font-size:19px;color:var(--muted);opacity:.75}
+
+  /* ---------- SECTION FRAME ---------- */
+  .pad{padding:clamp(72px,10vw,120px) 0}
+  .band-warm{background:var(--sand2)}
+  .band-dark{background:var(--deep);color:var(--cream)}
+  .band-dark h2,.band-dark h3{color:var(--cream)}
+  .sec-head h2{font-size:clamp(28px,4vw,44px);color:var(--ink);max-width:20ch}
+  .band-dark .sec-head h2{color:var(--cream)}
+  .sec-head .intro{color:var(--muted);font-size:17px;line-height:1.75;max-width:66ch;margin-top:16px}
+  .band-dark .sec-head .intro{color:rgba(251,244,231,.72)}
+
+  /* ---------- WHAT IS / STORY ---------- */
+  .what-is-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+  .what-is h2{font-size:clamp(28px,4vw,44px);margin-bottom:22px}
+  .what-is p{color:var(--muted);font-size:17px;line-height:1.8;margin-bottom:16px;max-width:56ch}
+  .what-is-logo{text-align:center}
+  .what-is-logo img{width:340px;max-width:100%;filter:drop-shadow(0 24px 50px rgba(24,35,56,.28))}
+
+  /* ---------- WHY (dark) ---------- */
+  .why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:52px}
+  .why-card{background:rgba(251,244,231,.05);border:1px solid rgba(251,244,231,.12);border-radius:18px;padding:30px 28px}
+  .why-card .icon{font-size:26px;margin-bottom:16px}
+  .why-card h3{font-size:21px;color:var(--cream);margin-bottom:8px}
+  .why-card p{color:rgba(251,244,231,.68);font-size:15px}
+
+  /* ---------- SERVICES ---------- */
+  .services .lead{color:var(--muted);font-size:17px;line-height:1.8;max-width:70ch;margin:16px 0 50px}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .service-card{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:30px 28px;display:flex;flex-direction:column}
+  .service-card h3{font-size:20px;margin-bottom:12px}
+  .service-card>p{color:var(--muted);font-size:14.5px;margin-bottom:16px;flex:1}
+  .service-card .bestfor{font-size:12.5px;color:var(--faint);margin-bottom:16px}
+  .service-card>a{color:var(--coral);font-weight:600;font-size:14.5px;border-bottom:1.5px solid transparent;align-self:flex-start;transition:border-color .2s}
+  .service-card>a:hover{border-color:var(--coral)}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
+  .test-card{background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:30px 28px;display:flex;flex-direction:column}
+  .test-card .stars{color:var(--coral);letter-spacing:3px;font-size:14px;margin-bottom:16px}
+  .test-card blockquote{font-family:var(--disp);font-size:16px;line-height:1.6;color:var(--ink);font-weight:400;margin-bottom:18px;flex:1}
+  .test-card .attr{font-size:13.5px;color:var(--muted)}
+
+  /* ---------- CONTACT (dark) ---------- */
+  .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .contact h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:16px}
+  .contact p{color:rgba(251,244,231,.72);font-size:17px;line-height:1.7;max-width:44ch}
+  .contact-info{margin-top:22px;font-size:15px;color:rgba(251,244,231,.72)}
+  .contact-info a{color:var(--beam);border-bottom:1px solid rgba(244,178,106,.4)}
+  .contact-form{background:var(--cream);border-radius:20px;padding:30px;display:flex;flex-direction:column;gap:13px}
+  .contact-form input,.contact-form select,.contact-form textarea{width:100%;padding:13px 15px;border:1px solid var(--line);border-radius:10px;background:#fff;font-family:var(--body);font-size:15px;color:var(--ink)}
+  .contact-form textarea{resize:vertical;min-height:96px}
+  .contact-form input::placeholder,.contact-form textarea::placeholder{color:var(--faint)}
+  .contact-form select{color:var(--muted)}
+  .contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{outline:none;border-color:var(--coral)}
+  .contact-form .btn{width:100%;justify-content:center;margin-top:4px}
+
+  /* ---------- ABOUT ---------- */
+  .about-wrap{display:grid;grid-template-columns:260px 1fr;gap:56px;align-items:center}
+  .about-photo{width:260px;height:300px;object-fit:cover;border-radius:6px;filter:grayscale(.18) sepia(.05);border:6px solid var(--cream);box-shadow:0 22px 44px -22px rgba(24,35,56,.5)}
+  .about h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:18px}
+  .about p{color:var(--muted);font-size:16.5px;line-height:1.8;margin-bottom:15px;max-width:60ch}
+  .about p strong{color:var(--ink);font-weight:600}
+
+  /* ---------- FAQ ---------- */
+  .faq h2{font-size:clamp(28px,4vw,44px);margin-bottom:44px}
+  .faq-list{display:grid;grid-template-columns:1fr 1fr;gap:34px 48px}
+  .faq-item h3{font-size:19px;margin-bottom:8px;color:var(--ink)}
+  .faq-item p{color:var(--muted);font-size:15px;line-height:1.7}
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta{background:linear-gradient(160deg,var(--sky1),var(--dusk) 120%);color:var(--cream);text-align:center;overflow:hidden}
+  .final-cta::after{content:"";position:absolute;left:50%;top:-40%;width:700px;height:700px;transform:translateX(-50%);background:radial-gradient(circle,rgba(244,178,106,.2),transparent 60%)}
+  .final-cta .container{position:relative;z-index:1}
+  .final-cta h2{font-size:clamp(30px,4.6vw,52px);margin-bottom:14px}
+  .final-cta p{color:rgba(251,244,231,.78);font-size:18px;margin-bottom:32px}
+  .final-cta .hero-ctas{justify-content:center}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--deep);color:rgba(251,244,231,.55);padding:34px 0;font-size:14px}
+  .footer-bottom{display:flex;justify-content:center;align-items:center}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:920px){
+    .what-is-wrap{grid-template-columns:1fr;gap:40px}
+    .what-is-logo{order:-1}
+    .why-grid{grid-template-columns:1fr}
+    .services-grid,.test-grid{grid-template-columns:1fr}
+    .contact-wrap{grid-template-columns:1fr;gap:34px}
+    .about-wrap{grid-template-columns:1fr;gap:30px;text-align:center}
+    .about-photo{margin:0 auto}
+    .faq-list{grid-template-columns:1fr;gap:26px}
+  }
+  @media(max-width:760px){
+    .nav-toggle{display:block}
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(16,26,48,.98);backdrop-filter:blur(14px);padding:8px 34px 20px;border-bottom:1px solid rgba(251,244,231,.1)}
+    nav.open .nav-links{display:flex}
+    .nav-links>a:not(.btn){padding:13px 0;border-bottom:1px solid rgba(251,244,231,.08)}
+    .nav-links .btn{margin-top:14px;justify-content:center}
+    .house{width:92px}.beam{opacity:.6}
+  }
 </style>
 </head>
 <body>
- 
-<!-- NAV -->
-<nav>
+
+<nav id="nav">
   <div class="nav-inner">
     <a href="#" class="nav-logo">
-      <svg width="32" height="32" viewBox="-20 -2 68 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="14" cy="34" r="32" fill="none" stroke="#fff" stroke-width="1.5"/>
-        <rect x="8" y="22" width="12" height="28" fill="#fff"/>
-        <path d="M14 10 L8 22 L20 22Z" fill="#fff"/>
-        <circle cx="14" cy="14" r="4" fill="#38bdf8"/>
-        <line x1="-4" y1="14" x2="6" y2="14" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="22" y1="14" x2="32" y2="14" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
-        <line x1="2" y1="4" x2="8" y2="10" stroke="#38bdf8" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-        <line x1="26" y1="4" x2="20" y2="10" stroke="#38bdf8" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
-        <rect x="8" y="34" width="12" height="4" fill="#38bdf8"/>
-        <path d="M-12 54 C-4 50, 4 56, 14 52 C24 48, 32 54, 40 50" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.35"/>
+      <svg width="28" height="28" viewBox="-20 -2 68 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="14" cy="34" r="32" fill="none" stroke="#FBF4E7" stroke-width="1.5"/>
+        <rect x="8" y="22" width="12" height="28" fill="#FBF4E7"/>
+        <path d="M14 10 L8 22 L20 22Z" fill="#FBF4E7"/>
+        <circle cx="14" cy="14" r="4" fill="#F4B26A"/>
+        <line x1="-4" y1="14" x2="6" y2="14" stroke="#F4B26A" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="22" y1="14" x2="32" y2="14" stroke="#F4B26A" stroke-width="1.5" stroke-linecap="round"/>
+        <rect x="8" y="34" width="12" height="4" fill="#F4B26A"/>
       </svg>
       Lighthouse <em>AI</em> Consulting
     </a>
@@ -446,6 +206,7 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
     <div class="nav-links">
       <a href="#services">Services</a>
       <a href="/real-estate">Real Estate</a>
+      <a href="/healthcare-staffing">Healthcare Staffing</a>
       <a href="case-studies.html">Case Studies</a>
       <a href="#why">Why Us</a>
       <a href="#faq">FAQ</a>
@@ -453,21 +214,59 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
     </div>
   </div>
 </nav>
- 
+
 <!-- HERO -->
-<section class="hero">
+<section class="scene">
+  <div class="stars">
+    <i style="left:10%;top:16%"></i><i style="left:20%;top:28%"></i><i style="left:32%;top:12%"></i>
+    <i style="left:46%;top:22%"></i><i style="left:58%;top:14%"></i><i style="left:70%;top:26%"></i>
+    <i style="left:80%;top:18%;width:3px;height:3px"></i><i style="left:16%;top:40%"></i><i style="left:40%;top:36%"></i>
+    <i style="left:6%;top:24%"></i><i style="left:88%;top:32%"></i><i style="left:52%;top:8%"></i>
+  </div>
+  <div class="glow"></div>
+  <div class="beam b2"></div>
+  <div class="beam"></div>
+
+  <div class="house">
+    <div class="lantern"></div>
+    <div class="gallery"></div>
+    <div class="towerwrap">
+      <div class="tower"></div>
+      <div class="band b1"></div>
+      <div class="band b2"></div>
+    </div>
+    <div class="base"></div>
+  </div>
+  <div class="rocks"></div>
+
   <div class="container">
-    <div class="hero-inner">
-      <div class="hero-badge">AI consulting for business leaders</div>
-      <h1>Helping business leaders<br><em>adopt AI</em> with confidence</h1>
+    <div class="hero-copy">
+      <h1>Helping business leaders <em>adopt AI</em> with confidence</h1>
       <p>Lighthouse AI Consulting helps businesses adopt AI the right way, with practical strategy, hands-on implementation, and ongoing governance. No hype, just results.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
+        <a href="#why" class="btn btn-ghost">Why Lighthouse</a>
       </div>
     </div>
   </div>
 </section>
- 
+
+<!-- ABOUT -->
+<section class="about band-warm pad">
+  <div class="container">
+    <div class="about-wrap">
+      <img src="images/Headshot.jpg" alt="Colm O'Regan" class="about-photo">
+      <div>
+        <div class="eyebrow">About</div>
+        <h2>Meet Colm O'Regan</h2>
+        <p>I'm a former research scientist with a Ph.D. in chemistry and over 10 years working in research labs. That background gave me a rigorous, evidence-based approach to problem-solving that I now apply to AI consulting.</p>
+        <p>Since 2015, I've been working with businesses on marketing strategy, content, and technology adoption. Now I help companies <strong>adopt AI with confidence</strong>, through discovery, strategy, implementation, and governance.</p>
+        <p><strong>I don't sell tools or push trends.</strong> I help you figure out where AI actually makes sense for your business, then build a plan to get there. Practical, clear, and focused on results. Finally, I'm the founder of BestLabTech.com, where I review lab software and help buyers find the right tools for their workflow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- LOGOS -->
 <section class="logos">
   <div class="container">
@@ -481,30 +280,32 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
     </div>
   </div>
 </section>
- 
-<!-- WHAT IS -->
-<section class="what-is">
+
+<!-- WHAT IS / STORY -->
+<section class="what-is pad">
   <div class="container">
     <div class="what-is-wrap">
       <div>
-        <div class="section-label">My story</div>
+        <div class="eyebrow">My story</div>
         <h2>What is Lighthouse AI Consulting?</h2>
         <p>The name Lighthouse takes its inspiration from the lighthouse that stands on Fastnet Rock off the southwest coast of Ireland. For over a century, it has guided ships safely through some of the most challenging waters in the North Atlantic.</p>
         <p>That's the idea behind Lighthouse AI Consulting. I shine a light on AI and help business leaders see the best path forward towards adoption. No hype, no confusion, just clear, practical guidance that delivers real results.</p>
         <p>Based in Ireland and serving clients worldwide, Lighthouse AI Consulting brings hands-on expertise to every engagement, whether you're across the road or across the ocean.</p>
       </div>
       <div class="what-is-logo">
-        <img src="images/lighthouse.png" alt="Lighthouse AI Consulting" style="width:400px;">
+        <img src="images/lighthouse.png" alt="Lighthouse AI Consulting">
       </div>
     </div>
   </div>
 </section>
- 
+
 <!-- WHY -->
-<section class="why" id="why">
+<section class="why band-dark pad" id="why">
   <div class="container">
-    <div class="section-label">Why Lighthouse AI</div>
-    <h2>AI consulting that focuses on what actually matters</h2>
+    <div class="sec-head">
+      <div class="eyebrow">Why Lighthouse AI</div>
+      <h2>AI consulting that focuses on what actually matters</h2>
+    </div>
     <div class="why-grid">
       <div class="why-card">
         <div class="icon">🎯</div>
@@ -529,83 +330,80 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
     </div>
   </div>
 </section>
- 
+
 <!-- SERVICES -->
-<section class="services" id="services">
+<section class="services pad" id="services">
   <div class="container">
-    <div class="section-label">Services</div>
-    <h2>How I help</h2>
-    <p style="color:rgba(255,255,255,0.55); font-size:1rem; line-height:1.75; max-width:700px; margin-bottom:50px;">AI should solve problems, not create more of them. But too often, businesses rush in without a strategy, spending time and money on tools that don't deliver. That's why I start with discovery. Instead of chasing trends, I focus on what actually moves the needle for your business. Before talking about solutions, I dig into your workflows, challenges, and opportunities, pinpointing where AI can have a real impact. No tech hype, just practical, real-world solutions.</p>
+    <div class="eyebrow">Services</div>
+    <h2 style="font-size:clamp(28px,4vw,44px)">How I help</h2>
+    <p class="lead">AI should solve problems, not create more of them. But too often, businesses rush in without a strategy, spending time and money on tools that don't deliver. That's why I start with discovery. Instead of chasing trends, I focus on what actually moves the needle for your business. Before talking about solutions, I dig into your workflows, challenges, and opportunities, pinpointing where AI can have a real impact. No tech hype, just practical, real-world solutions.</p>
     <div class="services-grid">
       <div class="service-card">
-        <h3>AI Discovery Call & Readiness Assessment</h3>
+        <h3>AI Discovery Call &amp; Readiness Assessment</h3>
         <p>A complimentary 30-minute consultation to assess your AI needs and goals. I'll help you identify quick wins and your biggest AI opportunities, give you expert insights on where AI makes sense for your business, and leave you with actionable next steps, even if you're just exploring.</p>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Businesses curious about AI but unsure where to start</div>
+        <div class="bestfor">Best for: Businesses curious about AI but unsure where to start</div>
         <a href="#contact">Book a Free Discovery Call</a>
       </div>
       <div class="service-card">
-        <h3>AI Education & Stakeholder Alignment</h3>
+        <h3>AI Education &amp; Stakeholder Alignment</h3>
         <p>AI explained in simple terms: what it is, what it isn't, and how it applies to your business. Includes industry-specific use cases, coverage of AI risks and best practices around security, compliance, and ethics, plus stakeholder alignment sessions so your team is on board before adoption.</p>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Companies interested in AI but hesitant about where to begin</div>
+        <div class="bestfor">Best for: Companies interested in AI but hesitant about where to begin</div>
         <a href="#contact">Contact for more information</a>
       </div>
       <div class="service-card">
-        <h3>AI Strategy & Roadmap Development</h3>
+        <h3>AI Strategy &amp; Roadmap Development</h3>
         <p>I evaluate AI opportunities and risks specific to your business, then develop a custom AI roadmap aligned with your goals. Covers ethical, secure, and compliant adoption with AI projects prioritised based on ROI and feasibility.</p>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Companies that need a clear strategy before investing in AI tools</div>
+        <div class="bestfor">Best for: Companies that need a clear strategy before investing in AI tools</div>
         <a href="#contact">Contact for more information</a>
       </div>
       <div class="service-card">
-        <h3>AI Automation & Implementation</h3>
+        <h3>AI Automation &amp; Implementation</h3>
         <p>I identify high-impact areas for AI-driven automation and integrate AI tools to streamline workflows and boost efficiency. Includes improving decision-making with AI-powered insights and training your teams on how to use AI effectively in daily operations.</p>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Businesses ready to actively implement AI with expert guidance</div>
+        <div class="bestfor">Best for: Businesses ready to actively implement AI with expert guidance</div>
         <a href="#contact">Contact for more information</a>
       </div>
       <div class="service-card">
-        <h3>AI Governance & Risk Management</h3>
+        <h3>AI Governance &amp; Risk Management</h3>
         <p>I establish AI policies and best practices for responsible, compliant use, ensuring your AI solutions meet security, compliance, and ethical standards. Includes monitoring risks associated with bias, misuse, or security vulnerabilities, plus quarterly AI audits to refine and optimise your initiatives.</p>
-        <div style="font-size:0.82rem; color:rgba(255,255,255,0.35); margin-bottom:14px;">Best for: Organisations that need long-term AI governance and risk management</div>
+        <div class="bestfor">Best for: Organisations that need long-term AI governance and risk management</div>
         <a href="#contact">Contact for more information</a>
       </div>
     </div>
   </div>
 </section>
- 
+
 <!-- TESTIMONIALS -->
-<section class="testimonials">
+<section class="testimonials band-warm pad">
   <div class="container">
-    <div class="section-label">Testimonials</div>
-    <h2>What clients say</h2>
+    <div class="eyebrow">Testimonials</div>
+    <h2 style="font-size:clamp(28px,4vw,44px)">What clients say</h2>
     <div class="test-grid">
       <div class="test-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"The quality of work was higher than expected. We asked  to turn a customer interview into an article, but he delivered a polished success story with a much more engaging style. He understood our business objectives and provided professional suggestions on gated content SEO, plus a full communications package including emails and social posts. Overall, I'm very satisfied."</blockquote>
+        <blockquote>"The quality of work was higher than expected. We asked Colm to turn a customer interview into an article, but he delivered a polished success story with a much more engaging style. He understood our business objectives and provided professional suggestions on gated content SEO, plus a full communications package including emails and social posts. Overall, I'm very satisfied."</blockquote>
         <div class="attr">– Shiyo Lin, Marketing Manager EMEA, Leica Microsystems</div>
       </div>
       <div class="test-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"'s AI Marketing Roadmap showed me exactly how AI could help with competitor research, audience insights, and creating content quickly. He asked great questions to make sure the roadmap matched what I needed, and gave me a clear plan with practical tools I could use straight away. I'd recommend this to any marketer who feels stuck or overwhelmed by AI."</blockquote>
+        <blockquote>"Colm's AI Marketing Roadmap showed me exactly how AI could help with competitor research, audience insights, and creating content quickly. He asked great questions to make sure the roadmap matched what I needed, and gave me a clear plan with practical tools I could use straight away. I'd recommend this to any marketer who feels stuck or overwhelmed by AI."</blockquote>
         <div class="attr">– Ricardo Wilkins, Health Science Author, ASEA</div>
       </div>
       <div class="test-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"I was blown away by how comprehensive and tailored 's AI Roadmap service is. He broke the process down into bite-size steps and spoke directly to my pain points. I'd recommend it to any marketer who wants to use AI to work smarter, not harder."</blockquote>
+        <blockquote>"I was blown away by how comprehensive and tailored Colm's AI Roadmap service is. He broke the process down into bite-size steps and spoke directly to my pain points. I'd recommend it to any marketer who wants to use AI to work smarter, not harder."</blockquote>
         <div class="attr">– Shawn Jones Clarke, Wellness Consultant, ASEA</div>
       </div>
     </div>
   </div>
 </section>
- 
+
 <!-- CONTACT -->
-<section class="contact" id="contact">
+<section class="contact band-dark pad" id="contact">
   <div class="container">
     <div class="contact-wrap">
       <div>
-        <div class="section-label">Get started</div>
+        <div class="eyebrow">Get started</div>
         <h2>Let's talk about your AI roadmap</h2>
         <p>Book a free 30-minute discovery call. No pitch deck, just a focused conversation about where AI can move the needle for your team.</p>
         <div class="contact-info">
-          <p>Or email directly: <a href="mailto:@colmporegan.com">colm@colmporegan.com</a></p>
+          <p>Or email directly: <a href="mailto:colm@lighthouseaiconsulting.com">colm@lighthouseaiconsulting.com</a></p>
         </div>
       </div>
       <form class="contact-form" id="contact-form" action="https://formspree.io/f/xlgoynyz" method="POST">
@@ -615,48 +413,22 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
         <input type="text" name="company" placeholder="Company">
         <select name="service">
           <option value="" disabled selected>I'm interested in...</option>
-          <option>AI Discovery Call & Readiness Assessment</option>
-          <option>AI Education & Stakeholder Alignment</option>
-          <option>AI Strategy & Roadmap Development</option>
-          <option>AI Automation & Implementation</option>
-          <option>AI Governance & Risk Management</option>
+          <option>AI Discovery Call &amp; Readiness Assessment</option>
+          <option>AI Education &amp; Stakeholder Alignment</option>
+          <option>AI Strategy &amp; Roadmap Development</option>
+          <option>AI Automation &amp; Implementation</option>
+          <option>AI Governance &amp; Risk Management</option>
           <option>Not sure yet, let's talk</option>
         </select>
         <textarea name="message" placeholder="Tell me briefly what you're trying to solve"></textarea>
         <button type="submit" class="btn btn-primary">Book a Discovery Call</button>
       </form>
- 
-      <!-- Success modal -->
-      <div id="form-modal" style="display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.5); z-index:999; align-items:center; justify-content:center;">
-        <div style="background:#fff; border-radius:12px; padding:40px 36px; max-width:460px; text-align:center; margin:20px; box-shadow:0 20px 60px rgba(0,0,0,0.2);">
-          <div style="font-size:48px; margin-bottom:16px;">&#10003;</div>
-          <h3 style="font-size:1.3rem; margin-bottom:12px; color:#0a1628;">Thank you!</h3>
-          <p style="color:#6b7280; font-size:0.95rem; line-height:1.7;">Your form has been successfully submitted. I'll reach out to you within 24 hours to schedule a call.</p>
-          <button onclick="document.getElementById('form-modal').style.display='none'" class="btn btn-primary" style="margin-top:20px;">Got it</button>
-        </div>
-      </div>
     </div>
   </div>
 </section>
- 
-<!-- ABOUT -->
-<section class="about">
-  <div class="container">
-    <div class="about-wrap">
-      <img src="images/Headshot.jpg" alt="Colm O'Regan" class="about-photo">
-      <div>
-        <div class="section-label" style="color:rgba(255,255,255,0.4);">About</div>
-        <h2>Meet Colm O'Regan</h2>
-        <p>I'm a former research scientist with a Ph.D. in chemistry and over 10 years working in research labs. That background gave me a rigorous, evidence-based approach to problem-solving that I now apply to AI consulting.</p>
-        <p>Since 2015, I've been working with businesses on marketing strategy, content, and technology adoption. Now I help companies <strong>adopt AI with confidence</strong>, through discovery, strategy, implementation, and governance.</p>
-        <p><strong>I don't sell tools or push trends.</strong> I help you figure out where AI actually makes sense for your business, then build a plan to get there. Practical, clear, and focused on results. Finally, I’m the founder of BestLabTech.com, where I review lab software and help buyers find the right tools for their workflow.</p>
-      </div>
-    </div>
-  </div>
-</section>
- 
+
 <!-- FAQ -->
-<section class="faq" id="faq">
+<section class="faq band-warm pad" id="faq">
   <div class="container">
     <h2>Frequently asked questions</h2>
     <div class="faq-list">
@@ -691,9 +463,9 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
     </div>
   </div>
 </section>
- 
+
 <!-- FINAL CTA -->
-<section class="final-cta">
+<section class="final-cta pad">
   <div class="container">
     <h2>Ready to put AI to work?</h2>
     <p>Your competitors are experimenting. Your team should be implementing.</p>
@@ -702,16 +474,16 @@ nav.open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45d
     </div>
   </div>
 </section>
- 
+
 <!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-bottom" style="justify-content: center;">
+    <div class="footer-bottom">
       <span>&copy; 2026 Lighthouse AI Consulting. All rights reserved.</span>
     </div>
   </div>
 </footer>
- 
+
 <script>
 document.getElementById('contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -733,7 +505,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 </script>
 <script>
 (function () {
-  var nv = document.querySelector('nav');
+  var nv = document.getElementById('nav');
   var tg = nv && nv.querySelector('.nav-toggle');
   if (!nv || !tg) return;
   tg.addEventListener('click', function () {
@@ -745,18 +517,6 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
       nv.classList.remove('open');
       tg.setAttribute('aria-expanded', 'false');
     });
-  });
-})();
-</script>
-<script>
-(function () {
-  document.querySelectorAll('.nav-drop-toggle').forEach(function (t) {
-    t.addEventListener('click', function (e) { e.stopPropagation(); t.parentElement.classList.toggle('open'); });
-  });
-  document.addEventListener('click', function (e) {
-    if (!e.target.closest('.nav-dropdown')) {
-      document.querySelectorAll('.nav-dropdown.open').forEach(function (d) { d.classList.remove('open'); });
-    }
   });
 })();
 </script>
