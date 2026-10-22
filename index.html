@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lighthouse AI Consulting · Helping business leaders adopt AI with confidence</title>
-<meta name="description" content="Lighthouse AI Consulting helps businesses adopt AI the right way, with practical strategy, hands-on implementation, and ongoing governance. No hype, just results.">
+<title>Lighthouse AI Consulting · AI automation for life science recruitment</title>
+<meta name="description" content="I help life science recruitment teams reduce manual admin with custom AI automations for CV screening, candidate re-engagement, outreach and interview scheduling, supported by practical EU AI Act guidance.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -184,13 +184,43 @@
     .nav-links .btn{margin-top:14px;justify-content:center}
     .house{width:92px}.beam{opacity:.6}
   }
+
+  /* Support the updated content using the original site design. */
+  html{scroll-padding-top:90px}
+  :focus-visible{outline:3px solid var(--coral);outline-offset:4px}
+  .skip-link{position:fixed;top:-80px;left:16px;background:var(--cream);padding:12px 20px;z-index:200}
+  .skip-link:focus{top:12px}
+  .scene .eyebrow{color:var(--beam)}
+  .scene{padding:120px 0 110px}
+  .hero-copy{padding-top:0}
+  .services-grid{margin-top:42px;grid-template-columns:repeat(2,1fr)}
+  .workflow-label{font-size:12px;color:var(--muted);margin-bottom:14px}
+  .outcome{font-size:13px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted)}
+  .governance-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  .governance-points article{padding:24px 0;border-top:1px solid rgba(251,244,231,.2)}
+  .governance-points h3{font-size:22px;margin-bottom:10px}
+  .governance-points p{font-size:15px;color:rgba(251,244,231,.78)}
+  .governance-points .governance-note{font-size:12px}
+  .source-link{display:inline-block;color:var(--beam);font-size:13px;margin-top:24px;text-decoration:underline}
+  .testimonial-context{color:var(--muted);margin-top:16px}
+  .contact-form label{font-size:13px;font-weight:600;color:var(--ink)}
+  .contact-form label span{font-weight:400}
+  .contact-form .form-note,.contact-form #form-status{color:var(--muted);font-size:13px}
+  .contact-form button:disabled{opacity:.6;cursor:wait}
+  .contact-info a{overflow-wrap:anywhere}
+  @media(max-width:1000px){.nav-links{gap:15px}.nav-logo{font-size:16px}.nav-inner{padding-left:22px;padding-right:22px}}
+  @media(max-width:920px){.governance-layout,.services-grid{grid-template-columns:1fr}.about p{margin-left:auto;margin-right:auto}}
+  @media(max-width:600px){.container{padding:0 22px}.nav-logo{font-size:15px;gap:6px}.scene{padding-top:120px;padding-bottom:150px}.hero-copy h1{font-size:42px}.hero-copy p{font-size:17px}.contact-form{padding:24px}.house{right:7%;transform:scale(.7);transform-origin:bottom right}}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">
+    <a href="#home" class="nav-logo">
       <svg width="28" height="28" viewBox="-20 -2 68 72" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="14" cy="34" r="32" fill="none" stroke="#FBF4E7" stroke-width="1.5"/>
         <rect x="8" y="22" width="12" height="28" fill="#FBF4E7"/>
@@ -202,21 +232,21 @@
       </svg>
       Lighthouse <em>AI</em> Consulting
     </a>
-    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    <div class="nav-links">
-      <a href="#services">Services</a>
-      <a href="/real-estate">Real Estate</a>
-      <a href="/healthcare-staffing">Healthcare Staffing</a>
-      <a href="case-studies.html">Case Studies</a>
-      <a href="#why">Why Us</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="nav-links">
+      <a href="#automations">Automations</a>
+      <a href="#approach">Approach</a>
+      <a href="#responsible-ai">Responsible AI</a>
+      <a href="#about">About</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact" class="btn btn-primary">Book a Call</a>
+      <a href="#contact" class="btn btn-primary">Let’s talk</a>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="scene">
+<main id="main">
+<section class="scene" id="home">
   <div class="stars">
     <i style="left:10%;top:16%"></i><i style="left:20%;top:28%"></i><i style="left:32%;top:12%"></i>
     <i style="left:46%;top:22%"></i><i style="left:58%;top:14%"></i><i style="left:70%;top:26%"></i>
@@ -241,31 +271,21 @@
 
   <div class="container">
     <div class="hero-copy">
-      <h1>Helping business leaders <em>adopt AI</em> with confidence</h1>
-      <p>Lighthouse AI Consulting helps businesses adopt AI the right way, with practical strategy, hands-on implementation, and ongoing governance. No hype, just results.</p>
+      <div class="eyebrow">AI for life science recruitment</div>
+      <h1>Less admin.<br><em>More time</em> to close placements.</h1>
+      <p>I help life science recruitment teams reduce manual admin with custom AI automations for CV screening, candidate re-engagement, outreach and interview scheduling, supported by practical EU AI Act guidance.</p>
       <div class="hero-ctas">
         <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
-        <a href="#why" class="btn btn-ghost">Why Lighthouse</a>
+        <a href="#automations" class="btn btn-ghost">Explore automations</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="about band-warm pad">
-  <div class="container">
-    <div class="about-wrap">
-      <img src="images/Headshot.jpg" alt="Colm O'Regan" class="about-photo">
-      <div>
-        <div class="eyebrow">About</div>
-        <h2>Meet Colm O'Regan</h2>
-        <p>I'm a former research scientist with a Ph.D. in chemistry and over 10 years working in research labs. That background gave me a rigorous, evidence-based approach to problem-solving that I now apply to AI consulting.</p>
-        <p>Since 2015, I've been working with businesses on marketing strategy, content, and technology adoption. Now I help companies <strong>adopt AI with confidence</strong>, through discovery, strategy, implementation, and governance.</p>
-        <p><strong>I don't sell tools or push trends.</strong> I help you figure out where AI actually makes sense for your business, then build a plan to get there. Practical, clear, and focused on results. Finally, I'm the founder of BestLabTech.com, where I review lab software and help buyers find the right tools for their workflow.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<section class="about band-warm pad" id="about"><div class="container"><div class="about-wrap">
+  <img src="images/Headshot.jpg" alt="Colm O’Regan, founder of Lighthouse AI Consulting" class="about-photo" width="260" height="300" loading="lazy">
+  <div><div class="eyebrow">Science background. Practical implementation.</div><h2>Meet Colm O’Regan</h2><p>I’m a former research scientist with a <strong>Ph.D. in chemistry and over 10 years working in research labs</strong>. That experience shapes how I approach AI: examine the evidence, test assumptions and understand the limits.</p><p>Since 2015, I’ve worked with businesses on marketing strategy, content and technology adoption. Today, I help life science recruitment teams put AI and automation to work on the administrative bottlenecks that slow them down.</p><p>You work directly with me throughout. Based in Ireland, I support clients worldwide with workflow discovery, custom implementation and practical AI governance.</p></div>
+</div></div></section>
 
 <!-- LOGOS -->
 <section class="logos">
@@ -289,7 +309,7 @@
         <div class="eyebrow">My story</div>
         <h2>What is Lighthouse AI Consulting?</h2>
         <p>The name Lighthouse takes its inspiration from the lighthouse that stands on Fastnet Rock off the southwest coast of Ireland. For over a century, it has guided ships safely through some of the most challenging waters in the North Atlantic.</p>
-        <p>That's the idea behind Lighthouse AI Consulting. I shine a light on AI and help business leaders see the best path forward towards adoption. No hype, no confusion, just clear, practical guidance that delivers real results.</p>
+        <p>That's the idea behind Lighthouse AI Consulting. I shine a light on AI and help life science recruitment teams see a practical path towards AI adoption. No hype, no confusion, just clear, practical guidance that delivers real results.</p>
         <p>Based in Ireland and serving clients worldwide, Lighthouse AI Consulting brings hands-on expertise to every engagement, whether you're across the road or across the ocean.</p>
       </div>
       <div class="what-is-logo">
@@ -300,22 +320,22 @@
 </section>
 
 <!-- WHY -->
-<section class="why band-dark pad" id="why">
+<section class="why band-dark pad" id="approach">
   <div class="container">
     <div class="sec-head">
       <div class="eyebrow">Why Lighthouse AI</div>
-      <h2>AI consulting that focuses on what actually matters</h2>
+      <h2>Practical AI for specialist recruitment</h2>
     </div>
     <div class="why-grid">
       <div class="why-card">
         <div class="icon">🎯</div>
         <h3>Strategy Before Tools</h3>
-        <p>I don't start with technology. I start with your business, your workflows, and your goals. The right AI solution comes from understanding the problem first.</p>
+        <p>We start with your recruitment workflow, systems and bottlenecks. Then we select a focused automation with a clear outcome to test.</p>
       </div>
       <div class="why-card">
         <div class="icon">⚡</div>
         <h3>Practical, Not Theoretical</h3>
-        <p>No slides-only presentations or abstract frameworks. Every engagement delivers actionable outcomes your team can implement straight away.</p>
+        <p>I build and test workflows around your existing tools where integration is feasible, then train your recruiters and document how to use them.</p>
       </div>
       <div class="why-card">
         <div class="icon">🛡️</div>
@@ -331,52 +351,32 @@
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="services pad" id="services">
+<section class="services pad" id="automations">
   <div class="container">
-    <div class="eyebrow">Services</div>
-    <h2 style="font-size:clamp(28px,4vw,44px)">How I help</h2>
-    <p class="lead">AI should solve problems, not create more of them. But too often, businesses rush in without a strategy, spending time and money on tools that don't deliver. That's why I start with discovery. Instead of chasing trends, I focus on what actually moves the needle for your business. Before talking about solutions, I dig into your workflows, challenges, and opportunities, pinpointing where AI can have a real impact. No tech hype, just practical, real-world solutions.</p>
+    <div class="sec-head"><div class="eyebrow">Custom recruitment automations</div><h2>Give your recruiters their time back.</h2><p class="intro">Great placements depend on relationships and specialist judgement. I help life science recruitment teams reduce the manual work that gets in the way, with workflows designed around your ATS, CRM and day-to-day process.</p></div>
     <div class="services-grid">
-      <div class="service-card">
-        <h3>AI Discovery Call &amp; Readiness Assessment</h3>
-        <p>A complimentary 30-minute consultation to assess your AI needs and goals. I'll help you identify quick wins and your biggest AI opportunities, give you expert insights on where AI makes sense for your business, and leave you with actionable next steps, even if you're just exploring.</p>
-        <div class="bestfor">Best for: Businesses curious about AI but unsure where to start</div>
-        <a href="#contact">Book a Free Discovery Call</a>
-      </div>
-      <div class="service-card">
-        <h3>AI Education &amp; Stakeholder Alignment</h3>
-        <p>AI explained in simple terms: what it is, what it isn't, and how it applies to your business. Includes industry-specific use cases, coverage of AI risks and best practices around security, compliance, and ethics, plus stakeholder alignment sessions so your team is on board before adoption.</p>
-        <div class="bestfor">Best for: Companies interested in AI but hesitant about where to begin</div>
-        <a href="#contact">Contact for more information</a>
-      </div>
-      <div class="service-card">
-        <h3>AI Strategy &amp; Roadmap Development</h3>
-        <p>I evaluate AI opportunities and risks specific to your business, then develop a custom AI roadmap aligned with your goals. Covers ethical, secure, and compliant adoption with AI projects prioritised based on ROI and feasibility.</p>
-        <div class="bestfor">Best for: Companies that need a clear strategy before investing in AI tools</div>
-        <a href="#contact">Contact for more information</a>
-      </div>
-      <div class="service-card">
-        <h3>AI Automation &amp; Implementation</h3>
-        <p>I identify high-impact areas for AI-driven automation and integrate AI tools to streamline workflows and boost efficiency. Includes improving decision-making with AI-powered insights and training your teams on how to use AI effectively in daily operations.</p>
-        <div class="bestfor">Best for: Businesses ready to actively implement AI with expert guidance</div>
-        <a href="#contact">Contact for more information</a>
-      </div>
-      <div class="service-card">
-        <h3>AI Governance &amp; Risk Management</h3>
-        <p>I establish AI policies and best practices for responsible, compliant use, ensuring your AI solutions meet security, compliance, and ethical standards. Includes monitoring risks associated with bias, misuse, or security vulnerabilities, plus quarterly AI audits to refine and optimise your initiatives.</p>
-        <div class="bestfor">Best for: Organisations that need long-term AI governance and risk management</div>
-        <a href="#contact">Contact for more information</a>
-      </div>
+      <article class="service-card"><div class="workflow-label">From CV to clear evidence</div><h3>CV screening support</h3><p>Extract qualifications, therapeutic-area experience and relevant skills into structured summaries. Help recruiters review candidates against agreed role requirements, with the original CV available for checking.</p><div class="outcome">Less manual reading and data entry. Recruiters retain selection decisions.</div></article>
+      <article class="service-card"><div class="workflow-label">From dormant record to conversation</div><h3>Candidate re-engagement</h3><p>Build follow-up workflows for candidates already in your database. Prepare relevant check-ins, capture updated availability and keep records current, with contact preferences built into the process.</p><div class="outcome">More consistent follow-up with the talent you already know.</div></article>
+      <article class="service-card"><div class="workflow-label">From blank email to relevant outreach</div><h3>Personalised outreach</h3><p>Prepare messages using the role brief and verified candidate information. Give recruiters drafts to review, manage follow-ups and stop sequences when someone replies or opts out.</p><div class="outcome">Less time drafting. More time having meaningful conversations.</div></article>
+      <article class="service-card"><div class="workflow-label">From email ping-pong to booked interview</div><h3>Interview scheduling</h3><p>Coordinate availability, share booking options and send confirmations and reminders. Keep your records up to date and route rescheduling requests to the right person.</p><div class="outcome">Fewer back-and-forth emails between candidates, clients and recruiters.</div></article>
     </div>
   </div>
 </section>
-
+<section class="band-dark pad" id="responsible-ai"><div class="container governance-layout">
+  <div class="sec-head"><div class="eyebrow">EU AI Act &amp; responsible adoption</div><h2>Move forward with AI.<br>Keep oversight in place.</h2><p class="intro">I help life science recruitment teams navigate the EU AI Act and turn regulatory considerations into practical decisions about how AI is selected, used and monitored.</p><p class="intro">AI used to analyse or filter applications, or evaluate candidates, can fall within the Act’s high-risk category. The intended use matters: a scheduling workflow and a candidate evaluation system need different assessments.</p><a class="source-link" href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" rel="noopener noreferrer">Read the European Commission’s AI Act overview ↗</a></div>
+  <div class="governance-points">
+    <article><h3>Understand your use cases</h3><p>Map where AI enters your process, assess risk classification and clarify responsibilities with your legal and compliance advisers.</p></article>
+    <article><h3>Build in human oversight</h3><p>Define review points, escalation routes and who can override an output. Keep recruiters accountable for candidate decisions.</p></article>
+    <article><h3>Put governance into practice</h3><p>Establish usage policies, staff training, documentation and checks for accuracy and bias. Review candidate data handling and GDPR considerations alongside AI risks.</p></article>
+    <p class="governance-note">Practical implementation and governance support; legal interpretation and formal compliance advice remain with your legal advisers.</p>
+  </div>
+</div></section>
 <!-- TESTIMONIALS -->
 <section class="testimonials band-warm pad">
   <div class="container">
     <div class="eyebrow">Testimonials</div>
     <h2 style="font-size:clamp(28px,4vw,44px)">What clients say</h2>
+    <p class="testimonial-context">Feedback on previous content and AI strategy engagements.</p>
     <div class="test-grid">
       <div class="test-card">
         <blockquote>"The quality of work was higher than expected. We asked Colm to turn a customer interview into an article, but he delivered a polished success story with a much more engaging style. He understood our business objectives and provided professional suggestions on gated content SEO, plus a full communications package including emails and social posts. Overall, I'm very satisfied."</blockquote>
@@ -394,87 +394,38 @@
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="contact band-dark pad" id="contact">
-  <div class="container">
-    <div class="contact-wrap">
-      <div>
-        <div class="eyebrow">Get started</div>
-        <h2>Let's talk about your AI roadmap</h2>
-        <p>Book a free 30-minute discovery call. No pitch deck, just a focused conversation about where AI can move the needle for your team.</p>
-        <div class="contact-info">
-          <p>Or email directly: <a href="mailto:colm@lighthouseaiconsulting.com">colm@lighthouseaiconsulting.com</a></p>
-        </div>
-      </div>
-      <form class="contact-form" id="contact-form" action="https://formspree.io/f/xlgoynyz" method="POST">
-        <input type="hidden" name="_source" value="homepage" />
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Work email" required>
-        <input type="text" name="company" placeholder="Company">
-        <select name="service">
-          <option value="" disabled selected>I'm interested in...</option>
-          <option>AI Discovery Call &amp; Readiness Assessment</option>
-          <option>AI Education &amp; Stakeholder Alignment</option>
-          <option>AI Strategy &amp; Roadmap Development</option>
-          <option>AI Automation &amp; Implementation</option>
-          <option>AI Governance &amp; Risk Management</option>
-          <option>Not sure yet, let's talk</option>
-        </select>
-        <textarea name="message" placeholder="Tell me briefly what you're trying to solve"></textarea>
-        <button type="submit" class="btn btn-primary">Book a Discovery Call</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq band-warm pad" id="faq">
-  <div class="container">
-    <h2>Frequently asked questions</h2>
-    <div class="faq-list">
-      <div class="faq-item">
-        <h3>Who do you typically work with?</h3>
-        <p>Business leaders, marketing directors, operations managers, and teams across a range of industries who want to adopt AI but aren't sure where to start, or who have started but aren't seeing the results they expected.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What makes you different from other AI consultancies?</h3>
-        <p>I focus on practical outcomes, not hype. Every engagement starts with understanding your business before recommending any technology. I work directly with you throughout, and I prioritise solutions based on real ROI and feasibility, not what's trendy.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Will AI actually work for my business?</h3>
-        <p>That depends on where and how you apply it. That's exactly what the discovery call and readiness assessment are for. I'll help you identify where AI can genuinely make a difference and where it's not worth the investment.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How do you handle compliance and security concerns?</h3>
-        <p>Every engagement includes a review of compliance and security requirements relevant to your sector. I build AI governance frameworks that keep humans in the loop at critical checkpoints and ensure your AI use meets ethical and regulatory standards.</p>
-      </div>
-      <div class="faq-item">
-        <h3>What does a typical engagement look like?</h3>
-        <p>It depends on where you are. Some clients start with a discovery call and readiness assessment. Others jump straight into strategy and roadmap development. We'll scope it together on an initial call.</p>
-      </div>
-      <div class="faq-item">
-        <h3>Do you work with specific industries?</h3>
-        <p>I work across industries. My background is in science and technology, but the AI strategy, implementation, and governance frameworks I build are applicable to any business looking to adopt AI responsibly and effectively.</p>
-      </div>
-      <div class="faq-item">
-        <h3>How do I get started?</h3>
-        <p>Book a free 30-minute discovery call. We'll discuss your current situation, identify your biggest opportunities, and map out what an AI engagement could look like for your business.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+<section class="contact band-dark pad" id="contact"><div class="container"><div class="contact-wrap">
+  <div><div class="eyebrow">Let’s find your first workflow</div><h2>What’s slowing your recruiters down?</h2><p>Request a free 30-minute discovery call. Tell me where the admin piles up, and we’ll explore how a custom automation could help your team spend more time on placements.</p><div class="contact-info"><p>Or email me directly:<br><a href="mailto:colm@lighthouseaiconsulting.com">colm@lighthouseaiconsulting.com</a></p></div></div>
+  <form class="contact-form" id="contact-form" action="https://formspree.io/f/xlgoynyz" method="POST">
+    <input type="hidden" name="_source" value="life-science-recruitment">
+    <label for="name">Your name</label><input id="name" type="text" name="name" autocomplete="name" required>
+    <label for="email">Work email</label><input id="email" type="email" name="email" autocomplete="email" required>
+    <label for="company">Company <span>(optional)</span></label><input id="company" type="text" name="company" autocomplete="organization">
+    <label for="service">Where would you like help?</label><select id="service" name="service"><option>Not sure yet, let’s talk</option><option>CV screening support</option><option>Candidate re-engagement</option><option>Personalised outreach</option><option>Interview scheduling</option><option>EU AI Act &amp; AI governance</option></select>
+    <label for="message">Your biggest bottleneck <span>(optional)</span></label><textarea id="message" name="message" placeholder="Tell me about the workflow, without including candidate information."></textarea>
+    <button type="submit" class="btn btn-primary">Request a discovery call</button><p class="form-note">I’ll reply to arrange a time for us to talk.</p><p id="form-status" role="status" aria-live="polite" hidden></p>
+  </form>
+</div></div></section>
+<section class="faq band-warm pad" id="faq"><div class="container"><div class="eyebrow">Your questions, answered</div><h2>Before we get started</h2><div class="faq-list">
+  <div class="faq-item"><h3>Who do you work with?</h3><p>Life science recruitment agencies and specialist recruitment teams working across biotech, pharma, medtech and clinical research, particularly teams held back by repetitive admin.</p></div>
+  <div class="faq-item"><h3>Can you work with our existing ATS or CRM?</h3><p>We start by reviewing your current setup. Integration depends on the access and capabilities your systems provide. I’ll establish what’s feasible before recommending a build.</p></div>
+  <div class="faq-item"><h3>Will AI make hiring decisions?</h3><p>The workflows I design keep recruiters responsible for candidate decisions. AI can prepare and organise information for review. Human review alone does not remove any applicable regulatory obligations.</p></div>
+  <div class="faq-item"><h3>Can we start with just one workflow?</h3><p>Yes. A focused pilot lets us test a useful improvement, measure time saved and check quality before extending automation across your process.</p></div>
+  <div class="faq-item"><h3>How do you approach the EU AI Act?</h3><p>We assess the intended use, identify governance needs and establish practical controls, working with your legal or compliance advisers where needed. No tool or human checkpoint is a blanket guarantee of compliance.</p></div>
+  <div class="faq-item"><h3>What happens on the discovery call?</h3><p>We spend 30 minutes discussing your recruitment process, the work taking up your team’s time and where automation could help. You’ll leave with a clearer next step.</p></div>
+</div></div></section>
 <!-- FINAL CTA -->
 <section class="final-cta pad">
   <div class="container">
-    <h2>Ready to put AI to work?</h2>
-    <p>Your competitors are experimenting. Your team should be implementing.</p>
+    <h2>Ready to give your recruiters time back?</h2>
+    <p>Let’s find the first recruitment workflow worth automating.</p>
     <div class="hero-ctas">
       <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
     </div>
   </div>
 </section>
 
+</main>
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -485,40 +436,33 @@
 </footer>
 
 <script>
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var form = this;
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
-  }).then(function(response) {
-    if (response.ok) {
-      window.location.href = 'thank-you.html';
-    } else {
-      alert('Something went wrong. Please try again or email directly.');
-    }
-  }).catch(function() {
-    alert('Something went wrong. Please try again or email directly.');
-  });
+const form = document.getElementById('contact-form');
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const button = form.querySelector('button');
+  const status = document.getElementById('form-status');
+  button.disabled = true;
+  button.textContent = 'Sending…';
+  status.hidden = false;
+  status.textContent = '';
+  try {
+    const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+    if (!response.ok) throw new Error('Submission failed');
+    form.reset();
+    status.textContent = 'Thanks, your request has been sent. I’ll reply to arrange your discovery call.';
+  } catch {
+    status.textContent = 'Your request could not be sent. Please try again or email colm@lighthouseaiconsulting.com.';
+  } finally {
+    button.disabled = false;
+    button.textContent = 'Request a discovery call';
+  }
 });
-</script>
-<script>
-(function () {
-  var nv = document.getElementById('nav');
-  var tg = nv && nv.querySelector('.nav-toggle');
-  if (!nv || !tg) return;
-  tg.addEventListener('click', function () {
-    var open = nv.classList.toggle('open');
-    tg.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  nv.querySelectorAll('.nav-links a').forEach(function (a) {
-    a.addEventListener('click', function () {
-      nv.classList.remove('open');
-      tg.setAttribute('aria-expanded', 'false');
-    });
-  });
-})();
+const nav = document.getElementById('nav');
+const toggle = nav.querySelector('.nav-toggle');
+function closeMenu() { nav.classList.remove('open'); toggle.setAttribute('aria-expanded', 'false'); }
+toggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); toggle.setAttribute('aria-expanded', String(open)); });
+nav.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', closeMenu));
+document.addEventListener('keydown', event => { if (event.key === 'Escape' && nav.classList.contains('open')) { closeMenu(); toggle.focus(); } });
 </script>
 </body>
 </html>
