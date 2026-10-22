@@ -213,6 +213,26 @@
   @media(max-width:600px){.container{padding:0 22px}.nav-logo{font-size:15px;gap:6px}.scene{padding-top:120px;padding-bottom:150px}.hero-copy h1{font-size:42px}.hero-copy p{font-size:17px}.contact-form{padding:24px}.house{right:7%;transform:scale(.7);transform-origin:bottom right}}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
 
+
+  .momentum{background:var(--sand2)}
+  .momentum .sec-head .intro{max-width:76ch}
+  .momentum-table-wrap{margin-top:44px}
+  .momentum-table{width:100%;border-collapse:collapse;text-align:left;font-size:15px}
+  .momentum-table caption{text-align:left;font-family:var(--disp);font-weight:600;font-size:clamp(22px,3vw,30px);line-height:1.2;margin-bottom:26px;color:var(--ink)}
+  .momentum-table th,.momentum-table td{padding:21px 16px;border-bottom:1px solid #c4b698;vertical-align:top}
+  .momentum-table thead th{font-size:13px;border-bottom:2px solid #b8a987}
+  .momentum-table tbody th{font-family:var(--disp);font-size:19px;font-weight:600}
+  .momentum-table td{color:var(--muted)}
+  .momentum-table td:nth-child(3){white-space:nowrap}
+  .momentum-table th:first-child,.momentum-table td:first-child{padding-left:0}
+  .momentum-cta{margin-top:32px}
+  @media(max-width:600px){
+    .momentum-table th,.momentum-table td{padding:16px 6px;font-size:12px}
+    .momentum-table tbody th{font-size:14px}
+    .momentum-table thead th{font-size:11px}
+    .momentum-table td:nth-child(3){white-space:normal}
+  }
+
 </style>
 </head>
 <body>
@@ -235,7 +255,7 @@
     <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-controls="nav-links" aria-expanded="false"><span></span><span></span><span></span></button>
     <div class="nav-links" id="nav-links">
       <a href="#automations">Automations</a>
-      <a href="#approach">Approach</a>
+      <a href="#how-i-work">How I Work</a>
       <a href="#responsible-ai">Responsible AI</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
@@ -348,6 +368,32 @@
         <p>Ireland-based, serving clients worldwide. Whether you're a growing startup or an established enterprise, I adapt to your pace and scale.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="momentum pad" id="how-i-work" aria-labelledby="momentum-title">
+  <div class="container">
+    <div class="sec-head">
+      <div class="eyebrow">How I Work</div>
+      <h2 id="momentum-title">The Momentum Method</h2>
+      <p class="intro">The Momentum Method is my five-stage approach to helping businesses turn AI opportunities into measurable results, starting with focused, low-risk projects and building towards lasting competitive advantage.</p>
+      <p class="intro">I call it the Momentum Method because it captures the principle behind how I work: start with quick wins and build towards larger, longer-term results. Each stage builds on what we learn and achieve, giving us the evidence and confidence to take the next step.</p>
+      <p class="intro">For life science recruitment teams, that could mean starting with interview scheduling or candidate follow-up, measuring the time saved, then building on what works across your recruitment process.</p>
+    </div>
+    <div class="momentum-table-wrap">
+      <table class="momentum-table">
+        <caption>Your AI consulting journey at a glance</caption>
+        <thead><tr><th scope="col">Step</th><th scope="col">Name</th><th scope="col">Duration</th><th scope="col">Core promise</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><th scope="row">Discover</th><td>7 days</td><td>Identify your best opportunities for AI-driven ROI</td></tr>
+          <tr><td>2</td><th scope="row">Prove</th><td>30 days</td><td>Test a focused AI solution and measure its value</td></tr>
+          <tr><td>3</td><th scope="row">Implement</th><td>90 days</td><td>Turn a successful pilot into a dependable business solution</td></tr>
+          <tr><td>4</td><th scope="row">Optimise</th><td>Ongoing</td><td>Maintain and continuously improve your AI investments</td></tr>
+          <tr><td>5</td><th scope="row">Transform</th><td>Long term</td><td>Build a sustainable AI-powered organisation</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <a href="#contact" class="btn btn-primary momentum-cta">Discuss your first step</a>
   </div>
 </section>
 
