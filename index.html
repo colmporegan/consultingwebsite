@@ -233,6 +233,27 @@
     .momentum-table td:nth-child(3){white-space:normal}
   }
 
+
+  .test-grid{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:650px){.test-grid{grid-template-columns:1fr}}
+  .testimonial-photo{width:72px;height:72px;object-fit:cover;border-radius:50%;border:3px solid var(--sand2);margin-bottom:14px}
+  .case-studies .sec-head{margin-bottom:42px}
+  .case-study{display:grid;grid-template-columns:220px 1fr;gap:36px;background:var(--cream);border:1px solid var(--line);border-radius:18px;padding:32px;margin-top:24px;align-items:start}
+  .case-study-img img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px}
+  .case-study h3{font-size:26px;margin-bottom:6px}
+  .case-role{font-size:14px;color:var(--muted);margin-bottom:24px}
+  .case-study h4{font-size:15px;margin:22px 0 8px}
+  .case-study p{font-size:15px;color:var(--muted);line-height:1.75}
+  .case-link{display:inline-block;margin-top:24px;color:#9B4D2C;font-size:14px;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+  @media(max-width:1100px){
+    .nav-toggle{display:block}
+    .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(16,26,48,.98);padding:8px 26px 20px}
+    nav.open .nav-links{display:flex}
+    .nav-links>a:not(.btn){padding:13px 0;border-bottom:1px solid rgba(251,244,231,.08)}
+    .nav-links .btn{margin-top:14px;justify-content:center}
+  }
+  @media(max-width:650px){.case-study{grid-template-columns:1fr;gap:24px;padding:24px}.case-study-img{max-width:180px}}
+
 </style>
 </head>
 <body>
@@ -258,6 +279,7 @@
       <a href="#how-i-work">How I Work</a>
       <a href="#responsible-ai">Responsible AI</a>
       <a href="#about">About</a>
+      <a href="#case-studies">Case Studies</a>
       <a href="#faq">FAQ</a>
       <a href="#contact" class="btn btn-primary">Let’s talk</a>
     </div>
@@ -418,25 +440,65 @@
   </div>
 </div></section>
 <!-- TESTIMONIALS -->
-<section class="testimonials band-warm pad">
+<section class="testimonials band-warm pad" id="testimonials">
   <div class="container">
     <div class="eyebrow">Testimonials</div>
     <h2 style="font-size:clamp(28px,4vw,44px)">What clients say</h2>
     <p class="testimonial-context">Feedback on previous content and AI strategy engagements.</p>
     <div class="test-grid">
-      <div class="test-card">
-        <blockquote>"The quality of work was higher than expected. We asked Colm to turn a customer interview into an article, but he delivered a polished success story with a much more engaging style. He understood our business objectives and provided professional suggestions on gated content SEO, plus a full communications package including emails and social posts. Overall, I'm very satisfied."</blockquote>
-        <div class="attr">– Shiyo Lin, Marketing Manager EMEA, Leica Microsystems</div>
-      </div>
+
       <div class="test-card">
         <blockquote>"Colm's AI Marketing Roadmap showed me exactly how AI could help with competitor research, audience insights, and creating content quickly. He asked great questions to make sure the roadmap matched what I needed, and gave me a clear plan with practical tools I could use straight away. I'd recommend this to any marketer who feels stuck or overwhelmed by AI."</blockquote>
+        <img class="testimonial-photo" src="images/ricardo.jpg" alt="Ricardo Wilkins" width="72" height="72" loading="lazy">
         <div class="attr">– Ricardo Wilkins, Health Science Author, ASEA</div>
       </div>
       <div class="test-card">
         <blockquote>"I was blown away by how comprehensive and tailored Colm's AI Roadmap service is. He broke the process down into bite-size steps and spoke directly to my pain points. I'd recommend it to any marketer who wants to use AI to work smarter, not harder."</blockquote>
+        <img class="testimonial-photo" src="images/shawn.jpg" alt="Shawn Jones Clarke" width="72" height="72" loading="lazy">
         <div class="attr">– Shawn Jones Clarke, Wellness Consultant, ASEA</div>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="case-studies pad" id="case-studies" aria-labelledby="cases-title">
+  <div class="container">
+    <div class="sec-head"><div class="eyebrow">Case studies</div><h2 id="cases-title">From AI uncertainty to a practical plan.</h2><p class="intro">These previous AI marketing engagements show how I help clients turn opportunities into clear, workable next steps.</p></div>
+
+    <div class="case-study">
+      <div class="case-study-img">
+        <img src="images/ricardo.jpg" alt="Ricardo Wilkins" loading="lazy">
+      </div>
+      <div>
+        <h3>Ricardo Wilkins</h3>
+        <div class="case-role">Health Science Author, ASEA</div>
+        <h4>Problem</h4>
+        <p>Ricardo was struggling to market his pain relief product on LinkedIn. Because of his caregiving responsibilities, he had very limited time, and marketing often got pushed aside. He was interested in AI but unsure how to use it in a practical way.</p>
+        <h4>Solution</h4>
+        <p>Ricardo used the AI Marketing Roadmap to build a tailored, realistic plan. The work focused on identifying his ideal audience, clarifying their pain points, and showing him how tools like ChatGPT and Perplexity could support competitor research and content creation. A simple workflow was created to fit his time constraints.</p>
+        <h4>Results</h4>
+        <p>Ricardo gained a clear plan, more confidence using AI, and a faster way to create relevant content. He discovered he could market more consistently without spending hours each week, which helped him save time and reduce overwhelm.</p>
+        <a href="https://colmporegan.com/wp-content/uploads/2025/05/Case-study.pdf" target="_blank" rel="noopener noreferrer" class="case-link">Read the full case study</a>
+      </div>
+    </div>
+
+    <div class="case-study">
+      <div class="case-study-img">
+        <img src="images/shawn.jpg" alt="Shawn Jones Clarke" loading="lazy">
+      </div>
+      <div>
+        <h3>Shawn Jones Clarke</h3>
+        <div class="case-role">Wellness Consultant, ASEA</div>
+        <h4>Problem</h4>
+        <p>Shawn wanted to use AI but felt overwhelmed by how fast everything was changing. Content demands were building up, and social media was becoming a major pain point. She needed a simpler way to create professional, engaging content without burning out.</p>
+        <h4>Solution</h4>
+        <p>Shawn booked the AI Marketing Roadmap to get clarity and direction. The roadmap was tailored to her goals, bandwidth, and platforms, and broke complex AI tools into simple, actionable steps. It also mapped out a repeatable process for creating, scheduling, and reviewing content more efficiently.</p>
+        <h4>Results</h4>
+        <p>Shawn left with a structured system for using AI in her day-to-day marketing. She felt more confident, less overwhelmed, and better able to create content consistently using bite-sized, AI-supported steps.</p>
+        <a href="https://colmporegan.com/wp-content/uploads/2025/05/Case-study-Shawn-Clarke.pdf" target="_blank" rel="noopener noreferrer" class="case-link">Read the full case study</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
